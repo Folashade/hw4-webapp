@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="601"
+   height="301"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.44"
+   version="1.0"
+   sodipodi:docbase="C:\Documents and Settings\ltljltlj\Desktop\Signs\Auxiliary Plates"
+   sodipodi:docname="Temporary plate blue (Outline).svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9916667"
+     inkscape:cx="300.00001"
+     inkscape:cy="150"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     width="601px"
+     height="301px"
+     inkscape:window-width="1280"
+     inkscape:window-height="968"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="color:black;fill:white;fill-opacity:1;fill-rule:nonzero;stroke:black;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       d="M 37.999844,0.5 L 563.00016,0.5 C 583.77507,0.5 600.5,17.22486 600.5,37.999687 L 600.5,263.00031 C 600.5,283.77514 583.77507,300.5 563.00016,300.5 L 37.999844,300.5 C 17.22493,300.5 0.5,283.77514 0.5,263.00031 L 0.5,37.999687 C 0.5,17.22486 17.22493,0.5 37.999844,0.5 z "
+       id="rect1872" />
+    <path
+       style="color:black;fill:#003f87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.8735441;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+       d="M 38,13 L 563,13 C 576.85,13 588,24.15 588,38 L 588,263 C 588,276.85 576.85,288 563,288 L 38,288 C 24.15,288 13,276.85 13,263 L 13,38 C 13,24.15 24.15,13 38,13 z "
+       id="rect2766" />
+    <g
+       id="g2000"
+       inkscape:label="Layer 1"
+       transform="translate(2.760247,-286.551)">
+      <g
+         id="g1981"
+         inkscape:label="Layer 1"
+         transform="translate(18.60837,25.64935)">
+        <g
+           id="g1980"
+           inkscape:label="Layer 1"
+           transform="translate(-1.508784,-1.005909)">
+          <g
+             id="g1945"
+             inkscape:label="Layer 1"
+             transform="translate(53.81632,22.13184)">
+            <g
+               id="g2020"
+               inkscape:label="Layer 1"
+               transform="translate(51.29875,-10.56155)" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g4663"
+       inkscape:label="Layer 1"
+       transform="translate(-0.818961,335.0177)">
+      <g
+         transform="translate(5.783682,-312.1946)"
+         id="g5535"
+         style="overflow:visible" />
+      <g
+         id="g4707"
+         transform="translate(-585.8799,-150)"
+         style="fill:white;fill-opacity:1">
+        <path
+           id="text2774"
+           d="M 662.12244,-71.531632 L 662.12244,15.482284 L 649.43746,15.482284 L 649.43746,-71.531632 L 637.19885,-71.531632 L 637.19885,-84.51722 L 675.10802,-84.51722 L 675.10802,-71.531632 L 662.12244,-71.531632 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2780"
+           d="M 686.37994,15.482284 L 686.37994,-84.51722 L 723.24608,-84.51722 L 723.24608,-71.531632 L 699.06492,-71.531632 L 699.06492,-45.86107 L 715.18417,-45.86107 L 715.18417,-32.574868 L 699.06492,-32.574868 L 699.06492,2.4966955 L 724.58973,2.4966955 L 724.58973,15.482284 L 686.37994,15.482284 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2786"
+           d="M 1008.6837,15.482284 L 1003.0131,-11.231317 L 986.5932,-11.231317 L 980.92254,15.482284 L 967.93695,15.482284 L 988.38322,-84.51722 L 1001.2185,-84.51722 L 1021.9654,15.482284 L 1008.6837,15.482284 z M 994.95116,-50.484139 L 989.43081,-24.216905 L 1000.1755,-24.216905 L 994.95116,-50.484139 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2792"
+           d="M 961.25743,-56.455415 C 961.25738,-50.783168 960.43676,-46.255753 958.79559,-42.873155 C 957.15431,-39.49044 954.49206,-36.655871 950.80884,-34.369439 L 960.95682,15.482284 L 947.97578,15.482284 L 936.62991,-31.231217 L 930.80894,-31.231217 L 930.80894,15.482284 L 918.12396,15.482284 L 918.12396,-84.51722 L 937.82325,-84.51722 C 953.44599,-84.51712 961.25738,-75.163195 961.25743,-56.455415 L 961.25743,-56.455415 z M 948.27184,-56.756028 C 948.2718,-62.425094 947.50053,-66.304977 945.95803,-68.395688 C 944.41545,-70.486232 941.45639,-71.531545 937.08083,-71.531632 L 930.80894,-71.531632 L 930.80894,-44.216805 L 939.1669,-44.216805 C 942.64973,-44.216746 945.03793,-45.112512 946.33152,-46.904107 C 947.62503,-48.695577 948.2718,-51.979548 948.27184,-56.756028 L 948.27184,-56.756028 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2798"
+           d="M 848.26042,-55.412377 C 848.26037,-47.052833 846.12116,-40.410498 841.84278,-35.485353 C 837.56431,-30.560105 831.89214,-28.097507 824.82624,-28.09755 L 817.81193,-28.09755 L 817.81193,15.482284 L 805.12695,15.482284 L 805.12695,-84.51722 L 824.82624,-84.51722 C 827.61371,-84.51712 830.22662,-84.168683 832.66496,-83.471906 C 835.10323,-82.774931 837.16805,-81.729617 838.85942,-80.335961 C 841.64384,-78.046348 843.90679,-74.687983 845.64827,-70.260858 C 847.38965,-65.833561 848.26037,-60.884072 848.26042,-55.412377 L 848.26042,-55.412377 z M 835.27483,-55.412377 C 835.27479,-61.084481 834.40408,-65.189064 832.66269,-67.72614 C 830.92122,-70.263049 828.30907,-71.531545 824.82624,-71.531632 L 817.81193,-71.531632 L 817.81193,-40.932832 L 824.82624,-40.932832 C 828.60968,-40.932775 831.29698,-42.002381 832.88815,-44.141652 C 834.47923,-46.280804 835.27479,-50.037709 835.27483,-55.412377 L 835.27483,-55.412377 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2804"
+           d="M 903.19568,-34.665498 C 903.19562,-31.978149 903.19562,-28.818675 903.19568,-25.187066 C 903.19562,-21.555376 903.02103,-17.799231 902.67188,-13.918618 C 902.32263,-10.037947 901.7252,-6.2324583 900.87959,-2.502141 C 900.03387,1.2282123 898.74033,4.5615258 896.99894,7.4978094 C 895.25746,10.434109 893.01881,12.797262 890.28297,14.587276 C 887.54704,16.377291 884.14009,17.272298 880.06211,17.2723 C 875.88082,17.272298 872.42226,16.377291 869.68639,14.587276 C 866.95049,12.797262 864.71183,10.434109 862.97042,7.4978094 C 861.22897,4.5615258 859.93543,1.2282123 859.08977,-2.502141 C 858.2441,-6.2324583 857.67172,-10.037947 857.37263,-13.918618 C 857.07353,-17.799231 856.92398,-21.531084 856.92399,-25.11419 C 856.92398,-28.697215 856.92398,-31.880981 856.92399,-34.665498 C 856.92398,-37.550119 856.92398,-40.808279 856.92399,-44.439988 C 856.92398,-48.071577 857.09858,-51.77838 857.44778,-55.560407 C 857.79697,-59.342291 858.41945,-63.049094 859.31523,-66.680825 C 860.21099,-70.312392 861.50453,-73.54626 863.19588,-76.38244 C 864.88719,-79.218435 867.1008,-81.506435 869.8367,-83.246446 C 872.57256,-84.986259 875.98103,-85.856215 880.06211,-85.856317 C 884.14009,-85.856215 887.54704,-84.986259 890.28297,-83.246446 C 893.01881,-81.506435 895.25746,-79.193384 896.99894,-76.307286 C 898.74033,-73.421005 900.03387,-70.162086 900.87959,-66.530519 C 901.7252,-62.898787 902.32263,-59.192744 902.67188,-55.412377 C 903.02103,-51.631869 903.19562,-47.925826 903.19568,-44.294236 C 903.19562,-40.662527 903.19562,-37.452951 903.19568,-34.665498 L 903.19568,-34.665498 z M 889.90948,-34.665498 C 889.90944,-36.059199 889.88439,-37.950177 889.83432,-40.338437 C 889.78418,-42.726585 889.65968,-45.337972 889.46083,-48.172605 C 889.2619,-51.00711 888.96357,-53.89254 888.56583,-56.828904 C 888.16801,-59.765123 887.59639,-62.427371 886.85096,-64.815656 C 886.10547,-67.20378 885.18541,-69.1441 884.09079,-70.636624 C 882.99609,-72.128976 881.6532,-72.875195 880.06211,-72.875283 C 878.17034,-72.875195 876.60275,-72.103925 875.35933,-70.561471 C 874.11586,-69.018845 873.12065,-67.028422 872.3737,-64.590196 C 871.62669,-62.151809 871.07937,-59.440218 870.73171,-56.455415 C 870.38401,-53.470467 870.13577,-50.559986 869.98701,-47.723962 C 869.8382,-44.887811 869.7881,-42.300717 869.8367,-39.96267 C 869.88526,-37.624513 869.90956,-35.858791 869.90958,-34.665498 C 869.90956,-33.572309 869.88526,-31.856689 869.8367,-29.518632 C 869.7881,-27.180485 869.8382,-24.568339 869.98701,-21.682187 C 870.13577,-18.79596 870.38401,-15.810326 870.73171,-12.725274 C 871.07937,-9.640166 871.62669,-6.8541809 872.3737,-4.3673105 C 873.12065,-1.8804005 874.11586,0.18365769 875.35933,1.8248701 C 876.60275,3.4661098 878.17034,4.2867229 880.06211,4.2867117 C 881.95078,4.2867229 883.49256,3.4661098 884.68746,1.8248701 C 885.88228,0.18365769 886.85244,-1.8804005 887.59794,-4.3673105 C 888.34336,-6.8541809 888.86564,-9.640166 889.16478,-12.725274 C 889.46383,-15.810326 889.68777,-18.79596 889.8366,-21.682187 C 889.98535,-24.568339 890.03469,-27.180485 889.98463,-29.518632 C 889.93449,-31.856689 889.90944,-33.572309 889.90948,-34.665498 L 889.90948,-34.665498 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2810"
+           d="M 1076.1384,-56.455415 C 1076.1384,-50.783168 1075.3177,-46.255753 1073.6766,-42.873155 C 1072.0353,-39.49044 1069.373,-36.655871 1065.6898,-34.369439 L 1075.8378,15.482284 L 1062.8568,15.482284 L 1051.5109,-31.231217 L 1045.6899,-31.231217 L 1045.6899,15.482284 L 1033.0049,15.482284 L 1033.0049,-84.51722 L 1052.7042,-84.51722 C 1068.327,-84.51712 1076.1384,-75.163195 1076.1384,-56.455415 L 1076.1384,-56.455415 z M 1063.1528,-56.756028 C 1063.1528,-62.425094 1062.3815,-66.304977 1060.839,-68.395688 C 1059.2964,-70.486232 1056.3374,-71.531545 1051.9618,-71.531632 L 1045.6899,-71.531632 L 1045.6899,-44.216805 L 1054.0479,-44.216805 C 1057.5307,-44.216746 1059.9189,-45.112512 1061.2125,-46.904107 C 1062.506,-48.695577 1063.1528,-51.979548 1063.1528,-56.756028 L 1063.1528,-56.756028 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2816"
+           d="M 1115.8596,-29.741815 L 1115.8596,15.482284 L 1103.0243,15.482284 L 1103.0243,-29.741815 L 1082.578,-84.51722 L 1096.3106,-84.51722 L 1109.5922,-49.441102 L 1122.5778,-84.51722 L 1136.3104,-84.51722 L 1115.8596,-29.741815 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+        <path
+           id="text2822"
+           d="M 775.15208,15.482284 L 775.15208,-43.77044 L 763.20953,-6.3076334 L 750.97092,-43.77044 L 750.97092,15.482284 L 738.28595,15.482284 L 738.28595,-84.51722 L 750.97092,-84.51722 L 763.20953,-49.145043 L 775.15208,-84.51722 L 787.68675,-84.51722 L 787.68675,15.482284 L 775.15208,15.482284 z "
+           style="font-size:149.25px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;fill:white;fill-opacity:1;font-family:Roadgeek 2005 Series B" />
+      </g>
+    </g>
+  </g>
+</svg>
