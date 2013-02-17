@@ -6,17 +6,24 @@ Folashade Okunubi - foo
 Samaan Ghani - sghani
 Lydia U - lju
 
-## Hw 4 Specs
+## Game Play
+### Description
+This game is .....
+
+### How To Play
+First You... TBD.
+
+## Development
+### Intended Implementation
+(to make sure we're all on the same page while working remotely)
+
+### Hw 4 Specs Achieved
 + Design.. 
 + Javascript
 
-## Game Decscription
-This game is .....
+### Resources
++ [Markdown](s)
 
-## Implementation (For Developers)
 
-## How To Play
-First You...
-
-## Questions
+### Questions
 + How do we ..
