@@ -3,7 +3,9 @@ Let's Party
 
 ## Team Members 
 > Folashade Okunubi - **foo** 
+
 > Samaan Ghani - **sghani**
+
 > Lydia U - **lju**
 
 ## Game Play
@@ -16,6 +18,8 @@ First You... **TBD**.
 ## Development
 ### Intended Implementation
 _to make sure we're all on the same page while working remotely_
++ The `users` file is a JSON list of all the users, which could be an array too.. but this is probably better
++ Changing the dom with JQUERY with info from the users file
 
 ### Required Elements
 Your project must demonstrate clear and effective use of all of the technologies, tools, or techniques from this list (be sure to itemize these clearly in your readme file, along with some specific file/lineNumber citations into your own code):

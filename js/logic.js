@@ -24,6 +24,6 @@ window.onload = function(){
 		
 	}
 	
-	chatroom();
+	chatroom(); // dont forget to call the function -__- 
 	});	
 }
