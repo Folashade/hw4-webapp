@@ -32,6 +32,7 @@ Your project must demonstrate clear and effective use of all of the technologies
 ### Resources
 + [Markdown: Quick Reference Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 + [Markdown: Verbose Syntax Description](http://daringfireball.net/projects/markdown/syntax)
++ [Box Shadows](http://www.css3.info/preview/box-shadow/)
 
 
 ### Questions
