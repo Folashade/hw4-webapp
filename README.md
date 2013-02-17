@@ -2,11 +2,9 @@ Let's Party
 =============
 
 ## Team Members 
-> Folashade Okunubi - **foo** 
-
-> Samaan Ghani - **sghani**
-
-> Lydia U - **lju**
++ Folashade Okunubi - **foo** 
++ Samaan Ghani - **sghani**
++ Lydia U - **lju**
 
 ## Game Play
 ### Description
@@ -25,6 +23,9 @@ _to make sure we're all on the same page while working remotely_
 Your project must demonstrate clear and effective use of all of the technologies, tools, or techniques from this list (be sure to itemize these clearly in your readme file, along with some specific file/lineNumber citations into your own code):
 
 1. Javascript (including creating your own objects but not with inheritance)
+	Line(s):
+	Desc: 
+	
 2. Canvas
 3. HTML (including a reasonably wide range of techniques, such as tables, forms with form validation, etc)
 4. CSS (including a reasonably range of techniques, such as reset, pseudo-selectors, fixed and fluid layout, etc)
