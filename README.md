@@ -23,6 +23,7 @@ _to make sure we're all on the same page while working remotely_
 Your project must demonstrate clear and effective use of all of the technologies, tools, or techniques from this list (be sure to itemize these clearly in your readme file, along with some specific file/lineNumber citations into your own code):
 
 1. Javascript (including creating your own objects but not with inheritance)
+
 	Line(s):
 	Desc: 
 	
