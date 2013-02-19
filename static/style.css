@@ -57,6 +57,7 @@ body {
 	bottom:50px;
 	padding: 8px; /* padding adds to the width of the box !! */
 	line-height: 1.15; /*basically a percentage */
+	overflow-y : scroll;
 }
  
 #message-input {
