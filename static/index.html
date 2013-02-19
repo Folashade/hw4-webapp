@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+-->
+
+<head>
+	<title> Game of Thrones </title>
+	
+	<link rel="shortcut icon" href="/img/favicon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
+	<link href="reset.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	<div id="outer-container">
+
+		<canvas id="game-canvas" class="shadow">
+			<div style="width: 100px; height: 50px; position: relative"> 
+				<!-- <img src="path" alt="something" id="image" style="position: absolute; top: 0px; left: 0px" /> -->
+			</div>
+		</canvas>
+		
+		<canvas id="map-canvas" class="shadow"></canvas>
+		<div id="chatroom" class="shadow">
+			<ul>
+
+			</ul>
+		</div>
+		<form name="myform" action="javascript:addMessage()">
+			<div class="row">
+				<input id="message-input" class = "shadow" name="Message" type="text" placeholder="Type message...."/> 
+			</div>
+			<div>
+            <input id="submitButton" name="Submit"  type="submit" value="Send"/>
+		</form>
+
+	</div> <!-- outer-container -->
+	
+	<script src="jquery-1.9.0.js"></script>
+	<script src="logic.js"></script>
+	<script src="users.js"></script>
+</body>
+</html>
