@@ -12,7 +12,14 @@ var BOARD_WIDTH = BOARD_X;
 var BOARD_HEIGHT = GAME_HEIGHT/2;
 
 // "card" array -- populate here (randomize?)
+
 var CARD_ARRAY = [];
+
+function MAKE_CARD()
+{
+	
+}
+
 var CARD_NUM = CARD_ARRAY.length;
 var ROW_NUM = 2;
 var COL_NUM = 4;
