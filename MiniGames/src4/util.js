@@ -33,7 +33,6 @@ function loadImages()
 function addArrows()
 {
 	var newArrow = new Arrow();
-	//console.log(newArrow);
 	ARROW_ARRAY.push(newArrow);
 }
 

@@ -3,7 +3,7 @@
 
 var GAME_WIDTH = MiniGame4Canvas.width;
 var GAME_HEIGHT = MiniGame4Canvas.height;
-var PERIOD = 20;
+var PERIOD = 1;
 
 // slide is the area in which the arrows appear!
 var SLIDE_WIDTH = GAME_WIDTH/2;
@@ -29,7 +29,7 @@ var ARROW_DOWN_X = SLIDE_X + ARROW_DISTANCE;
 var ARROW_LEFT_X = SLIDE_X + (ARROW_DISTANCE*2);
 var ARROW_RIGHT_X = SLIDE_X + (ARROW_DISTANCE*3);
 
-var ARROW_PERIOD = 2000;
+var ARROW_PERIOD = 400;
 
 // "arrow" array
 var ARROW_ARRAY = [];
