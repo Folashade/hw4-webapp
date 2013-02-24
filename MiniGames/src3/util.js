@@ -30,38 +30,41 @@ function loadImages()
 	//levelOneImg.src = LEVEL_ONE_IMG;
 }
 
-function CARD(img)
+function CARD(img, pair)
 {
 	this.x;
 	this.y;
 	this.x1;
 	this.y1;
 	this.img = img;
-	this.show = false;
+	this.isClicked = false;
 	this.clickable = true;
-}
-
-function PAIR(img)
-{
-	this.card1 = new CARD(img);
-	this.card2 = new CARD(img);
-	CARD_ARRAY.push(this.card1, this.card2);
+	this.pair = pair;
 }
 
 // make pairs
-function MAKE_PAIRS()
+function MAKE_CARDS()
 {
-	var pair1 = new PAIR(pair1Img);
-	var pair2 = new PAIR(pair2Img);
-	var pair3 = new PAIR(pair3Img);
-	var pair4 = new PAIR(pair4Img);
-	var pair5 = new PAIR(pair5Img);
-	var pair6 = new PAIR(pair6Img);
-	var pair7 = new PAIR(pair7Img);
-	var pair8 = new PAIR(pair8Img);
+	var card1a = new CARD(pair1Img, 1);
+	var card1b = new CARD(pair1Img, 1);
+	var card2a = new CARD(pair2Img, 2);
+	var card2b = new CARD(pair2Img, 2);
+	var card3a = new CARD(pair3Img, 3);
+	var card3b = new CARD(pair3Img, 3);
+	var card4a = new CARD(pair4Img, 4);
+	var card4b = new CARD(pair4Img, 4);
+	var card5a = new CARD(pair5Img, 5);
+	var card5b = new CARD(pair5Img, 5);
+	var card6a = new CARD(pair6Img, 6);
+	var card6b = new CARD(pair6Img, 6);
+	var card7a = new CARD(pair7Img, 7);
+	var card7b = new CARD(pair7Img, 7);
+	var card8a = new CARD(pair8Img, 8);
+	var card8b = new CARD(pair8Img, 8);
+	CARD_ARRAY.push(card1a, card1b, card2a, card2b, card3a, card3b, card4a, card4b, card5a, card5b, card6a, card6b, card7a, card7b, card8a, card8b)
 }
 
-function RANDOMIZE_PAIRS()
+function RANDOMIZE_CARDS()
 {
 	for (var i = 0; i < CARD_ARRAY.length; i++)
 	{
@@ -85,4 +88,26 @@ function SET_CARD_PARAMS()
 		CARD_ARRAY[i].x1 = CARD_ARRAY[i].x + CARD_WIDTH;
 		CARD_ARRAY[i].y1 = CARD_ARRAY[i].y + CARD_HEIGHT;
 	}
+}
+
+function PAIR_CHECK()
+{
+	if (CARD_ARRAY[CHOSEN1INDEX].pair !== CARD_ARRAY[CHOSEN2INDEX].pair)
+	{	
+		CARD_ARRAY[CHOSEN1INDEX].clickable = true;
+		CARD_ARRAY[CHOSEN2INDEX].clickable = true;
+		CARD_ARRAY[CHOSEN1INDEX].isClicked = false;
+		CARD_ARRAY[CHOSEN2INDEX].isClicked = false;
+	}
+	
+	else
+	{	
+		CARD_ARRAY[CHOSEN1INDEX].isClicked = true;
+		CARD_ARRAY[CHOSEN2INDEX].isClicked = true;
+		SCORE++;
+	}
+	
+	CHOSEN1INDEX = -1;
+	CHOSEN2INDEX = -1;
+	NUM_CHOSEN = 0;
 }

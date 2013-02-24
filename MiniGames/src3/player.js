@@ -6,7 +6,24 @@ function onMouseDown(event) {
 	{
 		if (xClicked >= CARD_ARRAY[i].x && xClicked <= CARD_ARRAY[i].x1 && yClicked >= CARD_ARRAY[i].y && yClicked <= CARD_ARRAY[i].y1)
 		{
-			CARD_ARRAY[i].show = true;
+			if (CARD_ARRAY[i].clickable === true)
+			{
+				NUM_CHOSEN++;
+				CARD_ARRAY[i].isClicked = true;
+				CARD_ARRAY[i].clickable = false;
+				if (NUM_CHOSEN < 2)
+				{
+					CHOSEN1INDEX = i;
+				}
+				
+				else if (NUM_CHOSEN === 2)
+				{
+					CHOSEN2INDEX = i;
+					setTimeout(PAIR_CHECK, CARD_DELAY);
+				}
+			}
 		}
 	}
+	
+	console.log(CARD_ARRAY);
 }
