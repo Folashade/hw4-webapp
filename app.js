@@ -82,8 +82,8 @@ app.post("/users", function(request,response){
   if (successful) {
     users.push(item);
     userarray[user] = {"score": 0};
-    writeFile("users.txt", JSON.stringify(users));
-    writeFile(user + ".txt", JSON.stringify(hash(user)));
+    writeFile("data/users.txt", JSON.stringify(users));
+    writeFile("data/"+ user + ".txt", JSON.stringify(hash(user)));
   }else {
     item = undefined;
   }
@@ -105,7 +105,7 @@ app.post("/messages", function(request, response) {
 
   if (successful) {
     messages.push(item);
-    writeFile("data.txt", JSON.stringify(messages));
+    writeFile("data/data.txt", JSON.stringify(messages));
   } else {
     item = undefined;
   }

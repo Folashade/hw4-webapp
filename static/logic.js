@@ -82,7 +82,7 @@ function newUser(){
 function message(){
   var user = getParam('user');
   console.log(user);
-  var message = $("#message-input").val();
+  var message = user + ": <br>" + $("#message-input").val();
   addMessage(message,user);
 	messages.push({message:message, user: user, date: new Date()});
   $("#message-input").val("");
