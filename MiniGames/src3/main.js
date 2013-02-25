@@ -10,6 +10,22 @@ function drawSquareBackground()
     ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 }
 
+function drawCards()
+{
+	for (var i = 0; i < CARD_ARRAY.length; i++)
+	{
+		if (CARD_ARRAY[i].isClicked)
+		{
+			ctx.drawImage(CARD_ARRAY[i].img, CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);		
+		}
+		
+		else if ((i !== CHOSEN1INDEX) && (i !== CHOSEN2INDEX))
+		{
+			ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
+		}
+	}
+}
+
 function mainLoop()
 {
 	ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
@@ -20,32 +36,17 @@ function mainLoop()
 	ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
 	drawSquareBackground();
 	ctx.fillStyle = 'red';
-	for (var i = 0; i < CARD_ARRAY.length; i++)
-	{
-		if (CARD_ARRAY[i].show === true && CARD_ARRAY[i].clickable === true)
-		{
-			NUM_CHOSEN++;
-			ctx.drawImage(CARD_ARRAY[i].img, CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
-			if (NUM_CHOSEN === 2)
-			{
-				PAIR_CHECK;
-			}
-		}
-		
-		else
-		{
-			ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
-		}
-	}
+	drawCards();
 }
+
 
 function startGame()
 {
 	// call init screen?
 	canvas.addEventListener('mousedown', onMouseDown, false);
 	loadImages();
-	MAKE_PAIRS();
-	RANDOMIZE_PAIRS();
+	MAKE_CARDS();
+	RANDOMIZE_CARDS();
 	SET_CARD_PARAMS();
 	intervalID = setInterval(mainLoop, PERIOD);
 }

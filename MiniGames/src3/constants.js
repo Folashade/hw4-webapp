@@ -2,7 +2,7 @@
 
 var GAME_WIDTH = MiniGame3Canvas.width;
 var GAME_HEIGHT = MiniGame3Canvas.height;
-var PERIOD = 1000;
+var PERIOD = 20;
 
 // "board" constants
 var BOARD_HEIGHT_MARGIN = 100;
@@ -30,9 +30,10 @@ var CARD_NUM = CARD_ARRAY.length;
 var ROW_NUM = 4;
 var COL_NUM = 4;
 var CARD_WIDTH = (BOARD_WIDTH - (COL_NUM*PADDING))/COL_NUM; 
-var CARD_HEIGHT = (BOARD_HEIGHT - (ROW_NUM*PADDING))/ROW_NUM; 
+var CARD_HEIGHT = (BOARD_HEIGHT - (ROW_NUM*PADDING))/ROW_NUM;
+var CARD_DELAY = 500;
 var SCORE = 0;
 
 var NUM_CHOSEN = 0;
-var CHOSEN1 = "";
-var CHOSEN2 = "";
+var CHOSEN1INDEX = -1;
+var CHOSEN2INDEX = -1;
