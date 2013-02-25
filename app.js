@@ -5,13 +5,22 @@ var app = express();        // create a new instance of express
 
 // imports the fs module (reading and writing to a text file)
 var fs = require("fs");
+var path = require("path");
 
 // the bodyParser middleware allows us to parse the
 // body of a request
 app.use(express.bodyParser());
+app.use(express.static(path.join(__dirname, 'static')));
 
 // The global datastore for this example
 var messages;
+var users;
+var userarray;
+
+function hash(k) {
+  return userarray[k];
+}
+
 
 // Asynchronously read file contents, then call callbackFn
 function readFile(filename, defaultData, callbackFn) {
@@ -46,20 +55,57 @@ app.get("/messages", function(request, response){
   });
 });
 
-// create new item
+app.get("/users", function(request,response){
+  response.send({
+    users: users,
+    success:true
+  });
+});
+
+app.get("/userarray", function(request,response){
+  response.send({
+    userarray: userarray,
+    success:true
+  });
+});
+
+
+//create new user
+app.post("/users", function(request,response){
+  console.log("SERVER CREATE NEW USER");
+  var item = {"user": request.body.user,
+              "date": new Date()};
+  var user = request.body.user;
+
+  var successful = (item.user !== undefined);
+
+  if (successful) {
+    users.push(item);
+    userarray[user] = {"score": 0};
+    writeFile("data/users.txt", JSON.stringify(users));
+    writeFile("data/"+ user + ".txt", JSON.stringify(hash(user)));
+  }else {
+    item = undefined;
+  }
+
+  response.send({
+    item: item,
+    success: successful
+  });
+});
+
+// create new message
 app.post("/messages", function(request, response) {
   console.log(request.body);
-  var item = {"user": request.body.user,
-              "message": request.body.message,
+  var item = {"message": request.body.message,
+              "user": request.body.user,
               "date": new Date()};
 
-  var successful = 
-      (item.user !== undefined) &&
-      (item.message !== undefined);
+  var successful = (item.message !== undefined);
 
   if (successful) {
     messages.push(item);
-    writeFile("data.txt", JSON.stringify(messages));
+    writeFile("data/data.txt", JSON.stringify(messages));
   } else {
     item = undefined;
   }
@@ -70,18 +116,16 @@ app.post("/messages", function(request, response) {
   });
 });
 
-
-// This is for serving files in the static directory
-app.get("/static/:staticFilename", function (request, response) {
-    response.sendfile("static/" + request.params.staticFilename);
-});
-
 function initServer() {
   // When we start the server, we must load the stored data
   var defaultList = "[]";
   readFile("data.txt", defaultList, function(err, data) {
     messages = JSON.parse(data);
   });
+  readFile("users.txt", defaultList, function(err, data) {
+    users = JSON.parse(data);
+  });
+  userarray = new Object();
 }
 
 // Finally, initialize the server, then activate the server at port 8889

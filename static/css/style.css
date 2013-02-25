@@ -14,7 +14,7 @@ body {
 	width:1000px; 
 	height:600px;
 	position:relative;
-	background: url(txture.png);
+	background: url("../txture.png");
 	
 	/** shadow **/
 	-moz-border-radius: 5px;
