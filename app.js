@@ -119,10 +119,10 @@ app.post("/messages", function(request, response) {
 function initServer() {
   // When we start the server, we must load the stored data
   var defaultList = "[]";
-  readFile("data.txt", defaultList, function(err, data) {
+  readFile("data/data.txt", defaultList, function(err, data) {
     messages = JSON.parse(data);
   });
-  readFile("users.txt", defaultList, function(err, data) {
+  readFile("data/users.txt", defaultList, function(err, data) {
     users = JSON.parse(data);
   });
   userarray = new Object();
