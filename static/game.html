@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
 	<div id="nav"></div>
 	<div id="nav-content">
 		<div id="game" class="icon"><p>GAME</p></div>
@@ -74,15 +75,15 @@
 			
 		</canvas>
 		
-		<canvas id="map-canvas" class="shadow" ></canvas>
-		<div id="chatroom" class="shadow">
+		<canvas id="map-canvas"></canvas>
+		<div id="chatroom" >
 			<ul>
 
 			</ul>
 		</div>
 		<form name="myform" action="javascript:message()">
 			<div class="row">
-				<input id="message-input" class = "shadow" name="Message" type="text" placeholder="Type message...."/> 
+				<input id="message-input"  name="Message" type="text" placeholder="Type message...."/> 
 			</div>
 			<div>
             <input id="submitButton" name="Submit"  type="submit" value="Send"/>
@@ -93,7 +94,7 @@
 
 	
 	<script src="js/jquery-1.9.0.js"></script>
-	<script src="js/gameplay.js"></script>
 	<script src="js/logic.js"></script>
+	<script src="js/gameplay.js"></script>
 </body>
 </html>

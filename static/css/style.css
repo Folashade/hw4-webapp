@@ -13,10 +13,12 @@ body {
 	text-align: center;
 	display: block;
 	border:2px solid #000000;
+	/*width:1500px; */
+	/*height:700px;*/
+	background: url("../binary.png");
 	width: 1000px; /* 1000px */
 	height: 600px; /*600px */
 	position:relative;
-	background: url("../images/txture.png");
 	
 	/** shadow **/
 	-moz-border-radius: 5px;
@@ -29,30 +31,47 @@ body {
 /**** Main Containers ****/
 #game-canvas {
 	position: absolute;
+
+/*
+ 	border:5px solid #212121;
+	background: #112D4E;
+	border-radius :8px;
+	width : 1000px; 
+	height: 600px;*/
+
 	border:1px solid #000000;
 	width:600px; 
 	height:500px;
 	background-color: #46b; /*#234*/
+
 	left: 50px;
 	top: 45px;
 }
 
 #map-canvas {
 	position: absolute;
+
+/*
+	border:5px solid #212121;
+	width:350px; 
+	height:200px;
+	background-color: #628970;*/
+
 	border:0px solid #000000;
 	width:267px; 
 	height:150px;
 	background-color: #928;
+
 	top:45px;
 	right:50px;
 }
 
 #chatroom {
-	font-size: 14px;
+	font-size: 16px;
 	position: absolute;
-	border:0px solid #000000;
-	width: 238px; /*subtract padding*(2) from 250*/
-	height:260px;
+	border:5px solid #212121;
+	width: 320px; /*subtract padding*(2) from 250*/
+	height:290px;
 	background-color: #333;
 	right:50px;
 	bottom:100px;
@@ -313,7 +332,7 @@ border-radius: 5px;
 .myself{
 	float: right;
 	text-align:right;
-	background: #5D5E59;
+	background: #595A55;
 }
 
 .others{
@@ -322,16 +341,15 @@ border-radius: 5px;
 	background: #2F302D;
 }
 
-
 #message-input {
 	text-align: left;
 	color: #000;
-	font-size: 12px;
+	font-size: 16px;
 	position: absolute;
-	width: 245px;
+	width: 347px;
 	height:30px;
-	right:55px;
-	bottom:60px;
+	right:50px;
+	bottom:50px;
 	background-color: #FFF;
 	border-radius: 5px;
   	-moz-border-radius: 5px;
@@ -340,16 +358,19 @@ border-radius: 5px;
 }
 
 #submitButton {
-	text-align: left;
-	font-size: 14px;
+	text-align: center;
+	font-size: 16px;
 	position: absolute;
 	right:50px;
-	bottom:20px;
+	bottom:5px;
+	width:100px;
 	color: #000000;
-  	background-color: #FFFFFF;
+  	background-color: #628970;
+  	border:5px solid #212121;
   	border-radius: 5px;
+  	/*
   	-moz-border-radius: 5px;
-  	border: none;
+  	border: none;*/
 }
 
 
@@ -370,7 +391,6 @@ border-radius: 5px;
 	list-style: none;
 	color: #FFF;
 	overflow: hidden;
-
 }
 	
 #chatroom .user {
