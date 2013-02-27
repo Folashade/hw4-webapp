@@ -4,7 +4,7 @@ function onKeyDown(event)
 	
 	if (e === 38)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row-1][PLAYER_POS.col] == 1)
+		if (GAME_ARRAY[PLAYER_POS.row-1][PLAYER_POS.col] !== 0)
 		{
 			PLAYER_POS.row--;
 		}
@@ -12,7 +12,7 @@ function onKeyDown(event)
 		
 	else if (e === 40)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row+1][PLAYER_POS.col] == 1)
+		if (GAME_ARRAY[PLAYER_POS.row+1][PLAYER_POS.col] !== 0)
 		{
 			PLAYER_POS.row++;
 		}
@@ -20,7 +20,7 @@ function onKeyDown(event)
 	
 	else if (e === 37)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col-1] == 1)
+		if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col-1] !== 0)
 		{
 			PLAYER_POS.col--;
 		}
@@ -28,7 +28,7 @@ function onKeyDown(event)
 
 	else if (e === 39)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col+1] == 1)
+		if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col+1] !== 0)
 		{
 			PLAYER_POS.col++;
 		}
