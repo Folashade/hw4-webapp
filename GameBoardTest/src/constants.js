@@ -109,8 +109,15 @@ var SQUARE_32L = "img/32L.png";
 var SQUARE_33L = "img/33L.png";
 var SQUARE_34L = "img/34L.png";
 
-var player;
-var PLAYER = "img/playerDown.png";
+var SERGEY = "";
+var SERGEYLEFT1 = "characters/sergeyleft1.png";
+var SERGEYLEFT2 = "characters/sergeyleft2.png";
+var SERGEYRIGHT1 = "characters/sergeyright1.png";
+var SERGEYRIGHT2 = "characters/sergeyright2.png";
+var SERGEYUP1 = "characters/sergeyup1.png";
+var SERGEYUP2 = "characters/sergeyup2.png";
+var SERGEYDOWN1 = "characters/sergeydown1.png";
+var SERGEYDOWN2 = "characters/sergeydown2.png";
 var PLAYER_HEIGHT = 200;
 var PLAYER_WIDTH = 150;
 var PLAYER_POS;
@@ -120,17 +127,22 @@ var BANK = "img/bank.png";
 var BANK_WIDTH = 230;
 var BANK_HEIGHT = 230;
 
+var tree;
+var TREE = "img/tree.png";
+var TREE_WIDTH = 100;
+var TREE_HEIGHT = 200;
+
 var GAME_ARRAY_WIDTH = 21;
 var GAME_ARRAY_HEIGHT = 16;
-// 0 = grass square, 1 = game board square, -1 = bank
+// 0 = grass square, 1 = game board square, -1 = bank -2, = tree
 var GAME_ARRAY = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				  [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+				  [0, 0, 0, -2, 1, 1, 1, 1, 0, 0, 0, 0, 1, -2, 1, 1, 1, 1, 1, 1, -2, 0, 0],
 				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
 				  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
-				  [0, 0, 1, 0, 0, 1, 0, 1, 1, -1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, 0, 1, 1, -1, 1, -2, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0],
@@ -138,5 +150,5 @@ var GAME_ARRAY = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, -1, 1, 1, 0, 1, 0, 0],
 				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0],
-				  [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+				  [0, 0, 1, 1, -2, 1, 1, 1, 1, 1, -2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
 				  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];

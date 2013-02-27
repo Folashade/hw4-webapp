@@ -20,6 +20,11 @@ function drawBoard()
 	{
 		switch(GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 			case -1:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
@@ -40,6 +45,11 @@ function drawBoard()
 	{
 		switch(GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i])
 		{
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 			case -1:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
@@ -60,6 +70,11 @@ function drawBoard()
 	{
 		switch(GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i])
 		{
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 			case -1:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
@@ -80,6 +95,11 @@ function drawBoard()
 	{
 		switch(GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i])
 		{
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 			case -1:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
@@ -104,7 +124,7 @@ function drawBoard()
 
 function drawPlayer()
 {
-	ctx.drawImage(player, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
+	ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
 }
 
 function drawGame()
@@ -118,7 +138,7 @@ function startGame()
 {
 	MAKE_SQUARES();
 	console.log(SQUARE_ARRAY);
-	LOAD_PLAYER();
+	LOAD_PLAYERS();
 	LOAD_GAME_ELEMS();
 	PLAYER_POS = new PLAYER_POSITION(9, 7);
 	canvas.addEventListener('keydown', onKeyDown, false);

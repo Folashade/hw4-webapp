@@ -9,16 +9,33 @@ function SQUARE(location, img, imgL, x, y, w, h)
 	this.h = h;
 }
 
-function LOAD_PLAYER()
+function LOAD_PLAYERS()
 {
-	player = new Image();
-	player.src = PLAYER;
+	sergeyleft1 = new Image();
+	sergeyleft1.src = SERGEYLEFT1;
+	sergeyleft2 = new Image();
+	sergeyleft2.src = SERGEYLEFT2;
+	sergeyright1 = new Image();
+	sergeyright1.src = SERGEYRIGHT1;
+	sergeyright2 = new Image();
+	sergeyright2.src = SERGEYRIGHT2;
+	sergeyup1 = new Image();
+	sergeyup1.src = SERGEYUP1;
+	sergeyup2 = new Image();
+	sergeyup2.src = SERGEYUP2;
+	sergeydown1 = new Image();
+	sergeydown1.src = SERGEYDOWN1;
+	sergeydown2 = new Image();
+	sergeydown2.src = SERGEYDOWN2;
+	SERGEY = sergeydown1;
 }
 
 function LOAD_GAME_ELEMS()
 {
 	bank = new Image();
 	bank.src = BANK;
+	tree = new Image();
+	tree.src = TREE;
 }
 
 function PLAYER_POSITION(row, col)
