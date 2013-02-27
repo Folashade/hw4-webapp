@@ -30,23 +30,26 @@ body {
 }
 
 /**** Main Containers ****/
-#game-canvas {
+/*#game-canvas {*/
+#GameBoard {
 	position: absolute;
 
 
- 	border:5px solid #212121;
-	background: #112D4E;
+ 	
+/*	background: #112D4E;*/
 	border-radius :8px;
 	width : 1000px; 
 	height: 600px;
 
-/*	border:1px solid #000000; */
+	border:5px solid #212121;
 /*	width:600px; */
 /*	height:500px;*/
-	background-color: #46b; /*#234*/
+/*	background-color: #46b; /*#234*/
 
 	left: 50px;
 	top: 45px;
+	
+	outline: none;
 }
 
 #map-canvas {
