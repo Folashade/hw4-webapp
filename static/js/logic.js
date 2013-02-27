@@ -3,6 +3,7 @@
 var messages;
 var users;
 var userarray;
+var gamestats;
 
 //users - local only (clears everytime sever is restarted)
 //userarray 
@@ -74,12 +75,13 @@ function newUser(user){
     window.location.replace(url+ query);
 
     userarray[user] = ({score: 0});
-
   }
   else{
-    users.push({user: user, date: new Date()});
+    //local
+    users.push({user: user, turn: 0, date: new Date()});
     userarray[user] = ({score: 0, turn: 0});
 
+    //server
     addUser(user);  
   }
 }
@@ -180,6 +182,16 @@ function refreshDOM(){
   }
 }
 
+function getGameStats(){
+  $.ajax({
+    type: "get",
+    url: "/gamestats",
+    success: function (data){
+      gamestats = data.gamestats;
+    }
+  });
+}
+
 function getMessages(){
   console.log('Get Messages');
   $.ajax({
@@ -213,6 +225,7 @@ function getUser(user){
 }
 
 function getUsers(){
+  console.log("getUsers");
   $.ajax({
     type: "get",
     url: "/users",
@@ -228,10 +241,9 @@ function getUsers(){
 }
 
 function addUser(user){
-  //console.log("ADDUSER!");
   $.ajax({
     type: "post",
-    data:{"user": user},
+    data:{"user": user, "turn":0},
     url:"/users",
     success: function (data){
       var query = insertParam("user", user);
@@ -249,6 +261,24 @@ function addMessage(message, user){
     "user": user},
     url: "/messages",
     success: function (data){}
+  });
+}
+
+function postGameStats(time){
+  if (time === 'init'){
+    gamestats =0;
+  }
+  else{
+    getGameStats();
+    gamestats +=1;
+  }
+  $.ajax({
+    type: "post",
+    data:{"gamestats": gamestats},
+    url: "/gamestats",
+    success: function(data){
+      console.log(gamestats);
+    }
   });
 }
 
@@ -287,6 +317,7 @@ $(document).ready(function() {
 	getMessages();
   getUsers();
   getUserArray();
+  postGameStats('init');
   refreshDOM();
 
 	/**** Game Navigation ****/

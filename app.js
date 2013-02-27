@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 var messages;
 var users;
 var userarray;
+var gamestats;
 
 function hash(k) {
   return userarray[k];
@@ -55,6 +56,13 @@ app.get("/messages", function(request, response){
   });
 });
 
+app.get("/gamestats", function(request, response){
+  response.send({
+    gamestats: gamestats,
+    success:true
+  });
+});
+
 app.get("/users", function(request,response){
   response.send({
     users: users,
@@ -74,16 +82,38 @@ app.get("/userarray", function(request,response){
 app.post("/users", function(request,response){
   console.log("SERVER CREATE NEW USER");
   var item = {"user": request.body.user,
+              "turn": request.body.turn,
               "date": new Date()};
   var user = request.body.user;
 
-  var successful = (item.user !== undefined);
+  var successful = (item.user !== undefined) && (item.turn !==undefined);
 
   if (successful) {
     users.push(item);
     userarray[user] = {"score": 0};
     writeFile("data/users.txt", JSON.stringify(users));
     writeFile("data/"+ user + ".txt", JSON.stringify(hash(user)));
+  }else {
+    item = undefined;
+  }
+
+  response.send({
+    item: item,
+    success: successful
+  });
+});
+
+
+//create gamestats
+app.post("/gamestats", function(request,response){
+  var item = {"gamestats": request.body.gamestats};
+  var gamestats = request.body.gamestats;
+
+  var successful = (item.gamestats !== undefined);
+
+  if (successful) {
+    gamestats =item;
+    writeFile("data/gamestats.txt", JSON.stringify(item));
   }else {
     item = undefined;
   }
@@ -124,6 +154,9 @@ function initServer() {
   });
   readFile("data/users.txt", defaultList, function(err, data) {
     users = JSON.parse(data);
+  });
+  readFile("data/gamestats.txt", defaultList, function(err, data) {
+    gamestats = JSON.parse(data);
   });
   userarray = new Object();
 }
