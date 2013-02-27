@@ -118,9 +118,11 @@ var SERGEYUP1 = "characters/sergeyup1.png";
 var SERGEYUP2 = "characters/sergeyup2.png";
 var SERGEYDOWN1 = "characters/sergeydown1.png";
 var SERGEYDOWN2 = "characters/sergeydown2.png";
-var PLAYER_HEIGHT = 200;
-var PLAYER_WIDTH = 150;
+var PLAYER_HEIGHT = 150;
+var PLAYER_WIDTH = 100;
 var PLAYER_POS;
+
+var NUM_STEPS = 100;
 
 var bank;
 var BANK = "img/bank.png";

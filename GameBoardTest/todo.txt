@@ -3,3 +3,13 @@ Personal to-do:
 -Add elems to board
 -Elem moving bugs
 -Music/sounds
+
+To board"
+-mtns
+-water
+-special spots
+-grass
+-start up stuff
+-cmu
+-computers
+-computer parts scattered

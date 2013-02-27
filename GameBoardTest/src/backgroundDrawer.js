@@ -140,10 +140,11 @@ function startGame()
 	console.log(SQUARE_ARRAY);
 	LOAD_PLAYERS();
 	LOAD_GAME_ELEMS();
-	PLAYER_POS = new PLAYER_POSITION(9, 7);
-	canvas.addEventListener('keydown', onKeyDown, false);
-	canvas.setAttribute('tabindex','0');
-    canvas.focus();
+	PLAYER_POS = new PLAYER_POSITION(9, 7); // constants
+	//canvas.addEventListener('keydown', onKeyDown, false);
+	//canvas.setAttribute('tabindex','0');
+    //canvas.focus();
+	setTimeout(moveUp, 1000);
 	intervalID = setInterval(drawGame, 40);
 }
 
