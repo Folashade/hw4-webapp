@@ -111,7 +111,7 @@ function MAKE_SQUARES()
 	square14.src = SQUARE_14;
 	square14L = new Image();
 	square14L.src = SQUARE_14L;
-	var SQUARE_14_OBJ = new SQUARE(14, square14, square14L, 581, 85, 224, 126);
+	var SQUARE_14_OBJ = new SQUARE(14, square14, square14L, 580, 85, 224, 126);
 
 	square15 = new Image();
 	square15.src = SQUARE_15;
