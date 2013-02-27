@@ -4,3 +4,11 @@ puzzle
 crayon game
 hammer
 typing game
+
+Init Screens (How to Play)
+Game Timer
+Game Over
+
+MiniGame 1
+-----------
+Facebook & Likes

@@ -16,7 +16,8 @@ function drawCircleBackground()
 function drawSquareBackground()
 {
 	ctx.fillStyle = 'green';
-    ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
+    // ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
+
 }
 
 function mainLoop()
