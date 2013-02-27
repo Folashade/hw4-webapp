@@ -117,8 +117,8 @@ var PLAYER_POS;
 
 var bank;
 var BANK = "img/bank.png";
-var BANK_WIDTH = 100;
-var BANK_HEIGHT = 100;
+var BANK_WIDTH = 300;
+var BANK_HEIGHT = 300;
 
 var GAME_ARRAY_WIDTH = 21;
 var GAME_ARRAY_HEIGHT = 16;
