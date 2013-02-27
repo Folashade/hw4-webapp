@@ -124,7 +124,7 @@ function getMessages(){
 		url: "/messages",
 		success: function (data){
 			messages = data.messages;
-      console.log(messages);
+      // console.log(messages);
       refreshDOM();
 		}
 	});
@@ -207,4 +207,65 @@ $(document).ready(function() {
   getUserArray();
   game = false;
   refreshDOM();
+
+	$("#nav").click(function() {
+	  console.log ("clicked the nav");
+	  alert("Handler for .click() called.");
+	});
+	
+	$("#game").click(function() {
+		//back to game - hide all overlays
+	  	$("#stats-overlay").fadeOut();
+		$("#help-overlay").fadeOut();
+		$("#about-overlay").fadeOut();
+	});
+	
+	$("#stats").click(function() {
+		console.log("----stats");
+		//hide other content
+		$("#help-content").hide();
+		$("#about-content").hide();
+		//fade in content we want
+		$("#stats-overlay").fadeToggle();
+		$("#stats-content").fadeIn();
+		
+		//hide the back ones
+		setTimeout(function() {
+			$("#help-overlay").fadeOut();
+			$("#about-overlay").fadeOut();
+		},300);
+
+	});
+	
+	$("#help").click(function() {
+		//hide other content
+		$("#stats-content").hide();
+		$("#about-content").hide();
+		//fade in content we want
+		$("#help-overlay").fadeToggle();
+		$("#help-content").fadeIn();
+		//hide the back ones
+		setTimeout(function() {
+		  	$("#stats-overlay").fadeOut();
+			$("#about-overlay").fadeOut();
+		},300);
+
+	});
+	
+	$("#about").click(function() {
+		//hide other content
+		$("#help-content").hide();
+		$("#stats-content").hide();
+		//fade in content we want
+		$("#about-overlay").fadeToggle();
+		$("#about-content").fadeIn();
+		
+		//hide the back ones
+		setTimeout(function() {
+		  	$("#stats-overlay").fadeOut();
+			$("#help-overlay").fadeOut();
+		},300);
+	});
+	
+
 });

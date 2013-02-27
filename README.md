@@ -16,6 +16,12 @@ First You... **TBD**.
 ## Development
 ### Intended Implementation
 _to make sure we're all on the same page while working remotely_
++ Dont Forget to Work On **DIFFERENT BRANCHES** 
+    - Create and switch to new branch `git checkout -b new-branch-name`
+    - Add and **commit** all changes on that branch
+    - switch back to master `git branch master`
+    - merge in changes `git merge new-branch-name`
+    - Please keep pushing to the repo ! :) 
 + The `users` file is a JSON list of all the users, which could be an array too.. but this is probably better
 + Changing the dom with JQUERY with info from the users file
 

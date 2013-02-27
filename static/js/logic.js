@@ -4,6 +4,9 @@ var messages;
 var users;
 var userarray;
 
+//users - local only (clears everytime sever is restarted)
+//userarray 
+
 
 //setinterval variable for disableUsers
 var checkUsers= setInterval(disableUsers, 1000);
@@ -69,6 +72,9 @@ function newUser(user){
     var url = window.location.href
     url = url.replace("index.html", "game.html")
     window.location.replace(url+ query);
+
+    userarray[user] = ({score: 0});
+
   }
   else{
     users.push({user: user, date: new Date()});
@@ -282,4 +288,79 @@ $(document).ready(function() {
   getUsers();
   getUserArray();
   refreshDOM();
+
+	/**** Game Navigation ****/
+  	$("#nav").click(function() {
+	  console.log ("clicked the nav");
+	  alert("Handler for .click() called.");
+	});
+	
+	$("#game").click(function() {
+		//back to game - hide all overlays
+	  	$("#stats-overlay").fadeOut();
+		$("#help-overlay").fadeOut();
+		$("#about-overlay").fadeOut();
+	});
+	
+	$("#stats").click(function() {
+		console.log("----stats");
+		//hide other content
+		$("#help-content").hide();
+		$("#about-content").hide();
+		//fade in content we want
+		$("#stats-overlay").fadeToggle();
+		$("#stats-content").fadeIn();
+		// getStats();
+		//hide the back ones
+		setTimeout(function() {
+			$("#help-overlay").fadeOut();
+			$("#about-overlay").fadeOut();
+		},300);
+
+	});
+	
+	$("#help").click(function() {
+		//hide other content
+		$("#stats-content").hide();
+		$("#about-content").hide();
+		//fade in content we want
+		$("#help-overlay").fadeToggle();
+		$("#help-content").fadeIn();
+		//hide the back ones
+		setTimeout(function() {
+		  	$("#stats-overlay").fadeOut();
+			$("#about-overlay").fadeOut();
+		},300);
+
+	});
+	
+	$("#about").click(function() {
+		//hide other content
+		$("#help-content").hide();
+		$("#stats-content").hide();
+		//fade in content we want
+		$("#about-overlay").fadeToggle();
+		$("#about-content").fadeIn();
+		
+		//hide the back ones
+		setTimeout(function() {
+		  	$("#stats-overlay").fadeOut();
+			$("#help-overlay").fadeOut();
+		},300);
+	});
+	
+	/**** Game Stats Page ****/
+	function getStats(){
+		console.log('getting stats....');
+		var userlist = users;
+		console.log(userlist[0].user)
+		$("#stats-content").html(userlist[0].user);	
+		var sc = getParam(userlist[0].user);
+		var curr = "" + userlist[0].user;
+		console.log(userarray);
+		console.log(users);
+	}
+	//add check for no users :) 
+
+
 });

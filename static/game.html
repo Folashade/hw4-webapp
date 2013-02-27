@@ -13,15 +13,65 @@
 	
 	<link rel="shortcut icon" href="/img/favicon.ico" />
 	<link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+	
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
-	<div id="outer-container" >
 
-		<canvas id="game-canvas">
+	<div id="nav"></div>
+	<div id="nav-content">
+		<div id="game" class="icon"><p>GAME</p></div>
+		<div id="stats" class="icon"><p>STATS</p></div>		
+		<div id="help" class="icon"><p>INFO</p></div>
+		<div id="about" class="icon"><p>ABOUT</p></div>	
+	</div>
+	
+		
+	<div id="outer-container">
+	<div id="stats-overlay" class="over">
+		<div id="stats-content">
+			<div class="overlay-header">The Game Stats</div>
+			<div id="player1" class="players shadow">
+					<div class="playername">Folashade</div>
+					<div class="score">102</div>
+			</div>
+			<div id="player2" class="players shadow">
+					<div class="playername">Lydia</div>
+					<div class="score">230</div>
+			</div>
+			<div id="player3" class="players shadow">
+				<div class="playername">Samaan</div>
+				<div class="score">98</div>
+			</div>
+			<div id="player4" class="players shadow">
+				<div class="playername">Mitra</div>
+				<div class="score">23</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="help-overlay" class="over">
+		<div id="help-content">
+			<div class="overlay-header">The Game Information</div>
+		</div>
+	</div>
+	
+	<div id="about-overlay" class="over">
+		<div id="about-content">
+			<div class="overlay-header">The Developers</div>
+				<div id="dev1" class="dev shadow"></div>
+				<div id="dev1" class="dev shadow"></div>
+				<div id="dev1" class="dev shadow"></div>
+		</div>
+	</div>
+		
+
+		<canvas id="game-canvas" width = "600" height="500" tabindex = "0">
+			<!-- class="shadow" -->
 			
 		</canvas>
 		
@@ -41,6 +91,7 @@
 		</form>
 
 	</div> <!-- outer-container -->
+
 	
 	<script src="js/jquery-1.9.0.js"></script>
 	<script src="js/logic.js"></script>
