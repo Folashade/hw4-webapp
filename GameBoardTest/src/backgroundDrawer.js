@@ -21,8 +21,8 @@ function drawBoard()
 		switch(GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y + (SQUARE_ARRAY[square].h/2) - (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case 0:
@@ -41,8 +41,8 @@ function drawBoard()
 		switch(GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i])
 		{
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y + (SQUARE_ARRAY[square].h/2) - (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case 0:
@@ -61,8 +61,8 @@ function drawBoard()
 		switch(GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i])
 		{
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y + (SQUARE_ARRAY[square].h/2) - (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case 0:
@@ -81,8 +81,8 @@ function drawBoard()
 		switch(GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i])
 		{
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y + (SQUARE_ARRAY[square].h/2) - (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (BANK_WIDTH/2), SQUARE_ARRAY[square].y - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case 0:
