@@ -221,6 +221,7 @@ $(document).ready(function() {
 	});
 	
 	$("#stats").click(function() {
+		console.log("----stats");
 		//hide other content
 		$("#help-content").hide();
 		$("#about-content").hide();
