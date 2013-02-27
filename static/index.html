@@ -19,12 +19,17 @@
 <body>
 	<div id="outer-container">
 		<div id = "titlegame"> GAME NAME </div>
-		<form name="myform" action="javascript:newUser()">
-			<div class="row">
-				<input id="user-input" class = "shadow" name="Message" type="text" placeholder="Username"/> 
-			</div>
-			<div>
-            <input id="loginButton" name="Submit"  type="submit" value="Login"/>
+		<form id="form1" action="javascript:newUser('Bill')" >
+			<input id="billButton" class = "button"  type="submit" value= "Bill Gates" />
+		</form> 
+		<form id = "form2"action="javascript:newUser('Steve')" >
+			<input id="steveButton" class = "button" type="submit" value= "Steve Jobs" /> 
+		</form> 
+		<form id = "form3" action="javascript:newUser('Sergey')" >
+			<input id="sergeyButton" class = "button" type="submit" value= "Sergey Brin" /> 
+		</form> 
+		<form id = "form4"action="javascript:newUser('Mark')" >
+			<input id="markButton" class = "button" type="submit" value= "Mark Zuckerberg" /> 
 		</form>
 	</div>
 	<script src="js/jquery-1.9.0.js"></script>

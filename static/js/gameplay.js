@@ -1,21 +1,20 @@
-
-
-
 canvas = document.getElementById("game-canvas");
 ctx = canvas.getContext("2d");
 
 var gameboard = new Image();
+clearInterval(checkUsers);
+var start = setInterval(startGame, 2000);
+setInterval(getMessages, 2000);
 
 var canvasx =300;
 var canvasy = 300;
 var playerx;
 var playery;
+var inGame = false;
 
-gameboard.src = "gameboard.png";
+//gameboard.src = "gameboard.png";
 gameboard.onload = function() {
-	//$("game-canvas").attr('width', aWidth);
-	//$("game-canvas").attr('height', aHeight);
-	ctx.drawImage(gameboard, canvasx, canvasy , 600, 500, 0,0, 600,500);
+	//ctx.drawImage(gameboard, canvasx, canvasy , 1000, 600, 0,0, 1000,600);
 	drawPlayer(280,290);
 }
 
@@ -61,6 +60,15 @@ function onKeyPress(event){
 	}
 }
 
+function startGame(){
+	console.log("startGame");
+	getUsers();
+	if(users.length === 4 ){
+		inGame = true;
+		alert("Everyone has logged in let's play!!");
+		clearInterval(start);
+	}
+}
 function movePlayer(direction){
 	console.log("moveplayer...");
 	if (direction === 'left'){
