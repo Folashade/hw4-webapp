@@ -19,12 +19,40 @@
 </head>
 
 <body>
+	<div id="nav"></div>
+	<div id="nav-content">
+		<div id="game">Game</div>
+		<div id="stats">STATS</div>		
+		<div id="help">INFO</div>
+		<div id="about">About Us</div>	
+	</div>
+	
+		
 	<div id="outer-container">
+	<div id="stats-overlay" class="over">
+		<div id="stats-content">
+			<h1>The Stats</h1>
+			<p> You're losing </p>
+		</div>
+	</div>
+	
+	<div id="help-overlay" class="over">
+		<div id="help-content">
+			<h1>How toPLay </p>
+		</div>
+	</div>
+	
+	<div id="about-overlay" class="over">
+		<div id="about-content">
+			<h1>WE AESOME </p>
+		</div>
+	</div>
+		
 
 		<canvas id="game-canvas" class="shadow">
-			<div style="width: 100px; height: 50px; position: relative"> 
+			<!-- <div style="width: 100px; height: 50px; position: relative">  -->
 				<!-- <img src="path" alt="something" id="image" style="position: absolute; top: 0px; left: 0px" /> -->
-			</div>
+			<!-- </div> -->
 		</canvas>
 		
 		<canvas id="map-canvas" class="shadow"></canvas>
@@ -43,6 +71,7 @@
 		</form>
 
 	</div> <!-- outer-container -->
+
 	
 	<script src="jquery-1.9.0.js"></script>
 	<script src="logic.js"></script>
