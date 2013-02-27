@@ -13,7 +13,7 @@ var numberArray = ["", "img/numbers/1.png", "img/numbers/2.png","img/numbers/3.p
 function startGame(){
 	console.log("startGame");
 	getUsers();
-	if(users.length === 1 ){
+	if(users.length === 2 ){
 		inGame = true;
 		alert("Everyone has logged in let's play!!");
 		clearInterval(start);
