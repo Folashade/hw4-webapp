@@ -1,5 +1,4 @@
 // constants.js
-
 var SQUARE_ARRAY = [];
 
 var square00;
@@ -29,6 +28,33 @@ var square32;
 var square33;
 var square34;
 
+var square00L;
+var square01L;
+var square02L;
+var square03L;
+var square04L;
+var square05L;
+var square06L;
+var square07L;
+var square08L;
+var square10L;
+var square11L;
+var square12L;
+var square13L;
+var square14L;
+var square15L;
+var square16L;
+var square20L;
+var square21L;
+var square22L;
+var square23L;
+var square24L;
+var square30L;
+var square31L;
+var square32L;
+var square33L;
+var square34L;
+
 var SQUARE_00 = "img/00.png";
 var SQUARE_01 = "img/01.png";
 var SQUARE_02 = "img/02.png";
@@ -56,36 +82,61 @@ var SQUARE_32 = "img/32.png";
 var SQUARE_33 = "img/33.png";
 var SQUARE_34 = "img/34.png";
 
+var SQUARE_00L = "img/00L.png";
+var SQUARE_01L = "img/01L.png";
+var SQUARE_02L = "img/02L.png";
+var SQUARE_03L = "img/03L.png";
+var SQUARE_04L = "img/04L.png";
+var SQUARE_05L = "img/05L.png";
+var SQUARE_06L = "img/06L.png";
+var SQUARE_07L = "img/07L.png";
+var SQUARE_08L = "img/08L.png";
+var SQUARE_10L = "img/10L.png";
+var SQUARE_11L = "img/11L.png";
+var SQUARE_12L = "img/12L.png";
+var SQUARE_13L = "img/13L.png";
+var SQUARE_14L = "img/14L.png";
+var SQUARE_15L = "img/15L.png";
+var SQUARE_16L = "img/16L.png";
+var SQUARE_20L = "img/20L.png";
+var SQUARE_21L = "img/21L.png";
+var SQUARE_22L = "img/22L.png";
+var SQUARE_23L = "img/23L.png";
+var SQUARE_24L = "img/24L.png";
+var SQUARE_30L = "img/30L.png";
+var SQUARE_31L = "img/31L.png";
+var SQUARE_32L = "img/32L.png";
+var SQUARE_33L = "img/33L.png";
+var SQUARE_34L = "img/34L.png";
 
-var player0Img;
-var player1Img;
-var player2Img;
-var player3Img;
+var player;
+var PLAYER = "img/playerDown.png";
+var PLAYER_HEIGHT = 200;
+var PLAYER_WIDTH = 150;
+var PLAYER_POS;
 
-var PLAYER_0;
-var PLAYER_1;
-var PLAYER_2;
-var PLAYER_3;
+var bank;
+var BANK = "img/bank.png";
+var BANK_WIDTH = 100;
+var BANK_HEIGHT = 100;
 
-var PLAYER_ARRAY = [];
-
-var PLAYER0_IMG = "img/playerDown.png";
-var PLAYER0_HEIGHT = 200;
-var PLAYER0_WIDTH = 150;
-
-var GAME_ARRAY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-				  0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-				  0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-				  0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-				  0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0,
-				  0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-				  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+var GAME_ARRAY_WIDTH = 21;
+var GAME_ARRAY_HEIGHT = 16;
+// 0 = grass square, -1 = bank
+var GAME_ARRAY = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				  [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+				  [0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0],
+				  [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+				  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
