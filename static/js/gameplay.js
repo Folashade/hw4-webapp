@@ -1,4 +1,4 @@
-canvas = document.getElementById("game-canvas");
+canvas = document.getElementById("GameBoard");
 ctx = canvas.getContext("2d");
 
 var gameboard = new Image();

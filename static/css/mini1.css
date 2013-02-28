@@ -1,0 +1,14 @@
+#MiniGame1Canvas {
+	border: 1px solid #000;
+	background: #eee url(../img1/profile.jpg);
+	background-size: 850px 600px;
+	background-repeat: no-repeat;
+}
+
+#MiniGame2Canvas {
+	border: 1px solid #000;
+	background: #eee url(../img2/ipad.png);
+	background-size: 1000px 630px; /*850px 600px;*/
+	background-repeat: no-repeat;
+	background-position:center; 
+}
