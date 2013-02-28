@@ -9,16 +9,33 @@ function SQUARE(location, img, imgL, x, y, w, h)
 	this.h = h;
 }
 
-function LOAD_PLAYER()
+function LOAD_PLAYERS()
 {
-	player = new Image();
-	player.src = PLAYER;
+	sergeyleft1 = new Image();
+	sergeyleft1.src = SERGEYLEFT1;
+	sergeyleft2 = new Image();
+	sergeyleft2.src = SERGEYLEFT2;
+	sergeyright1 = new Image();
+	sergeyright1.src = SERGEYRIGHT1;
+	sergeyright2 = new Image();
+	sergeyright2.src = SERGEYRIGHT2;
+	sergeyup1 = new Image();
+	sergeyup1.src = SERGEYUP1;
+	sergeyup2 = new Image();
+	sergeyup2.src = SERGEYUP2;
+	sergeydown1 = new Image();
+	sergeydown1.src = SERGEYDOWN1;
+	sergeydown2 = new Image();
+	sergeydown2.src = SERGEYDOWN2;
+	SERGEY = sergeydown1;
 }
 
 function LOAD_GAME_ELEMS()
 {
 	bank = new Image();
 	bank.src = BANK;
+	tree = new Image();
+	tree.src = TREE;
 }
 
 function PLAYER_POSITION(row, col)
@@ -186,5 +203,4 @@ function MAKE_SQUARES()
 	var SQUARE_34_OBJ = new SQUARE(34, square34, square34L, 894, 381, 106, 219);
 
 	SQUARE_ARRAY.push(SQUARE_00_OBJ, SQUARE_01_OBJ, SQUARE_02_OBJ, SQUARE_03_OBJ, SQUARE_04_OBJ, SQUARE_05_OBJ, SQUARE_06_OBJ, SQUARE_07_OBJ, SQUARE_08_OBJ, SQUARE_10_OBJ, SQUARE_11_OBJ, SQUARE_12_OBJ, SQUARE_13_OBJ, SQUARE_14_OBJ, SQUARE_15_OBJ, SQUARE_16_OBJ, SQUARE_20_OBJ, SQUARE_21_OBJ, SQUARE_22_OBJ, SQUARE_23_OBJ, SQUARE_24_OBJ, SQUARE_30_OBJ, SQUARE_31_OBJ, SQUARE_32_OBJ, SQUARE_33_OBJ, SQUARE_34_OBJ);
-	console.log(SQUARE_ARRAY);
 }
