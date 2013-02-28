@@ -33,7 +33,7 @@ function allPlayersTurn(){
 	console.log("ALL DONEL:::" + allDone);
 	if(allDone){
 		clearInterval(done);
-		console.log("END DONE" + done);
+		console.log("END DONE" + dones);
 		alert("MINIGAME TIME");
 		postGameStats('');
 		clearInterval(intervalID);
