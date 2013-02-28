@@ -73,4 +73,4 @@ function startGame()
 	intervalID = setInterval(mainLoop, PERIOD);
 }
 
-// startGame();
+startGame();

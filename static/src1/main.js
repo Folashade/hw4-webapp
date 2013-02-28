@@ -59,4 +59,4 @@ function startGame()
 	userIntervalID = setInterval(checkForKeys, 2);
 }
 
-// startGame();
+ startGame();
