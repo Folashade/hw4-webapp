@@ -43,7 +43,6 @@ function mainLoop()
 		var timemetrics = ctx.measureText(time);
 		var timeWidth = timemetrics.width;
 		ctx.fillText(time, GAME_WIDTH - timeWidth - 5, 30);
-		ctx.fillStyle = 'red';
 		TOTAL_TIME -= PERIOD;
 	}
 	
@@ -70,8 +69,6 @@ function initState()
 	ctx.fillRect(GAME_WIDTH/2 - (gameTitleWidth/2) - TEXT_PADDING, 2*GAME_HEIGHT/5 - 60, gameTitleWidth + 2*TEXT_PADDING, 70);
 	ctx.fillStyle = '#3B5998';
 	ctx.fillText(gameTitle, GAME_WIDTH/2 - (gameTitleWidth/2), 2*GAME_HEIGHT/5);
-	window.setTimeout(startGame, TIMEOUT);
-	
 	
 	ctx.font = 'italic 20px Georgia';
 	var welcomeMessage = "Click as fast as you can to get the most likes on your picture!";
