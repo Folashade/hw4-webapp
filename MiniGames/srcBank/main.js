@@ -117,7 +117,7 @@ function mainLoop()
 	bitmetrics = ctx.measureText(bit);
 	bitwidth = bitmetrics.width;
 	
-	displayBits = "1 x " + NUM_1_BITS + "            0 x " + NUM_0_BITS;
+	displayBits = "Your bits: 1 x " + NUM_1_BITS + ",   0 x " + NUM_0_BITS;
 	displayBitsMetrics = ctx.measureText(displayBits);
 	displayBitsWidth = displayBitsMetrics.width;
 	
