@@ -18,9 +18,7 @@ function drawCircleBackground()
 
 function drawSquareBackground()
 {
-	ctx.fillStyle = 'green';
-    ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
-
+	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
 }
 
 function gameOverState()
@@ -31,14 +29,13 @@ function gameOverState()
 function mainLoop()
 {
 	// drawCircleBackground();
-<<<<<<< HEAD
 	ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+	drawSquareBackground();
 	ctx.font="30px Arial";
 	var stringToWrite = String(TOPPING_NUM);
 	var metrics = ctx.measureText(stringToWrite);
 	var stringToWriteWidth = metrics.width;
 
-	drawSquareBackground();
 	
 	ctx.fillStyle = 'red';
 	ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
@@ -47,7 +44,8 @@ function mainLoop()
 	{
 		ctx.fillRect(TOPPING_ARRAY[i].x, TOPPING_ARRAY[i].y, TOPPING_SIZE, TOPPING_SIZE);
 		// ctx.drawImage(img,TOPPING_ARRAY[i].x - (imgOffset) , TOPPING_ARRAY[i].y - (imgOffset*2/3) );
-=======
+	}
+	
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		console.log(TOTAL_TIME);
@@ -62,7 +60,6 @@ function mainLoop()
 		var timemetrics = ctx.measureText(time);
 		var timeWidth = timemetrics.width;
 		ctx.fillText(time, GAME_WIDTH - timeWidth - 5, 30);
-		drawSquareBackground();
 		ctx.fillStyle = 'red';
 		for (var i = 0; i < TOPPING_ARRAY.length; i++)
 		{
@@ -76,7 +73,6 @@ function mainLoop()
 	{
 		clearInterval(intervalID);
 		gameOverState();
->>>>>>> mini game 1 with timer
 	}
 }
 
