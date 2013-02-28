@@ -18,6 +18,7 @@ function onKeyDown(event)
 			// draw perfect?
 			SCORE += 20;
 			ARROW_ARRAY.splice(0, 1);
+			FEEDBACK = "Perfect!!";
 		}
 		
 		// "Great"
@@ -27,6 +28,7 @@ function onKeyDown(event)
 			// draw great?
 			SCORE += 15;
 			ARROW_ARRAY.splice(0, 1);
+			FEEDBACK = "Great!";
 		}
 		
 		// "Good"
@@ -36,6 +38,7 @@ function onKeyDown(event)
 			// draw good?
 			SCORE += 10;
 			ARROW_ARRAY.splice(0, 1);
+			FEEDBACK = "Good";
 		}
 		
 		// "Poor"
@@ -45,6 +48,7 @@ function onKeyDown(event)
 			// draw poor?
 			SCORE += 5;
 			ARROW_ARRAY.splice(0, 1);
+			FEEDBACK = "Do Better.";
 		}
 	}
 }

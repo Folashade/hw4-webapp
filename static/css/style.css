@@ -380,21 +380,35 @@ border-radius: 5px;
 
 
 #mini-overlay {
-	display:inline-block;
+/*	display:inline-block;*/
 }
 
 #MiniGame1Canvas {
 	border: 3px solid #fff;
 	margin:50px;
 	
-/*	display:none;*/
+	display:none;
 }
 
 #MiniGame2Canvas {
 	border: 3px solid #fff;
 	margin-top:50px;
 	
+	display:none;
+}
+
+#MiniGame3Canvas {
+	border: 3px solid #fff;
+	margin-top:50px;
+	
 /*	display:none;*/
+}
+
+#MiniGame4Canvas {
+	border: 3px solid #fff;
+	margin-top:50px;
+	
+	display:none;
 }
 
 /***** foooter *****/

@@ -26,6 +26,9 @@ function loadImages()
 	arrowRightImgOutline = new Image();
 	arrowRightImgOutline.src = ARROW_RIGHT_IMG_OUTLINE;
 	
+	logo = new Image();
+	logo.src = WINDOWS_LOGO;
+	
 	//levelOneImg = new Image();
 	//levelOneImg.src = LEVEL_ONE_IMG;
 }

@@ -6,6 +6,7 @@ var pair5Img;
 var pair6Img;
 var pair7Img;
 var pair8Img;
+var flip_card;
 
 function loadImages()
 {
@@ -25,6 +26,8 @@ function loadImages()
 	pair7Img.src = PAIR_7_IMG;
 	pair8Img = new Image();
 	pair8Img.src = PAIR_8_IMG;
+	flip_card = new Image();
+	flip_card.src = FLIP_CARD;
 
 	//levelOneImg = new Image();
 	//levelOneImg.src = LEVEL_ONE_IMG;

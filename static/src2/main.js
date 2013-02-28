@@ -2,7 +2,12 @@
 // Mini Game 2 "Shape Clicker" Logic
 
 //HIDE OTHER CANVASES in Start function.. then start game
-document.getElementById("MiniGame1Canvas").style.display = "none";
+// var b1 = document.getElementById("MiniGame1Canvas")
+// 
+// if (b1 != null){
+// 	b1.style.display = "none";
+// }
+
 
 var canvas = document.getElementById("MiniGame2Canvas");
 var ctx = canvas.getContext("2d");
@@ -10,12 +15,11 @@ var img = new Image();   // Create new img element
 img.src = 'img2/iphone.png'; // Set source path
 var imgOffset = 15;
 
-var offX = canvas.offsetLeft;
-var offY = canvas.offsetTop;
-
 
 /** clear main interval **/
-clearInterval(intervalID);
+// if (intervalID != null){
+// 	clearInterval(intervalID);
+// }
 
 
 function drawSquareBackground()

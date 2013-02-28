@@ -15,14 +15,15 @@ var PADDING = 3;
 
 // "card" array -- populate here (randomize?)
 
-var PAIR_1_IMG = "img3/pair1Img.png";
-var PAIR_2_IMG = "img3/pair2Img.png";
-var PAIR_3_IMG = "img3/pair3Img.png";
-var PAIR_4_IMG = "img3/pair4Img.png";
-var PAIR_5_IMG = "img3/pair5Img.png";
-var PAIR_6_IMG = "img3/pair6Img.png";
-var PAIR_7_IMG = "img3/pair7Img.png";
-var PAIR_8_IMG = "img3/pair8Img.png";
+var PAIR_1_IMG = "img3/doodle1.png";
+var PAIR_2_IMG = "img3/doodle2.png";
+var PAIR_3_IMG = "img3/doodle3.png";
+var PAIR_4_IMG = "img3/doodle4.png";
+var PAIR_5_IMG = "img3/doodle5.png";
+var PAIR_6_IMG = "img3/doodle6.png";
+var PAIR_7_IMG = "img3/doodle7.png";
+var PAIR_8_IMG = "img3/doodle8.png";
+var FLIP_CARD = "img3/drive.png";
 
 var CARD_ARRAY = [];
 

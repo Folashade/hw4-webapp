@@ -1,12 +1,32 @@
 // main.js
-// Mini Game 2 "Shape Clicker" Logic
+// Mini Game 3 "FLIP SHAPES" Logic
 
 var canvas = document.getElementById("MiniGame3Canvas");
 var ctx = canvas.getContext("2d");
 
+// var b1 = document.getElementById("MiniGame1Canvas")
+// var b2 = document.getElementById("MiniGame2Canvas")
+// var b4 = document.getElementById("MiniGame4Canvas")
+// 
+// if (b1 != null){
+// 	b1.style.display = "none";
+// }
+// if (b2 != null){
+// 	b2.style.display = "none";
+// }
+// if (b4 != null){
+// 	b4.style.display = "none";
+// }
+
+
+// clearInterval(intervalID);
+
+
+
+
 function drawSquareBackground()
 {
-	ctx.fillStyle = 'black';
+	ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 }
 
@@ -22,6 +42,8 @@ function drawCards()
 		else if ((i !== CHOSEN1INDEX) && (i !== CHOSEN2INDEX))
 		{
 			ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
+			ctx.drawImage(flip_card, CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);		
+			
 		}
 	}
 }
@@ -51,4 +73,4 @@ function startGame()
 	intervalID = setInterval(mainLoop, PERIOD);
 }
 
-startGame();
+// startGame();
