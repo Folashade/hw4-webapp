@@ -102,6 +102,8 @@ function move()
 				setTimeout(moveDown, 1000);
 				break;
 		}	
+		
+		NUM_STEPS--;
 	}
 }
 	// if (e === 38)
