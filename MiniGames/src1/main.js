@@ -19,7 +19,7 @@ function drawCircleBackground()
 function drawSquareBackground()
 {
 	ctx.fillStyle = 'green';
-    // ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
+    ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
 
 }
 
@@ -31,13 +31,16 @@ function mainLoop()
 	var stringToWrite = String(TOPPING_NUM);
 	var metrics = ctx.measureText(stringToWrite);
 	var stringToWriteWidth = metrics.width;
-	ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
+
 	drawSquareBackground();
+	
 	ctx.fillStyle = 'red';
+	ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
+	
 	for (var i = 0; i < TOPPING_ARRAY.length; i++)
 	{
-		// ctx.fillRect(TOPPING_ARRAY[i].x, TOPPING_ARRAY[i].y, TOPPING_SIZE, TOPPING_SIZE);
-		ctx.drawImage(img,TOPPING_ARRAY[i].x - (imgOffset) , TOPPING_ARRAY[i].y - (imgOffset*2/3) );
+		ctx.fillRect(TOPPING_ARRAY[i].x, TOPPING_ARRAY[i].y, TOPPING_SIZE, TOPPING_SIZE);
+		// ctx.drawImage(img,TOPPING_ARRAY[i].x - (imgOffset) , TOPPING_ARRAY[i].y - (imgOffset*2/3) );
 	}
 }
 

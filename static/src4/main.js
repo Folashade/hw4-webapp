@@ -80,4 +80,4 @@ function startGame()
 	arrowIntervalID = setInterval(addArrows, ARROW_PERIOD);
 }
 
-// startGame();
+startGame();
