@@ -17,6 +17,7 @@ var messages;
 var users;
 var userarray;
 var gamestats;
+var minigame;
 
 function hash(k) {
   return userarray[k];
@@ -52,6 +53,13 @@ function writeFile(filename, data, callbackFn) {
 app.get("/messages", function(request, response){
   response.send({
     messages: messages,
+    success: true
+  });
+});
+
+app.get("/minigame", function(request, response){
+  response.send({
+    minigame : minigame,
     success: true
   });
 });
@@ -93,7 +101,7 @@ app.put("/users/:id", function (request, response){
   item.score = (item.score !== undefined) ? item.score : oldItem.score;
 
   users[id] = item;
-  //writeFile("data/users.txt", JSON.stringify(users));
+  writeFile("data/users.txt", JSON.stringify(users));
   response.send({
     users: users,
     success: true
@@ -149,6 +157,26 @@ app.post("/gamestats", function(request,response){
   });
 });
 
+app.post("/minigame", function(request,response){
+  var item = {"user": request.body.user,
+              "score": request.body.score};
+
+  var successful = (item.user !== undefined) && (item.score !== undefined);
+
+  if (successful){
+    minigame.push(item);
+    writeFile("data/minigame.txt", JSON.stringify(minigame));
+  }
+  else{
+    item = undefined;
+  }
+
+  response.send({
+    item: item,
+    success: successful
+  });
+});
+
 // create new message
 app.post("/messages", function(request, response) {
   console.log(request.body);
@@ -182,6 +210,9 @@ function initServer() {
   });
   readFile("data/gamestats.txt", defaultList, function(err, data) {
     gamestats = JSON.parse(data);
+  });
+   readFile("data/minigame.txt", defaultList, function(err, data) {
+    minigame = JSON.parse(data);
   });
   userarray = new Object();
 }
