@@ -278,6 +278,7 @@ function updateUser(user, id, turn, position, minigame, score){
      url: "/users/" + id,
      success: function(data) {
       users = data.users;
+      console.log("UPDATED USERS:" +users[0].minigame + users[1].minigame);
       //console.log("UPDATED"+ data[0]);
      }
   });

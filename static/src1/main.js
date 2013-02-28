@@ -15,19 +15,20 @@ initScreen.src = 'img1/profile.jpg'
 
 function gameOverState()
 {
+	console.log("GAME OVER EXECUTING");
 	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
 	postGameScores(getParam('user'), TOPPING_NUM);
 	var id;
 	for (var i = 0; i< users.length; i++){
-		if (users[i].user == getParam('user')){
-			id = i;
-		}
+		
+			updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
+
 	}
-	updateUser(getParam('user'), id, users[id].turn, users[id].position, true, users[id].score);
 }
 
 function mainLoop()
 {
+	console.log("THE TIME LEFT IS" + TOTAL_TIME);
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
@@ -59,6 +60,8 @@ function mainLoop()
 	
 	else
 	{
+
+		clearInterval(userIntervalID);
 		clearInterval(intervalID);
 		gameOverState();
 	}
@@ -67,7 +70,9 @@ function mainLoop()
 function startMiniGame1()
 {
 	initState();
-
+	TOTAL_TIME = 14000; // 15 secs
+	TOPPING_NUM = 0;
+	TOPPING_ARRAY = [];
 	intervalID = setInterval(mainLoop, PERIOD);
 	userIntervalID = setInterval(checkForKeys, 2);
 }
