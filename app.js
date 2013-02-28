@@ -93,9 +93,9 @@ app.put("/users/:id", function (request, response){
   item.score = (item.score !== undefined) ? item.score : oldItem.score;
 
   users[id] = item;
-  writeFile("data/users.txt", JSON.stringify(users));
+  //writeFile("data/users.txt", JSON.stringify(users));
   response.send({
-    item: item,
+    users: users,
     success: true
   });
 });

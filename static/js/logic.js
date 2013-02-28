@@ -248,6 +248,7 @@ function updateUser(user, id, turn, position, minigame, score){
     "minigame": minigame, "score": score, "id": id},
      url: "/users/" + id,
      success: function(data) {
+      users = data.users;
       console.log("UPDATED"+ data[0]);
      }
   });
@@ -284,7 +285,7 @@ function postGameStats(time){
   }
   else{
     //getGameStats();
-    gamestats +=1;
+    gamestats = (parseInt(gamestats,10)+1)+"";
   }
   $.ajax({
     type: "post",
