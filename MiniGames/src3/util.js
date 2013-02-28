@@ -110,4 +110,5 @@ function PAIR_CHECK()
 	CHOSEN1INDEX = -1;
 	CHOSEN2INDEX = -1;
 	NUM_CHOSEN = 0;
+	canvas.addEventListener('mousedown', onMouseDown, false);
 }
