@@ -210,7 +210,9 @@ $(document).ready(function() {
 
 	$("#nav").click(function() {
 	  console.log ("clicked the nav");
-	  alert("Handler for .click() called.");
+	  // alert("Handler for .click() called.");
+		$('GameBoard').id = "MiniGame1Canvas";
+		// $('mini-overlay').load('minigame1.html');
 	});
 	
 	$("#game").click(function() {
@@ -265,6 +267,12 @@ $(document).ready(function() {
 		  	$("#stats-overlay").fadeOut();
 			$("#help-overlay").fadeOut();
 		},300);
+	});
+	
+	$("#mini1").click(function() {
+		alert("switched Canvasess");
+		// $('GameBoard').id = "MiniGame1Canvas";
+		// $('mini-overlay').load('minigame1.html');
 	});
 	
 

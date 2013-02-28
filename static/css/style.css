@@ -378,6 +378,71 @@ border-radius: 5px;
 }
 
 
+
+#mini-overlay {
+/*	display:inline-block;*/
+}
+
+#MiniGame1Canvas {
+	border: 3px solid #fff;
+	margin:50px;
+	
+	display:none;
+}
+
+#MiniGame2Canvas {
+	border: 3px solid #fff;
+	margin-top:50px;
+	
+	display:none;
+}
+
+#MiniGame3Canvas {
+	border: 3px solid #fff;
+	margin-top:50px;
+	
+/*	display:none;*/
+}
+
+#MiniGame4Canvas {
+	border: 3px solid #fff;
+	margin-top:50px;
+	
+	display:none;
+}
+
+/***** foooter *****/
+#footer {
+	position:fixed;
+	bottom: 0;
+	left:0;
+	width: 100%;
+	background-color: #222;
+	height:70px;
+	margin: 0;
+	text-align: center;
+}
+
+.tab {
+	background: no-repeat;
+	display:inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 20px;
+}
+
+#mini1 {background: url("../images/pause.png"); }
+#mini2 {background-color: #DDDFAF; }
+#mini3 {background-color: #FFEE33; }
+
+
+
+
+
+
+
+
+
 /**** Main Container Classes ****/
 
 .shadow {

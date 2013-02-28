@@ -1,5 +1,8 @@
-mapcanvas = document.getElementById("map-canvas");
-mapctx = mapcanvas.getContext("2d");
+// mapcanvas = document.getElementById("map-canvas");
+// mapctx = mapcanvas.getContext("2d");
+
+canvas = document.getElementById("GameBoard");
+ctx = canvas.getContext("2d");
 
 clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);

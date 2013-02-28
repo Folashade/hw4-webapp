@@ -3,6 +3,9 @@
 
 var canvas = document.getElementById("MiniGame1Canvas");
 var ctx = canvas.getContext("2d");
+var img = new Image();   // Create new img element
+img.src = 'img1/like.png'; // Set source path
+var imgOffset = 15; // this will be 300
 
 function drawCircleBackground()
 {
@@ -16,7 +19,7 @@ function drawCircleBackground()
 function drawSquareBackground()
 {
 	ctx.fillStyle = 'green';
-    // ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
+    ctx.fillRect((GAME_WIDTH/2) - (PIZZA_WIDTH/2), (GAME_HEIGHT/2) - (PIZZA_HEIGHT/2), PIZZA_WIDTH, PIZZA_HEIGHT);
 
 }
 
