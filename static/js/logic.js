@@ -78,7 +78,8 @@ function newUser(user){
   }
   else{
     //local
-    users.push({user: user, turn: 0, date: new Date()});
+    users.push({"user": user, "turn":0, "position": {"row":9, "col": 7}, 
+      "minigame": false, "score": {"bits": 0, "bytes": 0}, "id": users.length, "date": new Date()});
     userarray[user] = ({score: 0, turn: 0});
 
     //server
@@ -216,13 +217,13 @@ function getUserArray(){
   });
 }
 
-function getUser(user){
+/*function getUser(user){
   $.ajax({
     type: "get",
     url: "data/"+user,
     success: function (data){}
   });
-}
+}*/
 
 function getUsers(){
   console.log("getUsers");
@@ -240,10 +241,23 @@ function getUsers(){
   });
 }
 
+function updateUser(user, id, turn, position, minigame, score){
+  $.ajax({
+    type: "put",
+    data: {"user": user, "turn": turn, "position": position, 
+    "minigame": minigame, "score": score, "id": id},
+     url: "/users/" + id,
+     success: function(data) {
+      console.log("UPDATED"+ data[0]);
+     }
+  });
+}
+
 function addUser(user){
   $.ajax({
     type: "post",
-    data:{"user": user, "turn":0},
+    data:{"user": user, "turn":0, "position": {"row":9, "col": 7}, 
+    "minigame": false, "score": {"bits": 0, "bytes": 0}, "id": users.length},
     url:"/users",
     success: function (data){
       var query = insertParam("user", user);
@@ -266,10 +280,10 @@ function addMessage(message, user){
 
 function postGameStats(time){
   if (time === 'init'){
-    gamestats =0;
+    gamestats = 0;
   }
   else{
-    getGameStats();
+    //getGameStats();
     gamestats +=1;
   }
   $.ajax({

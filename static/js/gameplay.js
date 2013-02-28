@@ -2,69 +2,101 @@ mapcanvas = document.getElementById("map-canvas");
 mapctx = mapcanvas.getContext("2d");
 
 clearInterval(checkUsers);
-var start = setInterval(startGame, 2000);
+var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
 setInterval(getUsers, 2000);
+setInterval(getGameStats, 2000);
+var turns; 
+var turn = false;
 var inGame = false;
+var randomnumber;
 
 var numberArray = ["", "img/numbers/1.png", "img/numbers/2.png","img/numbers/3.png","img/numbers/4.png","img/numbers/5.png","img/numbers/6.png"];
 
+function turnOver(){
+	if (turn == true && NUM_STEPS === 0){
+		turn = false;
+		clearInterval(turns);
+		var id;
 
-function startGame(){
+    	for(var i =0; i < users.length; i++){
+    		if(users[i].user == getParam('user')){
+    			id = i;
+    		}
+    	}
+    	updateUser(getParam('user'), id, (parseInt(users[id].turn)+1)+"", users[id].position, false, users[id].score );
+	}
+}
+function startGameServer(){
+	NUM_STEPS = -1;
+	turn = true;
 	console.log("startGame");
 	getUsers();
-	if(users.length === 2 ){
+
+	if(users.length === 2){
+		turns = setInterval(turnOver, 4000);
 		inGame = true;
-		alert("Everyone has logged in let's play!!");
+		//alert("Everyone has logged in let's play!!");
 		clearInterval(start);
+		console.log("USER:"+ getParam('user') + "IS NOW PLAYING");
+		console.log("users are::: " + users);
 		takeTurns();
+		
 	}
 }
 
 function takeTurns(){
-	console.log("currentTurn is:" + gamestats);
+	console.log("IN TAKE TURNS");
+	//console.log("currentTurn is:" + gamestats);
 	for (var i =0; i < users.length; i++){
-		console.log(users[i].turn);
-		if(users[i].turn == gamestats && users[i].user == getParam('user')){
-			console.log("WOOOOWOWOWOWOWOW");
-			showDie();
+		console.log("PARAM: " + getParam('user'));
+		console.log("USER: " + users[i].user);
+		console.log("TURN: " + users[i].turn);
+		console.log("GAMESTATS: " + gamestats);
+		if(users[i].user == getParam('user') && users[i].turn == gamestats){
+			console.log("STARTING THE DIE");
+		showDie();
 		}
 	}
 }
 
 function showDie(){
 	console.log("SHOW DIE");
-	mapctx.fillStyle = "#B182F8";
-	mapctx.fillRect(100,40,80,50);
-	var random = setInterval(generateRandom, 200);
+	var random = setInterval(generateRandom, 50);
+	var cube = setInterval(drawCube,60);
 
-	var randomnumber;
-
-	function generateRandom(){
-		console.log("generateRandom!!!");
-		randomnumber = Math.floor((Math.random()*6)+1);
+	function drawCube(){
 		var number = new Image();
 		number.src = numberArray[randomnumber];
 
 		number.onload = function (){
 			console.log("DRAWING IMAGE");
-			mapctx.drawImage(number, 100,40);
+			ctx.drawImage(number, 20,20);
 		}
-
 	}
-	var onKeyDown = function(event){
+	function generateRandom(){
+		console.log("generateRandom!!!");
+		randomnumber = Math.floor((Math.random()*6)+1);
+		drawCube(randomnumber);
+	}
+
+	var onMouseDown = function(event){
 		clearInterval(random);
     	alert("You move:" + randomnumber);
-    	//movePlayer();
-    	//updatePlayerTurn();
-    	canvas.removeEventListener('keydown', onKeyDown,false);
+    	canvas.removeEventListener('click', onMouseDown,false);
+    	NUM_STEPS = randomnumber;
+    	
+    	console.log("***********************************************************************");
+  
     }
 
-	canvas.addEventListener('keydown', onKeyDown, false);
+
+	
+    
+	canvas.addEventListener('click', onMouseDown, false);
 }
 
-//TODO movePlayer()
-//access the array position
+
 
 /*var canvasx =300;
 var canvasy = 300;

@@ -140,16 +140,19 @@ function drawBoard()
 	}
 }
 
-function drawPlayer()
+function drawPlayer(user)
 {
-	ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
+	if (user === 'Sergey'){
+		ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
+	}
 }
 
 function drawGame()
 {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBoard();
-	drawPlayer();
+	var user = getParam('user');
+	drawPlayer(user);
 }
 
 function startGame()

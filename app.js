@@ -77,22 +77,49 @@ app.get("/userarray", function(request,response){
   });
 });
 
+app.put("/users/:id", function (request, response){
+  var id = request.params.id;
+  var oldItem = users[id];
+  var item = {"user": request.body.user,
+              "turn": request.body.turn,
+              "position": request.body.position,
+              "minigame": request.body.minigame,
+              "score": request.body.score,
+              "date": new Date()};
+  item.user = (item.user !== undefined) ? item.user : oldItem.user;
+  item.turn = (item.turn !== undefined) ? item.turn : oldItem.turn;
+  item.position = (item.position !== undefined) ? item.position : oldItem.position;
+  item.minigame = (item.minigame !== undefined) ? item.minigame : oldItem.minigame;
+  item.score = (item.score !== undefined) ? item.score : oldItem.score;
+
+  users[id] = item;
+  writeFile("data/users.txt", JSON.stringify(users));
+  response.send({
+    item: item,
+    success: true
+  });
+});
 
 //create new user
 app.post("/users", function(request,response){
   console.log("SERVER CREATE NEW USER");
   var item = {"user": request.body.user,
               "turn": request.body.turn,
+              "position": request.body.position,
+              "minigame": request.body.minigame,
+              "score": request.body.score,
               "date": new Date()};
   var user = request.body.user;
 
-  var successful = (item.user !== undefined) && (item.turn !==undefined);
+  var successful = (item.user !== undefined) && (item.turn !== undefined)
+                    && (item.position !== undefined)
+                    && (item.minigame !== undefined) && (item.score !== undefined);
 
   if (successful) {
-    users.push(item);
+    users.push(item); 
     userarray[user] = {"score": 0};
     writeFile("data/users.txt", JSON.stringify(users));
-    writeFile("data/"+ user + ".txt", JSON.stringify(hash(user)));
+    //writeFile("data/"+ user + ".txt", JSON.stringify(hash(user)));
   }else {
     item = undefined;
   }
@@ -103,16 +130,14 @@ app.post("/users", function(request,response){
   });
 });
 
-
 //create gamestats
 app.post("/gamestats", function(request,response){
   var item = {"gamestats": request.body.gamestats};
-  var gamestats = request.body.gamestats;
 
   var successful = (item.gamestats !== undefined);
 
   if (successful) {
-    gamestats =item;
+    gamestats = item.gamestats;
     writeFile("data/gamestats.txt", JSON.stringify(item));
   }else {
     item = undefined;

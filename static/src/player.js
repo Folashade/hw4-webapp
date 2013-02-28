@@ -69,8 +69,7 @@ function moveRight()
 
 function move()
 {
-	if (NUM_STEPS > 0)
-	{
+	if (NUM_STEPS> 0){
 		console.log(NUM_STEPS + "***************************");
 		console.log("in move row: " + PLAYER_POS.row + " in move col: " + PLAYER_POS.col);
 		switch (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col])
@@ -142,9 +141,17 @@ function move()
 				
 				break;
 		}	
-		
 		NUM_STEPS--;
+		var id;
+
+    	for(var i =0; i < users.length; i++){
+    		if(users[i].user == getParam('user')){
+    			id = i;
+    		}
+    	}
+		updateUser(getParam('user'), id, users[id].turn, {"row": PLAYER_POS.row, "col": PLAYER_POS.col}, false, users[id].score );
 	}
 	
-		console.log("after move row: " + PLAYER_POS.row + " after move col: " + PLAYER_POS.col);
+	
+		//console.log("after move row: " + PLAYER_POS.row + " after move col: " + PLAYER_POS.col);
 }

@@ -122,7 +122,7 @@ var PLAYER_HEIGHT = 150;
 var PLAYER_WIDTH = 100;
 var PLAYER_POS;
 
-var NUM_STEPS = 1000;
+var NUM_STEPS = -1;
 var STEP_TIME = 1000;
 
 var bank;
