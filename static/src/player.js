@@ -69,6 +69,7 @@ function moveRight()
 
 function move()
 {
+	console.log("DRAWING THE MOVEMENT!!!!!");
 	if (NUM_STEPS> 0){
 		console.log(NUM_STEPS + "***************************");
 		console.log("in move row: " + PLAYER_POS.row + " in move col: " + PLAYER_POS.col);

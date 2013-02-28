@@ -1,1 +1,1 @@
-{"gamestats":"6"}
+{"gamestats":"1"}

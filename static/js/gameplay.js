@@ -8,10 +8,12 @@ clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
 setInterval(getUsers, 2000);
-setInterval(getGameStats, 2000);
+//setInterval(getGameStats, 2000);
 var turns; 
 var done;
 var cube;
+var intervalID;
+var intervalIDGame;
 var turn = false;
 var inGame = false;
 var randomnumber;
@@ -31,10 +33,16 @@ function allPlayersTurn(){
 	console.log("ALL DONEL:::" + allDone);
 	if(allDone){
 		clearInterval(done);
-
+		console.log("END DONE" + done);
 		alert("MINIGAME TIME");
 		postGameStats('');
-		setTimeout(function(){start = setInterval(startGameServer,2000);}, 4000);
+		clearInterval(intervalID);
+		console.log("END INTERVALID" + intervalID);
+		clearInterval(intervalIDGame);
+		console.log("END INTERVALIDGAME" + intervalIDGame);
+		ctx.fillStyle="#FF0000";
+		ctx.fillRect(280, 290,50,50);
+		setTimeout(function(){start = setInterval(startGameServer,2000);}, 10000);
 		console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");
 
 	}
@@ -56,9 +64,12 @@ function turnOver(){
 	}
 }
 function startGameServer(){
+	intervalID = setInterval(move, 1000);
+	intervalIDGame = setInterval(drawGame, 1000);
+	getGameStats();
 	NUM_STEPS = -1;
 	turn = true;
-	//console.log("startGame");
+	console.log("startGame");
 	getUsers();
 
 	if(users.length === 2){
