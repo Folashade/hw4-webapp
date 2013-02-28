@@ -45,8 +45,47 @@ function SET_BIT_PARAMS()
 
 function getByteValue()
 {
-	for (int i = 4; i < BYTE_ARRAY.length; i++)
+	BYTE_VALUE = 0;
+	for (var i = BIT_ARRAY.length-1; i > 3; i--)
 	{
+		if ((BIT_ARRAY[i].bit === 0) || (BIT_ARRAY[i].bit === 1))
+		{
+			BYTE_VALUE += BIT_ARRAY[i].bit * Math.pow(2, Math.abs(i-BIT_ARRAY.length + 1) % (BIT_ARRAY.length + 1));
+		}
 		
+		else
+		{
+			return "NaN";
+		}
+	}
+	
+	if (BYTE_VALUE < 10)
+	{
+		return BYTE_VALUE;
+	}
+	
+	switch (BYTE_VALUE)
+	{
+		case 10:
+			return "A";
+			break;
+		case 11:
+			return "B";
+			break;
+		case 11:
+			return "B";
+			break;
+		case 12:
+			return "C";
+			break;
+		case 13:
+			return "D";
+			break;
+		case 14:
+			return "E";
+			break;
+		case 15:
+			return "F";
+			break;
 	}
 }

@@ -82,26 +82,37 @@ function drawBits()
 	
 	ctx.fillStyle = 'red';
 	ctx.font = "30px Arial";
-	ctx.fillText(bank, GAME_WIDTH/2 - bankwidth/2, 35);
 	ctx.fillText(displayBits, GAME_WIDTH/2 - displayBitsWidth/2, (BIT_ARRAY[0].y1) + (GAME_HEIGHT - BIT_ARRAY[0].y1)/3);
-	ctx.fillText(BYTE_VALUE, GAME_WIDTH/2 - byteValueWidth/2, (BIT_ARRAY[0].y1) + (GAME_HEIGHT - BIT_ARRAY[0].y1)/3);
+	ctx.font = "50px Arial";
+	ctx.fillText(bank, GAME_WIDTH/2 - bankwidth/2, 55);
+	ctx.fillText(byteval, GAME_WIDTH/2 - bytevalwidth/2, (BIT_ARRAY[0].y1) + 4*(GAME_HEIGHT - BIT_ARRAY[0].y1)/5);
 	ctx.font = "20px Arial";
-	ctx.fillText(bankinstructions, GAME_WIDTH/2 - bankinstructionswidth/2, (BIT_ARRAY[0].y/2));
+	ctx.fillText(bankinstructions, GAME_WIDTH/2 - bankinstructionswidth/2, 2*(BIT_ARRAY[0].y/3));
+	
+	BUTTON_X = GAME_WIDTH - gobackwidth - BUTTON_PADDING - BUTTON_PADDING;
+	BUTTON_Y = BUTTON_PADDING;
+	BUTTON_WIDTH = gobackwidth + BUTTON_PADDING + BUTTON_PADDING + BUTTON_PADDING
+	BUTTON_HEIGHT = 25
+	ctx.fillRect(BUTTON_X, BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
+	ctx.fillStyle = 'white';
+	ctx.fillText(goback, GAME_WIDTH - gobackwidth - BUTTON_PADDING, BUTTON_PADDING + 20);
 }
 
 function mainLoop()
 {
 	ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 	
-	ctx.font="30px Arial";
-	var stringToWrite = String(BYTE_VALUE);
-	var metrics = ctx.measureText(stringToWrite);
-	var stringToWriteWidth = metrics.width;
+	ctx.font="50px Arial";
 	
 	bank = "BANK";
 	bankmetrics = ctx.measureText(bank);
 	bankwidth = bankmetrics.width;
+		
+	byteval = "Byte Value: " + getByteValue();
+	bytevalmetrics = ctx.measureText(byteval);
+	bytevalwidth = bytevalmetrics.width;
 	
+	ctx.font="30px Arial";
 	bit = "0";
 	bitmetrics = ctx.measureText(bit);
 	bitwidth = bitmetrics.width;
@@ -115,9 +126,12 @@ function mainLoop()
 	bankinstructionsmetrics = ctx.measureText(bankinstructions);
 	bankinstructionswidth = bankinstructionsmetrics.width;
 
+	goback = "Go Back";
+	gobackmetrics = ctx.measureText(goback);
+	gobackwidth = gobackmetrics.width;
+	
 	if (keyPressed(ZERO_KEY))
 	{
-		console.log(ZERO_KEY);
 		ONE = false;
 		ZERO = true;
 	}
@@ -134,7 +148,7 @@ function mainLoop()
 		ONE = false;
 	}
 	
-	ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
+	//ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
 	drawBankBackground();
 	ctx.fillStyle = 'white';
 	drawBits();
