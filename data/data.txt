@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"message":"Sergey: <br>Hey!","user":"Sergey","date":"2013-02-27T19:43:27.796Z"},{"message":"Bill: <br>whats up","user":"Bill","date":"2013-02-27T19:43:34.348Z"}]
+=======
+[{"message":"Bill: <br>lsdf","user":"Bill","date":"2013-02-28T14:48:07.891Z"},{"message":"Bill: <br>sdfds","user":"Bill","date":"2013-02-28T14:48:09.287Z"},{"message":"Mark: <br>Yoo","user":"Mark","date":"2013-02-28T14:48:23.041Z"}]
+>>>>>>> minis

@@ -17,6 +17,8 @@
 	
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/mini1.css" rel="stylesheet" type="text/css">
+	
 
 </head>
 
@@ -70,7 +72,17 @@
 	</div>
 		
 		
+		<div id="mini-overlay" class="over">
+			<canvas id="MiniGame1Canvas" width="1000" height="600"></canvas>
+			<canvas id="MiniGame2Canvas" width="1000" height="600"></canvas>
+			<canvas id="MiniGame3Canvas" width="1000" height="600"></canvas>
+			<canvas id="MiniGame4Canvas" width="1000" height="600"></canvas>
+			
+			
+		</div>
+		
 		<canvas id="GameBoard" width="1000" height="600"></canvas>
+		<!-- <canvas id="miniGameBoard" width="1000" height="600"></canvas> -->
 		
 		<canvas id="map-canvas"></canvas>
 		<div id="chatroom" >
@@ -88,6 +100,12 @@
 		</form>
 
 	</div> <!-- outer-container -->
+	
+	<div id="footer">
+		<div id="mini1" class="tab"></div>
+		<div id="mini2" class="tab"></div>
+		<div id="mini3" class="tab"></div>
+	</div>
 
 	
 	<script src="js/jquery-1.9.0.js"></script>
@@ -95,8 +113,39 @@
 	
 	<script src="src/constants.js"></script>
     <script src="src/util.js"></script>
+
      <script src="src/player.js"></script>
     <script src="src/main.js"></script>
     <script src="js/gameplay.js"></script>
+
+    <script src="src/player.js"></script>
+    <script src="src/backgroundDrawer.js"></script>
+
+	<!-- Game One -->
+  <!-- <script src="src1/constants.js"></script>
+  <script src="src1/player.js"></script>
+  <script src="src1/toppingObject.js"></script>
+  <script src="src1/main.js"></script> -->
+
+	<!-- Game Two -->
+  <!-- <script src="src2/constants.js"></script>
+  <script src="src2/shapeObject.js"></script>
+  <script src="src2/player.js"></script>
+  <script src="src2/main.js"></script> -->
+
+	<!-- Game Three -->
+  <!-- <script src="src3/constants.js"></script>
+  <script src="src3/util.js"></script>
+  <script src="src3/player.js"></script>
+  <script src="src3/main.js"></script> -->
+
+<!-- Game Four -->
+  <!-- <script src="src4/constants.js"></script>
+  <script src="src4/util.js"></script>
+  <script src="src4/player.js"></script>
+  <script src="src4/Arrow.js"></script> -->
+    <!-- // <script src="src4/main.js"></script> -->
+
+
 </body>
 </html>
