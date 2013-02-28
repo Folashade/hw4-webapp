@@ -1,17 +1,20 @@
 // mapcanvas = document.getElementById("map-canvas");
 // mapctx = mapcanvas.getContext("2d");
 
-canvas = document.getElementById("GameBoard");
-ctx = canvas.getContext("2d");
+//canvas = document.getElementById("GameBoard");
+//ctx = canvas.getContext("2d");
 
 clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
 setInterval(getUsers, 2000);
-setInterval(getGameStats, 2000);
+//setInterval(getGameStats, 2000);
 var turns; 
 var done;
 var cube;
+var intervalID;
+var intervalIDGame;
+var minigamedone;
 var turn = false;
 var inGame = false;
 var randomnumber;
@@ -31,12 +34,54 @@ function allPlayersTurn(){
 	console.log("ALL DONEL:::" + allDone);
 	if(allDone){
 		clearInterval(done);
-
+		console.log("END DONE" + done);
 		alert("MINIGAME TIME");
 		postGameStats('');
-		setTimeout(function(){start = setInterval(startGameServer,2000);}, 4000);
-		console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");
+		clearInterval(intervalID);
+		console.log("END INTERVALID" + intervalID);
+		clearInterval(intervalIDGame);
+		console.log("END INTERVALIDGAME" + intervalIDGame);
+		startMiniGame1();
+		minigamedone = setInterval(checkMiniGames, 2000);
 
+		function checkMiniGames(){
+			console.log("CHECKMINIGAMES");
+			done = true;
+			for (var i = 0; i < users.length; i++){
+				console.log("USER MINIGAME VALUE:" + users[i].minigame)
+				if(users[i].minigame != "true"){
+					done = false;
+				}
+			}
+			console.log("DONE: "+ done);
+			if(done){
+				clearInterval(minigamedone);
+				console.log("DONEEEEEEE");
+				ctx.linewidth = 1;
+				ctx.lineStyle = "#ffff00";
+				ctx.font= "24px sans-serif";
+				getGameScores();
+				setTimeout(checkAllScores, 3000);
+				function checkAllScores(){
+					console.log("MINIGAME LENGTH:"+ minigame.length);
+					if(minigame.length == users.length){
+						for (var i =0; i < minigame.length; i++){
+							ctx.fillText("Score for " + minigame[i].user+ ": " + minigame[i].score, 400,100+(i*100));
+						}
+					}
+					for(var i=0; i<users.length; i++){
+						if(users[i].user == getParam('user')){
+							console.log("USER REVERT MINIGAME");
+							updateUser(getParam('user'), i, users[i].turn, users[i].position, false, users[i].score);
+						}
+					}
+				}
+			}
+		}
+
+		setTimeout(function(){start = setInterval(startGameServer,2000);}, 50000);
+		//canvas.addClass('hide');
+		console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");
 	}
 }
 
@@ -47,23 +92,28 @@ function turnOver(){
 		clearInterval(turns);
 		var id;
 
-    	for(var i =0; i < users.length; i++){
-    		if(users[i].user == getParam('user')){
-    			id = i;
-    		}
-    	}
-    	updateUser(getParam('user'), id, (parseInt(users[id].turn,10)+1)+"", users[id].position, false, users[id].score );
+		for(var i =0; i < users.length; i++){
+			if(users[i].user == getParam('user')){
+				id = i;
+			}
+		}
+		updateUser(getParam('user'), id, (parseInt(users[id].turn,10)+1)+"", users[id].position, false, users[id].score );
 	}
 }
 function startGameServer(){
+	getGameStats();
 	NUM_STEPS = -1;
 	turn = true;
-	//console.log("startGame");
-	getUsers();
+	console.log("startGame");
+	//getUsers();
+
 
 	if(users.length === 2){
+
 		turns = setInterval(turnOver, 4000);
 		done = setInterval(allPlayersTurn, 4000);
+		intervalID = setInterval(move, 1000);
+		intervalIDGame = setInterval(drawGame, 1000);
 		inGame = true;
 		//alert("Everyone has logged in let's play!!");
 		clearInterval(start);
@@ -84,7 +134,8 @@ function takeTurns(){
 		//console.log("GAMESTATS: " + gamestats);
 		if(users[i].user == getParam('user') && users[i].turn == gamestats){
 			//console.log("STARTING THE DIE");
-		showDie();
+
+			showDie();
 		}
 	}
 }
@@ -111,18 +162,18 @@ function showDie(){
 
 	var onMouseDown = function(event){
 		clearInterval(random);
-    	alert("You move:" + randomnumber);
-    	canvas.removeEventListener('click', onMouseDown,false);
-    	NUM_STEPS = randomnumber;
-    	
+		alert("You move:" + randomnumber);
+		canvas.removeEventListener('click', onMouseDown,false);
+		NUM_STEPS = randomnumber;
+
     	//console.log("***********************************************************************");
-  
+
     }
 
 
-	
+
     
-	canvas.addEventListener('click', onMouseDown, false);
+    canvas.addEventListener('click', onMouseDown, false);
 }
 
 

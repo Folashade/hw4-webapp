@@ -11,58 +11,86 @@
 
 var canvas = document.getElementById("MiniGame2Canvas");
 var ctx = canvas.getContext("2d");
-var img = new Image();   // Create new img element
-img.src = 'img2/iphone.png'; // Set source path
 var imgOffset = 15;
 
+var img;
+var img1;
+
+function loadImages()
+{
+	img = new Image();   // Create new img element
+	img.src = 'img2/iphone.png'; // Set source path
+	img1 = new Image();
+	img1.src = 'img2/macbookpro.png';
+}
 
 /** clear main interval **/
 // if (intervalID != null){
 // 	clearInterval(intervalID);
 // }
 
-
-function drawSquareBackground()
-{
-	ctx.fillStyle = 'blue';
-    ctx.fillRect((GAME_WIDTH/2) - (BOARD_WIDTH/2), (GAME_HEIGHT/2) - (BOARD_HEIGHT/2), BOARD_WIDTH, BOARD_HEIGHT);
-}
-
 function mainLoop()
 {
-	// drawCircleBackground();
-	
-	ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-	ctx.font="30px Arial";
-	var stringToWrite = String(SHAPE_NUM);
-	var metrics = ctx.measureText(stringToWrite);
-	var stringToWriteWidth = metrics.width;
-
-	// drawSquareBackground();
-	
-	
-	for (var i = 0; i < SHAPE_ARRAY.length; i++)
+	if (TOTAL_TIME >= -PERIOD)
 	{
-		/** iphone products **/
-		ctx.fillStyle = 'red';
-		// ctx.fillRect(SHAPE_ARRAY[i].x - 70, SHAPE_ARRAY[i].y -40, SHAPE_WIDTH, SHAPE_HEIGHT);
-		ctx.drawImage(img,SHAPE_ARRAY[i].x - (imgOffset) , SHAPE_ARRAY[i].y + (imgOffset/5) );
+		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+
+		for (var i = 0; i < SHAPE_ARRAY.length; i++)
+		{
+			/** iphone products **/
+
+			ctx.drawImage(SHAPE_ARRAY[i].img, SHAPE_ARRAY[i].x, SHAPE_ARRAY[i].y, SHAPE_ARRAY[i].w, SHAPE_ARRAY[i].h);
+
+			/** score **/
+			ctx.font = 'bold 30px Arial';
+			
+			var time = "Time left: " + String(Math.floor((TOTAL_TIME + 1000)/1000)); //for milliseconds
+			var timemetrics = ctx.measureText(time);
+			var timeWidth = timemetrics.width;
+			var stringToWrite = "Score: " + String(SHAPE_NUM);
+			ctx.fillText(time, 3*TEXT_PADDING, 50);
+			var metrics = ctx.measureText(stringToWrite);
+			var stringToWriteWidth = metrics.width;
+			ctx.fillStyle = 'white';
+			ctx.fillText(stringToWrite, GAME_WIDTH - stringToWriteWidth - 3*TEXT_PADDING, 50);
+		}
 		
-		/** score **/
-		ctx.font = 'italic 105px Georgia';
-		ctx.fillStyle = 'red';
-		ctx.fillText(stringToWrite, GAME_WIDTH - 120, 120, 100);
+		TOTAL_TIME -= PERIOD;
+	}
+	
+	else
+	{
+		clearInterval(intervalID);
+		gameOverState();
 	}
 }
 
 function startGame()
 {
-	// call init screen?
-	var initShape;
-	initShape = new Shape();
+	loadImages();
+	var initShape = makeRandomShape();
+	
 	SHAPE_ARRAY.push(initShape);
 	canvas.addEventListener('mousedown', onClick, false);
 	intervalID = setInterval(mainLoop, PERIOD);
 }
 
-// startGame();
+function initState()
+{
+	ctx.font = 'bold 60px Arial';
+	var gameTitle = "APPLE CHALLENGE";
+	var gameTitleMetrics = ctx.measureText(gameTitle);
+	var gameTitleWidth = gameTitleMetrics.width;
+	ctx.fillStyle = 'black';
+	ctx.fillText(gameTitle, GAME_WIDTH/2 - (gameTitleWidth/2), 2*GAME_HEIGHT/5);
+	
+	ctx.font = 'bold 20px Arial';
+	var welcomeMessage = "Collect as many apple products as you can!";
+	var welcomeMessageMetrics = ctx.measureText(welcomeMessage);
+	var welcomeMessageWidth = welcomeMessageMetrics.width;
+	
+	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
+	window.setTimeout(startGame, TIMEOUT);
+}
+
+window.onload = initState;

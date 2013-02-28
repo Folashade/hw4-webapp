@@ -4,6 +4,7 @@ var messages;
 var users;
 var userarray;
 var gamestats;
+var minigame;
 
 //users - local only (clears everytime sever is restarted)
 //userarray 
@@ -97,6 +98,12 @@ function message(){
 
   refreshDOM();
 }
+
+function postGameScores(user, score){
+  postScores(user,score);
+  minigame.push({user: user, score: score});
+}
+
 //<input id="billButton" class = "button"  type="submit" value= "Bill Gates" />
 function refreshIndex(){
 
@@ -193,6 +200,17 @@ function getGameStats(){
   });
 }
 
+function getGameScores(){
+  $.ajax({
+    type: "get",
+    url: "/minigame",
+    success: function (data){
+      minigame = data.minigame;
+      console.log("MINIGAME IS:" + minigame);
+    }
+  });
+}
+
 function getMessages(){
   console.log('Get Messages');
   $.ajax({
@@ -213,6 +231,16 @@ function getUserArray(){
       userarray = data.userarray;
       refreshDOM();
 
+    }
+  });
+}
+
+function postScores(user,score){
+  $.ajax({
+    type:"post",
+    data: {"user": user, "score": score },
+    url: "/minigame",
+    success:function(data){
     }
   });
 }
@@ -242,6 +270,7 @@ function getUsers(){
 }
 
 function updateUser(user, id, turn, position, minigame, score){
+
   $.ajax({
     type: "put",
     data: {"user": user, "turn": turn, "position": position, 
@@ -249,7 +278,7 @@ function updateUser(user, id, turn, position, minigame, score){
      url: "/users/" + id,
      success: function(data) {
       users = data.users;
-      console.log("UPDATED"+ data[0]);
+      //console.log("UPDATED"+ data[0]);
      }
   });
 }
@@ -331,6 +360,7 @@ function disableUsers (){
 $(document).ready(function() {
 	getMessages();
   getUsers();
+  getGameScores();
   getUserArray();
   postGameStats('init');
   refreshDOM();

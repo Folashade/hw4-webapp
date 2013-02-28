@@ -149,6 +149,7 @@ function drawPlayer(user)
 
 function drawGame()
 {
+	console.log("DRAWINGTHE GAMEEEE");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBoard();
 	var user = getParam('user');
@@ -165,8 +166,8 @@ function startGame()
 	//canvas.setAttribute('tabindex','0');
     //canvas.focus();
 	
-	intervalID = setInterval(move, 1000);
-	intervalIDGame = setInterval(drawGame, 1000);
+	//intervalID = setInterval(move, 1000);
+	//intervalIDGame = setInterval(drawGame, 1000);
 }
 
 startGame();
