@@ -38,3 +38,7 @@ var SCORE = 0;
 var NUM_CHOSEN = 0;
 var CHOSEN1INDEX = -1;
 var CHOSEN2INDEX = -1;
+
+var TIMEOUT = 4000;
+var TOTAL_TIME = 14000; // 15 secs
+var TEXT_PADDING = 5;

@@ -3,7 +3,7 @@
 
 var GAME_WIDTH = MiniGame4Canvas.width;
 var GAME_HEIGHT = MiniGame4Canvas.height;
-var PERIOD = 1;
+var PERIOD = 5;
 
 // slide is the area in which the arrows appear!
 var SLIDE_WIDTH = GAME_WIDTH/2;
@@ -31,7 +31,7 @@ var ARROW_RIGHT_X = SLIDE_X + (ARROW_DISTANCE*3);
 
 var WINDOWS_LOGO = "img4/windows.png";
 
-var ARROW_PERIOD = 1000;
+var ARROW_PERIOD = 800;
 
 var FEEDBACK = ""
 
@@ -40,3 +40,7 @@ var ARROW_ARRAY = [];
 var ARROW_SIZE = 100;
 var SCORE = 0;
 var NEW_LEVEL_SCORE = 200;
+
+var TIMEOUT = 4000;
+var TOTAL_TIME = 14000; // 15 secs
+var TEXT_PADDING = 5;
