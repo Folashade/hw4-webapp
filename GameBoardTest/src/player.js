@@ -69,21 +69,23 @@ function moveRight()
 
 function move()
 {
-	while (NUM_STEPS > 0)
+	if (NUM_STEPS > 0)
 	{
-		switch (GAME_ARRAY[PLAYER_POS.row][GAME_ARRAY[col])
+		console.log(NUM_STEPS + "***************************");
+		console.log("in move row: " + PLAYER_POS.row + " in move col: " + PLAYER_POS.col);
+		switch (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col])
 		{
 			case 1:
-				setTimeout(moveDown, 1000);
+				moveUp();
 				break;
 			case 2:
-				setTimeout(moveLeft, 1000);
+				moveRight();
 				break;
 			case 3:
-				setTimeout(moveRight, 1000);
+				moveDown();
 				break;
 			case 4:
-				setTimeout(moveUp, 1000);
+				moveLeft();
 				break;
 			case 5:
 				var random = Math.floor(Math.random()*2)+1;
@@ -94,17 +96,57 @@ function move()
 				
 				else
 				{
-					moveLeft();
+					moveDown();
 				}
-				setTimeout(moveDown, 1000);
+				
 				break;
 			case 6:
-				setTimeout(moveDown, 1000);
+				var random = Math.floor(Math.random()*2)+1;
+				if (random === 1)
+				{
+					moveDown();
+				}
+				
+				else
+				{
+					moveRight();
+				}
+				
+				break;
+			
+			case 8:
+				var random = Math.floor(Math.random()*2)+1;
+				if (random === 1)
+				{
+					moveLeft()
+				}
+				
+				else
+				{
+					moveDown();
+				}
+
+				break;
+
+			case 9:
+				var random = Math.floor(Math.random()*2)+1;
+				if (random === 1)
+				{
+					moveLeft();
+				}
+				
+				else
+				{
+					moveUp();
+				}
+				
 				break;
 		}	
 		
 		NUM_STEPS--;
 	}
+	
+		console.log("after move row: " + PLAYER_POS.row + " after move col: " + PLAYER_POS.col);
 }
 	// if (e === 38)
 	// {

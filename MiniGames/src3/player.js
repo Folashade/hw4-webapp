@@ -25,5 +25,5 @@ function onMouseDown(event) {
 		}
 	}
 	
-	console.log(CARD_ARRAY);
+	//console.log(CARD_ARRAY);
 }
