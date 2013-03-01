@@ -45,7 +45,7 @@ function drawBoard()
 	
 	for (var i = -3; i <= 3; i++)
 	{
-		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i])
 		{
 			case 0:
 				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
@@ -70,7 +70,7 @@ function drawBoard()
 	
 	for (var i = -2; i <= 2; i++)
 	{
-		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i])
 		{
 			case 0:
 				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
@@ -95,7 +95,7 @@ function drawBoard()
 	
 	for (var i = -2; i <= 2; i++)
 	{
-		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i])
 		{
 			case 0:
 				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
@@ -129,7 +129,17 @@ function drawPlayer(user)
 	if (user === 'Sergey'){
 		ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
 	}
+	if (user === 'Bill'){
+		ctx.drawImage(BILL, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
+	}
+	if (user === 'Steve'){
+		ctx.drawImage(STEVE, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
+	}
+	if (user === 'Mark'){
+		ctx.drawImage(MARK, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
+	}
 }
+
 
 function drawGame()
 {
