@@ -1,4 +1,10 @@
 /*Login Page stylesheet*/
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
 
 body {
 	background-color: #dfdfdf;
@@ -15,10 +21,9 @@ body {
 	font-family: 'Oleo Script Swash Caps', cursive;
 	padding-left: -20px;
 	position:absolute;
-/*	left: -25px;*/
+
 	line-height: .6;
 	text-shadow: 4px 4px 4px #333;
-/*	bottom:0;*/
 	
 	/* Safari */
 	-webkit-transform: rotate(-10deg);
@@ -113,8 +118,7 @@ form {
 
 input {
 	height: 50px;
-/*	width: 220px;*/
-/*	font-size:50px;*/
+
 }
 
 
@@ -133,10 +137,6 @@ body {
 
 #clouds{
 	padding: 100px 0;
-/*	background: #c9dbe9;
-	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
-	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
-	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
 	position: fixed;
 }
 
@@ -251,24 +251,6 @@ body {
 
 
 /******* BUTTONS ********/
-/*div.indent {
-  background-color: #e2e2e2;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2e2e2), color-stop(100%, #fafafa));
-  background-image: -webkit-linear-gradient(top, #e2e2e2, #fafafa);
-  background-image: -moz-linear-gradient(top, #e2e2e2, #fafafa);
-  background-image: -ms-linear-gradient(top, #e2e2e2, #fafafa);
-  background-image: -o-linear-gradient(top, #e2e2e2, #fafafa);
-  background-image: linear-gradient(top, #e2e2e2, #fafafa);
-  border-bottom: 1px solid #e7e7e7;
-  border-left: 1px solid #eaeaea;
-  border-right: 1px solid #eaeaea;
-  border-top: 1px solid #dfdfdf;
-  border-radius: 8px;
-  margin: 50px auto 0;
-  padding: 10px 0;
-  width: 170px; }*/
-
-
 .minimal-indent {
   background-color: #f3f3f3;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(50%, #dddddd), color-stop(50%, #d2d2d2), color-stop(100%, #dfdfdf));
@@ -288,7 +270,6 @@ body {
   margin: 0;
   padding: 7px 15px;
   text-shadow: 0 1px 1px #fff;
-/*  width: 220px; */
 }
 
   .minimal-indent:hover {

@@ -1,4 +1,9 @@
-// backgroundDrawer.js
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
 
 var canvas = document.getElementById("GameBoard");
 var ctx = canvas.getContext("2d");
@@ -17,19 +22,9 @@ function drawBoard()
 	}
 }
 
-// function drawPlayer()
-// {
-	// console.log(PLAYER_ARRAY);
-	// for (var i = 0; i < PLAYER_ARRAY.length; i++)
-	// {
-		// ctx.drawImage(PLAYER_ARRAY[i].img, PLAYER_ARRAY[i].x, PLAYER_ARRAY[i].y, PLAYER_ARRAY[i].w, PLAYER_ARRAY[i].h); // TODO: hardcoded to actual square coordinates
-	// }
-// }
-
 function drawGame()
 {
 	drawBoard();
-	//drawPlayer();
 }
 
 function startGame()

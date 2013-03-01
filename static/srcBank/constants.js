@@ -1,10 +1,20 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 // constants.js
 // Bank constants
 
 var BANK_IMAGE = "imgBank/bank.jpg";
+// var LAMP = "imgBank/lampT.png";
+var LAMP = "imgBank/money.jpg";
+var WOOD = "imgBank/wood.jpeg";
 
-var GAME_WIDTH = BankCanvas.width;
-var GAME_HEIGHT = BankCanvas.height;
+var GAME_WIDTH = canvas.width;
+var GAME_HEIGHT = canvas.height;
 var PERIOD = 5;
 
 var RECTANGLE_WIDTH = GAME_WIDTH/10;
@@ -39,11 +49,6 @@ var LEFT_KEY = 37;
 var TAB_KEY = 9;
 
 var BUTTON_PADDING = 5;
-
-// var BUTTON_WIDTH = 0;
-// var BUTTON_HEIGHT = 0;
-// var BUTTON_x = 0;
-// var BUTTON_y = 0;
 
 var TIMEOUT = 4000;
 var TOTAL_TIME = 14000; // 15 secs

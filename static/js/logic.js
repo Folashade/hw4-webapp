@@ -1,13 +1,16 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+//logic.js
 
 //Global datastore
 var messages;
 var users;
-var userarray;
 var gamestats;
 var minigame;
-
-//users - local only (clears everytime sever is restarted)
-//userarray 
 
 
 //setinterval variable for disableUsers
@@ -15,14 +18,6 @@ var checkUsers= setInterval(disableUsers, 1000);
 var initDisable= true;
 var billDisabled=false;
 var steveDisabled = false;
-var sergeyDisabled  = false;
-var markDisabled = false;
-
-
-function hash(k) {
-  return userarray[k];
-}
-
 
 function insertParam(key, value)
 {
@@ -81,7 +76,6 @@ function newUser(user){
     //local
     users.push({"user": user, "turn":0, "position": {"row":9, "col": 7}, 
       "minigame": false, "score": {"bits": 0, "bytes": 0}, "id": users.length, "date": new Date()});
-    userarray[user] = ({score: 0, turn: 0});
 
     //server
     addUser(user);  
@@ -106,18 +100,17 @@ function postGameScores(user, score){
 
 function delScores() {
   minigame = [];
-    $.ajax({
-      type: "delete",
-      url: "/minigame",
-      success: function(data) { }
-    });
-  }
+  $.ajax({
+    type: "delete",
+    url: "/minigame",
+    success: function(data) { }
+  });
+}
 
-//<input id="billButton" class = "button"  type="submit" value= "Bill Gates" />
+
 function refreshIndex(){
 
   if (billDisabled){
-     console.log("billDisabledinrefresh");
     var input = $("<input>")
     input.attr('id', 'billButton');
     input.attr('disabled','disabled');
@@ -129,8 +122,8 @@ function refreshIndex(){
     form1.empty();
     form1.append(input);
   }
+
   if(steveDisabled){
-     console.log("steveDisabledinrefresh");
     var input = $("<input>")
     input.attr('id', 'steveButton');
     input.attr('disabled','disabled');
@@ -141,33 +134,6 @@ function refreshIndex(){
     var form2 = $("#form2");
     form2.empty();
     form2.append(input);
-  }
-
-  if(sergeyDisabled){
-    console.log("sergeyDisabledinrefresh");
-    var input = $("<input>")
-    input.attr('id', 'sergeyButton');
-    input.attr('disabled','disabled');
-    input.addClass('disabled');
-    input.attr('type', 'submit');
-    input.attr('value', 'Sergey Brin');
-
-    var form3 = $("#form3");
-    form3.empty();
-    form3.append(input);
-  } 
-  if (markDisabled){ 
-     console.log("markDisabledinrefresh");
-    var input = $("<input>")
-    input.attr('id', 'markButton');
-    input.attr('disabled','disabled');
-    input.addClass('disabled');
-    input.attr('type', 'submit');
-    input.attr('value', 'Mark Zuckerberg');
-
-    var form4 = $("#form4");
-    form4.empty();
-    form4.append(input);
   }
 }
 
@@ -215,13 +181,11 @@ function getGameScores(){
     url: "/minigame",
     success: function (data){
       minigame = data.minigame;
-      console.log("MINIGAME IS:" + minigame);
     }
   });
 }
 
 function getMessages(){
-  console.log('Get Messages');
   $.ajax({
     type: "get",
     url: "/messages",
@@ -230,18 +194,6 @@ function getMessages(){
      refreshDOM();
    }
  });
-}
-
-function getUserArray(){
-  $.ajax({
-    type: "get",
-    url:"/userarray",
-    success: function (data){
-      userarray = data.userarray;
-      refreshDOM();
-
-    }
-  });
 }
 
 function postScores(user,score){
@@ -254,16 +206,8 @@ function postScores(user,score){
   });
 }
 
-/*function getUser(user){
-  $.ajax({
-    type: "get",
-    url: "data/"+user,
-    success: function (data){}
-  });
-}*/
 
 function getUsers(){
-  console.log("getUsers");
   $.ajax({
     type: "get",
     url: "/users",
@@ -284,12 +228,10 @@ function updateUser(user, id, turn, position, minigame, score){
     type: "put",
     data: {"user": user, "turn": turn, "position": position, 
     "minigame": minigame, "score": score, "id": id},
-     url: "/users/" + id,
-     success: function(data) {
+    url: "/users/" + id,
+    success: function(data) {
       users = data.users;
-      console.log("UPDATED USERS:" +users[0].minigame + users[1].minigame);
-      //console.log("UPDATED"+ data[0]);
-     }
+    }
   });
 }
 
@@ -330,36 +272,22 @@ function postGameStats(time){
     type: "post",
     data:{"gamestats": gamestats},
     url: "/gamestats",
-    success: function(data){
-      console.log(gamestats);
-    }
+    success: function(data){}
   });
 }
 
 function disableUsers (){
-  console.log("disableUsers");
   if(users !== undefined){
 
     for (var i =0; i < users.length; i++){
-     
+
       var x = users[i].user;
 
       if (x === 'Bill'){
-        console.log("BILL");
         billDisabled = true;
       }
       else if(x==='Steve'){
-        console.log("STEVE");
         steveDisabled = true;
-
-      }
-      else if(x ==='Sergey'){
-        console.log("SERGEY");
-        sergeyDisabled=true;
-      }
-      else if (x === 'Mark'){
-        console.log("MARK");
-        markDisabled = true;
       }
     }
     getUsers();
@@ -371,25 +299,21 @@ $(document).ready(function() {
 	getMessages();
   getUsers();
   getGameScores();
-  getUserArray();
   postGameStats('init');
   refreshDOM();
 
-	/**** Game Navigation ****/
-  	$("#nav").click(function() {
-	  console.log ("clicked the nav");
-	  alert("Handler for .click() called.");
-	});
-	
-	$("#game").click(function() {
+  /**** Game Navigation ****/
+  $("#nav").click(function() {
+  });
+
+  $("#game").click(function() {
 		//back to game - hide all overlays
-	  	$("#stats-overlay").fadeOut();
-		$("#help-overlay").fadeOut();
-		$("#about-overlay").fadeOut();
-	});
-	
-	$("#stats").click(function() {
-		console.log("----stats");
+    $("#stats-overlay").fadeOut();
+    $("#help-overlay").fadeOut();
+    $("#about-overlay").fadeOut();
+  });
+
+  $("#stats").click(function() {
 		//hide other content
 		$("#help-content").hide();
 		$("#about-content").hide();
@@ -404,8 +328,8 @@ $(document).ready(function() {
 		},300);
 
 	});
-	
-	$("#help").click(function() {
+
+  $("#help").click(function() {
 		//hide other content
 		$("#stats-content").hide();
 		$("#about-content").hide();
@@ -414,13 +338,13 @@ $(document).ready(function() {
 		$("#help-content").fadeIn();
 		//hide the back ones
 		setTimeout(function() {
-		  	$("#stats-overlay").fadeOut();
-			$("#about-overlay").fadeOut();
-		},300);
+     $("#stats-overlay").fadeOut();
+     $("#about-overlay").fadeOut();
+   },300);
 
 	});
-	
-	$("#about").click(function() {
+
+  $("#about").click(function() {
 		//hide other content
 		$("#help-content").hide();
 		$("#stats-content").hide();
@@ -430,23 +354,16 @@ $(document).ready(function() {
 		
 		//hide the back ones
 		setTimeout(function() {
-		  	$("#stats-overlay").fadeOut();
-			$("#help-overlay").fadeOut();
-		},300);
+     $("#stats-overlay").fadeOut();
+     $("#help-overlay").fadeOut();
+   },300);
 	});
-	
-	/**** Game Stats Page ****/
-	function getStats(){
-		console.log('getting stats....');
-		var userlist = users;
-		console.log(userlist[0].user)
-		$("#stats-content").html(userlist[0].user);	
-		var sc = getParam(userlist[0].user);
-		var curr = "" + userlist[0].user;
-		console.log(userarray);
-		console.log(users);
-	}
-	//add check for no users :) 
 
-
+  /**** Game Stats Page ****/
+  function getStats(){
+    var userlist = users;
+    $("#stats-content").html(userlist[0].user);	
+    var sc = getParam(userlist[0].user);
+    var curr = "" + userlist[0].user;
+  }
 });

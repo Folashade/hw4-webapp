@@ -1,4 +1,13 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 // constants.js
+
+
 var SQUARE_ARRAY = [];
 
 var square00;
@@ -109,16 +118,6 @@ var SQUARE_32L = "img/32L.png";
 var SQUARE_33L = "img/33L.png";
 var SQUARE_34L = "img/34L.png";
 
-var SERGEY = "";
-var SERGEYLEFT1 = "characters/sergeyleft1.png";
-var SERGEYLEFT2 = "characters/sergeyleft2.png";
-var SERGEYRIGHT1 = "characters/sergeyright1.png";
-var SERGEYRIGHT2 = "characters/sergeyright2.png";
-var SERGEYUP1 = "characters/sergeyup1.png";
-var SERGEYUP2 = "characters/sergeyup2.png";
-var SERGEYDOWN1 = "characters/sergeydown1.png";
-var SERGEYDOWN2 = "characters/sergeydown2.png";
-
 var BILL = "";
 var BILLLEFT1 = "characters/billleft1.png";
 var BILLLEFT2 = "characters/billleft2.png";
@@ -139,15 +138,6 @@ var STEVEUP2 = "characters/steveup2.png";
 var STEVEDOWN1 = "characters/stevedown1.png";
 var STEVEDOWN2 = "characters/stevedown2.png";
 
-var MARK = "";
-var MARKLEFT1 = "characters/markleft1.png";
-var MARKLEFT2 = "characters/markleft2.png";
-var MARKRIGHT1 = "characters/markright1.png";
-var MARKRIGHT2 = "characters/markright2.png";
-var MARKUP1 = "characters/markup1.png";
-var MARKUP2 = "characters/markup2.png";
-var MARKDOWN1 = "characters/markdown1.png";
-var MARKDOWN2 = "characters/markdown2.png";
 var PLAYER_HEIGHT = 150;
 var PLAYER_WIDTH = 100;
 var PLAYER_POS;

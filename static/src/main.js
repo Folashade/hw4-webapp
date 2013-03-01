@@ -1,4 +1,9 @@
-// backgroundDrawer.js
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
 
 var canvas = document.getElementById("GameBoard");
 var ctx = canvas.getContext("2d");
@@ -18,8 +23,6 @@ function drawBoard()
 	
 	for (var i = -4; i <= 4; i++)
 	{
-		//console.log(DRAW_GAME_ARRAY);
-		//console.log(PLAYER_POS);
 		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
 			case 0:
@@ -127,24 +130,17 @@ function drawBoard()
 
 function drawPlayer(user)
 {
-	if (user === 'Sergey'){
-		ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
-	}
 	if (user === 'Bill'){
 		ctx.drawImage(BILL, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
 	}
 	if (user === 'Steve'){
 		ctx.drawImage(STEVE, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
 	}
-	if (user === 'Mark'){
-		ctx.drawImage(MARK, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
-	}
 }
 
 
 function drawGame()
 {
-	console.log("DRAWINGTHE GAMEEEE");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBoard();
 	var user = getParam('user');
@@ -157,12 +153,6 @@ function startGame()
 	LOAD_PLAYERS();
 	LOAD_GAME_ELEMS();
 	PLAYER_POS = new PLAYER_POSITION(9, 7); // constants
-	//canvas.addEventListener('keydown', onKeyDown, false);
-	//canvas.setAttribute('tabindex','0');
-    //canvas.focus();
-	
-	//intervalID = setInterval(move, 1000);
-	//intervalIDGame = setInterval(drawGame, 1000);
 }
 
 startGame();

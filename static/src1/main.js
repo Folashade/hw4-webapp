@@ -1,9 +1,11 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
 // main.js
 // Mini Game 1 "Pizza Game" Logic
-
-//var canvas = document.getElementById("MiniGame1Canvas");
-//var ctx = canvas.getContext("2d");
-
 
 var img = new Image();   // Create new img element
 img.src = 'img1/like.png'; // Set source path
@@ -12,28 +14,37 @@ var imgOffset = 15; // this will be 300
 var initScreen1 = new Image();
 initScreen1.src = 'img1/profile.jpg'
 
-/** clear main interval **/
-// clearInterval(intervalID);
-
 function gameOverState()
 {
-	console.log("GAME OVER EXECUTING");
 
-	if (gamestats %4 == 0){
+	if (gamestats %5 == 0){
 		ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), TOPPING_NUM);
 	}
-	if (gamestats %4 ==1){
+	if (gamestats %5 ==1){
 		ctx.drawImage(initScreen2, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), SHAPE_NUM);
 	}
-	if (gamestats %4 == 2){
+	if (gamestats %5 == 2){
 		ctx.drawImage(initScreen3, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), SCORE);
 	}
-	if (gamestats %4 == 3){
+	if (gamestats %5 == 3){
 		ctx.drawImage(initScreen4, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), SCORE);
+	}
+	if (gamestats %5== 4){
+		drawBankBackground();
+		var id;
+		for(var i =0; i< users.length; i++){
+			if(users[i].user == getParam('user')){
+				id =i;
+			}
+		}
+		if(parseInt(users[id].score.bits,10) >= 32){
+			updateUser(users[id].user, id, users[id].turn, users[i].position, true, {bits: parseInt(users[id].score.bits,10) -32, 
+				bytes: parseInt(users[id].score.bytes,10) +1});
+		}
 	}
 	setTimeout(function(){for (var i = 0; i< users.length; i++){
 		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
@@ -43,7 +54,6 @@ function gameOverState()
 
 function mainLoop1()
 {
-	console.log("THE TIME LEFT IS" + TOTAL_TIME);
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);

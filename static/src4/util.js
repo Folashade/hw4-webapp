@@ -1,3 +1,10 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 // util.js
 
 var arrowUpImg;
@@ -28,9 +35,7 @@ function loadImages4()
 	
 	logo = new Image();
 	logo.src = WINDOWS_LOGO;
-	
-	//levelOneImg = new Image();
-	//levelOneImg.src = LEVEL_ONE_IMG;
+
 }
 
 function addArrows()

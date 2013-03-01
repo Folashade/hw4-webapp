@@ -1,21 +1,12 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 // main.js
 // Mini Game 3 "FLIP SHAPES" Logic
-// var b1 = document.getElementById("MiniGame1Canvas")
-// var b2 = document.getElementById("MiniGame2Canvas")
-// var b4 = document.getElementById("MiniGame4Canvas")
-// 
-// if (b1 != null){
-// 	b1.style.display = "none";
-// }
-// if (b2 != null){
-// 	b2.style.display = "none";
-// }
-// if (b4 != null){
-// 	b4.style.display = "none";
-// }
-
-
-// clearInterval(intervalID);
 
 var initScreen3 = new Image();
 initScreen3.src = 'img3/background.png'
@@ -40,9 +31,7 @@ function drawCards()
 		
 		else if ((i !== CHOSEN1INDEX) && (i !== CHOSEN2INDEX))
 		{
-			console.log(flip_card+ "    "+ CARD_ARRAY[i].x + "     " + CARD_ARRAY[i].y + "       " + CARD_WIDTH + "    " + CARD_HEIGHT);
-			ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
-
+			//ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
 			ctx.drawImage(flip_card, CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);		
 
 			
@@ -84,7 +73,6 @@ function mainLoop3()
 
 function startMiniGame3()
 {
-	// call init screen?
 	TOTAL_TIME = 14000;
 	CARD_NUM = 0;
 	SCORE  = 0;

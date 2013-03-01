@@ -1,15 +1,13 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 // main.js
 // Mini Game 4 "DDR" Logic
 
-// var b1 = document.getElementById("MiniGame1Canvas")
-// var b2 = document.getElementById("MiniGame2Canvas")
-// 
-// if (b1 != null){
-// 	b1.style.display = "none";
-// }
-// if (b2 != null){
-// 	b2.style.display = "none";
-// }
 var initScreen4 = new Image();
 initScreen4.src = 'img4/lazer.jpg'
 
@@ -38,8 +36,6 @@ function mainLoop4()
 		}
 		
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-		//ctx.drawImage(initScreen4, 0, 0, canvas.width, canvas.height);
-		// ctx.fillText(stringToWrite, GAME_WIDTH-stringToWriteWidth-10, 30);
 		drawSlideBackground();
 		
 		/** score **/
@@ -69,7 +65,6 @@ function mainLoop4()
 		ctx.drawImage(logo, 50, 50, ARROW_SIZE, ARROW_SIZE);
 		
 		
-		
 		while ((ARROW_ARRAY.length > 0) && (ARROW_ARRAY[0].y + ARROW_SIZE < 0))
 		{
 			ARROW_ARRAY.splice(0, 1);
@@ -86,6 +81,7 @@ function mainLoop4()
 	
 	else
 	{
+		canvas.removeEventListener('keydown', onKeyDown, false);
 		clearInterval(arrowIntervalID);
 		clearInterval(intervalID);
 		gameOverState();
@@ -95,15 +91,26 @@ function mainLoop4()
 function startMiniGame4()
 {
 	// call init screen?
-	var TOTAL_TIME = 14000; // 15 secs
-	var SCORE = 0;
+	TOTAL_TIME = 14000; // 15 secs
+	SCORE = 0;
 	ARROW_ARRAY = [];
 
 	loadImages4();
 	canvas.addEventListener('keydown', onKeyDown, false);
+	var ar=new Array(33,34,35,36,37,38,39,40);
+
+	$(document).keydown(function(e) {
+     var key = e.which;
+      //if(key==35 || key == 36 || key == 37 || key == 39)
+      if($.inArray(key,ar) > -1) {
+          e.preventDefault();
+          return false;
+      }
+      return true;
+});
 	canvas.setAttribute('tabindex','0');
     canvas.focus();
-	intervalID = setInterval(mainLoop, PERIOD);
+	intervalID = setInterval(mainLoop4, PERIOD);
 	arrowIntervalID = setInterval(addArrows, ARROW_PERIOD);
 }
 

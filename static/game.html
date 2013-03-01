@@ -22,11 +22,11 @@
 
 </head>
 
-<!--<script> // Load the music :3 
-  var music = new Audio('/music.mp3');
-  music.loop = true;
-  music.play();
-  </script>-->
+<script> // Load the music 
+var music = new Audio('/music.mp3');
+music.loop = true;
+music.play();
+</script>
 
 <body>
 
@@ -38,64 +38,64 @@
 		<div id="about" class="icon"><p>ABOUT</p></div>	
 	</div>
 	
-		
+
 	<div id="outer-container">
-	<div id="stats-overlay" class="over">
-		<div id="stats-content">
-			<div class="overlay-header">The Game Stats</div>
-			<div id="player1" class="players shadow">
-					<div class="playername">Bill</div>
-					<div class="score">102</div>
-			</div>
-			<div id="player2" class="players shadow">
-					<div class="playername">Sergey</div>
-					<div class="score">230</div>
-			</div>
-			<div id="player3" class="players shadow">
-				<div class="playername">Mark</div>
-				<div class="score">98</div>
-			</div>
-			<div id="player4" class="players shadow">
-				<div class="playername">Steve</div>
-				<div class="score">23</div>
+		<div id="stats-overlay" class="over">
+			<div id="stats-content">
+				<div class="overlay-header">The Game Stats</div>
+				<div id="player1" class="players shadow">
+					<div id = "billtag"class="playername">Bill</div>
+					<div id = "billscore" class="score"></div>
+				</div>
+				<div id="player2" class="players shadow">
+					<div id = "sergeytag" class="playername">Sergey</div>
+					<div id = "sergeyscore" class="score"></div>
+				</div>
+				<div id="player3" class="players shadow">
+					<div id = "marktag" class="playername">Mark</div>
+					<div id = "markscore" class="score"></div>
+				</div>
+				<div id="player4" class="players shadow">
+					<div id = "stevetag" class="playername">Steve</div>
+					<div id = "stevescore" class="score"></div>
+				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div id="help-overlay" class="over">
-		<div id="help-content">
-			<div class="overlay-header">The Game Information</div>
-			<h1>ABOUT THE GAME</h1>
+
+		<div id="help-overlay" class="over">
+			<div id="help-content">
+				<div class="overlay-header">The Game Information</div>
+				<h1>ABOUT THE GAME</h1>
 				<p>As a developer, one of the best places to be is Silicon Valley, arguably the technological hub of the United States. This multiplayer game simulates a small part of the Valley, the large companies. Do you best to get high scores in the mini games for Facebook, Microsoft, Apple, and Google.</p><p style="font-weight:700;">Do you have what it takes? </p>
 				
-			<h1>HOW TO PLAY</h1>
+				<h1>HOW TO PLAY</h1>
 				<p>After logging in to the game, You will see a die. Once you click the screen, the number that the die lands on is the number of spaces your player will move. After every player has moved, a mini game will begin. Try to get as high os a score as you can. Your results will be accessible on the STATS page. There is a link on the left hand side of the screen in the navigation bar.</p>
 				
 				<h1>THE MINIGAMES</h1>
 				<h2><b>FACEBOOK: </b>They Like Me... They Really Like Me</h2>
-					<p>The Social Web can be a lonely place. Get as many likes on your profile picture as you can by pressing all the keys on the board as fast as possible. </p>   
-					
+				<p>The Social Web can be a lonely place. Get as many likes on your profile picture as you can by pressing all the keys on the board as fast as possible. </p>   
+
 				<h2><b id="a">APPLE: </b>My iPhone is so last week </h2>
-					<p>Everyone knows that Apple updates and ships products faster than people can buy them. Keep giving Apple all you money by trying to get your hands on every Apple Product that appears on the screen.</p>
-			
+				<p>Everyone knows that Apple updates and ships products faster than people can buy them. Keep giving Apple all you money by trying to get your hands on every Apple Product that appears on the screen.</p>
+
 				<h2><b id="g">GOOGLE: </b>LMGTFY</h2>
-					<p>Google. A way of life. A way of living. This is how people find out the weather, new movies, and how to put socks on. This time Google needs your knowledge. Match the Google Doodles with their pair as quickly as possible.</p>
-			
+				<p>Google. A way of life. A way of living. This is how people find out the weather, new movies, and how to put socks on. This time Google needs your knowledge. Match the Google Doodles with their pair as quickly as possible.</p>
+
 				<h2><b id="m">MICROSOFT: </b>Dance Dance Revolution</h2>
-					<p>A game you know and love. Use the arrow keys to select the correct arrow when it is as close to the center of the target arrow. The closer you get the more points you get.</p>				                                               
-			
+				<p>A game you know and love. Use the arrow keys to select the correct arrow when it is as close to the center of the target arrow. The closer you get the more points you get.</p>				                                               
+
 				
+			</div>
 		</div>
-	</div>
-	
-	<div id="about-overlay" class="over">
-		<div id="about-content">
-			<div class="overlay-header">The Developers</div>
+
+		<div id="about-overlay" class="over">
+			<div id="about-content">
+				<div class="overlay-header">The Developers</div>
 				<div id="dev1" class="dev shadow"><p>Lydia</p></div>
 				<div id="dev2" class="dev shadow"><p>Samaan</p></div>
 				<div id="dev3" class="dev shadow"><p>Folashade</p></div>
+			</div>
 		</div>
-	</div>
 		
 		
 		<div id="mini-overlay" class="over">
@@ -103,14 +103,14 @@
 			<canvas id="MiniGame2Canvas" width="1000" height="600"></canvas>
 			<canvas id="MiniGame3Canvas" width="1000" height="600"></canvas>
 			<canvas id="MiniGame4Canvas" width="1000" height="600"></canvas>
-			
+			<canvas id="BankCanvas" width="1000" height="600"></canvas>
 			
 		</div>
 		
 		<canvas id="GameBoard" width="1000" height="600"></canvas>
 		<!-- <canvas id="miniGameBoard" width="1000" height="600"></canvas> -->
 		
-		<canvas id="map-canvas"></canvas>
+		<canvas id="map-canvas" width= "330" height= "200"></canvas>
 		<div id="chatroom" >
 			<ul>
 
@@ -121,12 +121,12 @@
 				<input id="message-input"  name="Message" type="text" placeholder="Type message...."/> 
 			</div>
 			<div>
-            <input id="submitButton" name="Submit"  type="submit" value="Send"/>
-            
-		</form>
+				<input id="submitButton" name="Submit"  type="submit" value="Send"/>
 
-	</div> <!-- outer-container -->
-	
+			</form>
+
+		</div> <!-- outer-container -->
+
 	<!-- <div id="footer">
 		<div id="mini1" class="tab"></div>
 		<div id="mini2" class="tab"></div>
@@ -134,67 +134,45 @@
 	</div> -->
 
 	
-		<script src="js/jquery-1.9.0.js"></script>
-		<script src="js/logic.js"></script>
-		
-		<script src="src/constants.js"></script>
-		<script src="src/util.js"></script>
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="js/logic.js"></script>
 
-		 <script src="src/player.js"></script>
-		<script src="src/main.js"></script>
+	<script src="src/constants.js"></script>
+	<script src="src/util.js"></script>
 
-		<script src="src1/constants.js"></script>
-	  <script src="src1/player.js"></script>
-	  <script src="src1/toppingObject.js"></script>
-	  <script src="src1/main.js"></script>
+	<script src="src/player.js"></script>
+	<script src="src/main.js"></script>
 
-<script src="src2/constants.js"></script>
-  <script src="src2/shapeObject.js"></script>
-  <script src="src2/player.js"></script>
-  <script src="src2/main.js"></script>
+	<script src="src1/constants.js"></script>
+	<script src="src1/player.js"></script>
+	<script src="src1/toppingObject.js"></script>
+	<script src="src1/main.js"></script>
 
- <script src="src3/constants.js"></script>
-  <script src="src3/util.js"></script>
-  <script src="src3/player.js"></script>
-  <script src="src3/main.js"></script>
+	<script src="src2/constants.js"></script>
+	<script src="src2/shapeObject.js"></script>
+	<script src="src2/player.js"></script>
+	<script src="src2/main.js"></script>
 
-  <script src="src4/constants.js"></script>
-  <script src="src4/util.js"></script>
-  <script src="src4/player.js"></script>
-  <script src="src4/Arrow.js"></script>
-  <script src="src4/main.js"></script>
-  
-    <script src="js/gameplay.js"></script>
+	<script src="src3/constants.js"></script>
+	<script src="src3/util.js"></script>
+	<script src="src3/player.js"></script>
+	<script src="src3/main.js"></script>
 
+	<script src="src4/constants.js"></script>
+	<script src="src4/util.js"></script>
+	<script src="src4/player.js"></script>
+	<script src="src4/Arrow.js"></script>
+	<script src="src4/main.js"></script>
 
-   <!-- <script src="src/player.js"></script>
-    <script src="src/backgroundDrawer.js"></script>-->
+	<script src="srcBank/constants.js"></script>
+	<script src="srcBank/util.js"></script>
+	<script src="srcBank/player.js"></script>
+	<script src="srcBank/main.js"></script>
 
-	<!-- Game One -->
-  <!-- <script src="src1/constants.js"></script>
-  <script src="src1/player.js"></script>
-  <script src="src1/toppingObject.js"></script>
-  <script src="src1/main.js"></script> -->
-
-	<!-- Game Two -->
-  <!-- <script src="src2/constants.js"></script>
-  <script src="src2/shapeObject.js"></script>
-  <script src="src2/player.js"></script>
-  <script src="src2/main.js"></script> -->
-
-	<!-- Game Three -->
-  <!-- <script src="src3/constants.js"></script>
-  <script src="src3/util.js"></script>
-  <script src="src3/player.js"></script>
-  <script src="src3/main.js"></script> -->
-
-<!-- Game Four -->
-  <!-- <script src="src4/constants.js"></script>
-  <script src="src4/util.js"></script>
-  <script src="src4/player.js"></script>
-  <script src="src4/Arrow.js"></script> -->
-    <!-- // <script src="src4/main.js"></script> -->
+	<script src="js/gameplay.js"></script>
 
 
-	</body>
+
+
+</body>
 </html>

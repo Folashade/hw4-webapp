@@ -1,4 +1,10 @@
-// 15-237 Homework 4- Server
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+//app.js
 
 var express = require("express"); // imports express
 var app = express();        // create a new instance of express
@@ -15,14 +21,8 @@ app.use(express.static(path.join(__dirname, 'static')));
 // The global datastore for this example
 var messages;
 var users;
-var userarray;
 var gamestats;
 var minigame;
-
-function hash(k) {
-  return userarray[k];
-}
-
 
 // Asynchronously read file contents, then call callbackFn
 function readFile(filename, defaultData, callbackFn) {
@@ -78,17 +78,10 @@ app.get("/users", function(request,response){
   });
 });
 
-app.get("/userarray", function(request,response){
-  response.send({
-    userarray: userarray,
-    success:true
-  });
-});
-
 // delete entire list
 app.delete("/minigame", function(request, response){
   minigame = [];
-  writeFile("data.txt", JSON.stringify(minigame));
+  writeFile("data/minigame.txt", JSON.stringify(minigame));
   response.send({
     minigame: minigame,
     success: true
@@ -111,7 +104,6 @@ app.put("/users/:id", function (request, response){
   item.score = (item.score !== undefined) ? item.score : oldItem.score;
 
   users[id] = item;
-  //writeFile("data/users.txt", JSON.stringify(users));
   response.send({
     users: users,
     success: true
@@ -120,7 +112,6 @@ app.put("/users/:id", function (request, response){
 
 //create new user
 app.post("/users", function(request,response){
-  console.log("SERVER CREATE NEW USER");
   var item = {"user": request.body.user,
               "turn": request.body.turn,
               "position": request.body.position,
@@ -135,9 +126,8 @@ app.post("/users", function(request,response){
 
   if (successful) {
     users.push(item); 
-    userarray[user] = {"score": 0};
+   // userarray[user] = {"score": 0};
     writeFile("data/users.txt", JSON.stringify(users));
-    //writeFile("data/"+ user + ".txt", JSON.stringify(hash(user)));
   }else {
     item = undefined;
   }
@@ -187,9 +177,9 @@ app.post("/minigame", function(request,response){
   });
 });
 
+
 // create new message
 app.post("/messages", function(request, response) {
-  console.log(request.body);
   var item = {"message": request.body.message,
               "user": request.body.user,
               "date": new Date()};
@@ -224,7 +214,7 @@ function initServer() {
    readFile("data/minigame.txt", defaultList, function(err, data) {
     minigame = JSON.parse(data);
   });
-  userarray = new Object();
+  //uuserarray = new Object();
 }
 
 // Finally, initialize the server, then activate the server at port 8889

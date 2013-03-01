@@ -1,11 +1,12 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 // main.js
 // Bank
-
-var canvas = document.getElementById("BankCanvas");
-var ctx = canvas.getContext("2d");
-
-// bank = new Image();
-// bank.src = BANK_IMAGE;
 
 function drawBankBackground()
 {
@@ -100,7 +101,7 @@ function drawBits()
 	// ctx.fillText(goback, GAME_WIDTH - gobackwidth - BUTTON_PADDING, BUTTON_PADDING + 20);
 }
 
-function mainLoop()
+function mainLoop5()
 {
 	if (TOTAL_TIME >= -PERIOD)
 	{
@@ -135,18 +136,14 @@ function mainLoop()
 		var timemetrics = ctx.measureText(time);
 		var timeWidth = timemetrics.width;
 		ctx.fillText(time, GAME_WIDTH - timeWidth - 5, 30);
-
-		// goback = "Go Back";
-		// gobackmetrics = ctx.measureText(goback);
-		// gobackwidth = gobackmetrics.width;
 		
-		if (keyPressed(ZERO_KEY))
+		if (keyPressed5(ZERO_KEY))
 		{
 			ONE = false;
 			ZERO = true;
 		}
 		
-		else if (keyPressed(ONE_KEY))
+		else if (keyPressed5(ONE_KEY))
 		{
 			ZERO = false;
 			ONE = true;
@@ -173,30 +170,33 @@ function mainLoop()
 }
 
 
-function startGame()
+function startMiniGame5()
 {
 	// call init screen?
-	canvas.addEventListener('keydown', onKeyDown, false);
-	canvas.addEventListener('keyup', onKeyUp, false);
+	TOTAL_TIME = 14000; // 15 secs
+	canvas.addEventListener('keydown', onKeyDown5, false);
+	canvas.addEventListener('keyup', onKeyUp5, false);
     canvas.setAttribute('tabindex','0');
     canvas.focus();
-	canvas.addEventListener('mousedown', onMouseDown, false);
+	canvas.addEventListener('mousedown', onMouseDown5, false);
 	MAKE_BITS();
 	SET_BIT_PARAMS();
-	intervalID = setInterval(mainLoop, PERIOD);
+	intervalID = setInterval(mainLoop5, PERIOD);
 }
 
-function initState()
+function initState5()
 {
-	loadImages();
+	loadImages5();
 	ctx.fillStyle = 'black';
 	ctx.font = 'bold 60px Calibri';
 	var welcomeMessage = "Entering the bank!";
 	var welcomeMessageMetrics = ctx.measureText(welcomeMessage);
 	var welcomeMessageWidth = welcomeMessageMetrics.width;
+
+	ctx.drawImage(wood, 0, GAME_HEIGHT/2 + 50, GAME_WIDTH, GAME_HEIGHT);
+	ctx.drawImage(lamp, -25, 15);	
+	
 	
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
-	window.setTimeout(startGame, TIMEOUT);
+	window.setTimeout(startMiniGame5, TIMEOUT);
 }
-
-window.onload = initState;

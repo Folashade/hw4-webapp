@@ -1,3 +1,10 @@
+/*15-237 Project 4
+ * Samaan Ghani (sghani), Folashade Okunubi (foo),  Lydia Utkin(lju)
+ * Due: 26 February 2013 
+ 
+ Based off of Mario Party series.
+*/
+
 function SQUARE(location, img, imgL, x, y, w, h)
 {
 	this.location = location;
@@ -13,24 +20,7 @@ function SQUARE(location, img, imgL, x, y, w, h)
 
 function LOAD_PLAYERS()
 {
-	sergeyleft1 = new Image();
-	sergeyleft1.src = SERGEYLEFT1;
-	sergeyleft2 = new Image();
-	sergeyleft2.src = SERGEYLEFT2;
-	sergeyright1 = new Image();
-	sergeyright1.src = SERGEYRIGHT1;
-	sergeyright2 = new Image();
-	sergeyright2.src = SERGEYRIGHT2;
-	sergeyup1 = new Image();
-	sergeyup1.src = SERGEYUP1;
-	sergeyup2 = new Image();
-	sergeyup2.src = SERGEYUP2;
-	sergeydown1 = new Image();
-	sergeydown1.src = SERGEYDOWN1;
-	sergeydown2 = new Image();
-	sergeydown2.src = SERGEYDOWN2;
-	SERGEY = sergeydown1;
-
+	
 	billleft1 = new Image();
 	billleft1.src = BILLLEFT1;
 	billleft2 = new Image();
@@ -49,24 +39,7 @@ function LOAD_PLAYERS()
 	billdown2.src = BILLDOWN2;
 	BILL = billdown1;
 
-	markleft1 = new Image();
-	markleft1.src = MARKLEFT1;
-	markleft2 = new Image();
-	markleft2.src = MARKLEFT2;
-	markright1 = new Image();
-	markright1.src = MARKRIGHT1;
-	markright2 = new Image();
-	markright2.src = MARKRIGHT2;
-	markup1 = new Image();
-	markup1.src = MARKUP1;
-	markup2 = new Image();
-	markup2.src = MARKUP2;
-	markdown1 = new Image();
-	markdown1.src = MARKDOWN1;
-	markdown2 = new Image();
-	markdown2.src = MARKDOWN2;
-	MARK = markdown1;
-
+	
 	steveleft1 = new Image();
 	steveleft1.src = STEVELEFT1;
 	steveleft2 = new Image();
