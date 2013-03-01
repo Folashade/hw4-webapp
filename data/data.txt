@@ -1,1 +1,0 @@
-[{"message":"Bill: <br>something","user":"Bill","date":"2013-03-01T18:06:05.167Z"},{"message":"Steve: <br>asdf;asd","user":"Steve","date":"2013-03-01T18:06:08.047Z"}]

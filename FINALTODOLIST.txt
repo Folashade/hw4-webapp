@@ -12,7 +12,7 @@
 -bit values should be person's
 -game over condition and look pretty with scores?
 -add rocks, water, and bushes
--die should stop after the turn
+-die should stop after the end of game
 -music on/off button?
 -background color
 -clear rect in game over in apple mini game
