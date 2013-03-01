@@ -38,15 +38,18 @@ function allPlayersTurn(){
 		//console.log("END INTERVALID" + intervalID);
 		clearInterval(intervalIDGame);
 		//console.log("END INTERVALIDGAME" + intervalIDGame);
-		if (gamestats %4 == 0){
+		if (gamestats %5 == 0){
 			console.log("STARTING MINI GAME 1");
 			initState1();
 		}
-		if (gamestats %4 ==1){
+		if (gamestats %5 ==1){
 			initState2();
 		}
-		if (gamestats %4 ==2){
+		if (gamestats %5 ==2){
 			initState3();
+		}
+		if (gamestats %5 ==3){
+			initState4();
 		}
 		console.log("JUST STARTED THEGAME");
 		minigamedone = setInterval(checkMiniGames, 2000);

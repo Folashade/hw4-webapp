@@ -29,13 +29,13 @@ function drawBoard()
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				break;
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].cx - (TREE_WIDTH/2), SQUARE_ARRAY[square].cy - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case -2:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].cx - (BANK_WIDTH/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].cx - (BANK_WIDTH/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT, BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 		}		
@@ -54,13 +54,13 @@ function drawBoard()
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				break;
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].cx - (TREE_WIDTH1/2), SQUARE_ARRAY[square].cy - TREE_HEIGHT1, TREE_WIDTH1, TREE_HEIGHT1);
 				specialSquares.push(special);
 				break;
 			case -2:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].cx - (BANK_WIDTH1/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT1, BANK_WIDTH1, BANK_HEIGHT1);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].cx - (BANK_WIDTH1/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT1, BANK_WIDTH1, BANK_HEIGHT1);
 				specialSquares.push(special);
 				break;Squares.push(special);
 				break;
@@ -80,13 +80,13 @@ function drawBoard()
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				break;
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].cx - (TREE_WIDTH2/2), SQUARE_ARRAY[square].cy - TREE_HEIGHT2, TREE_WIDTH2, TREE_HEIGHT2);
 				specialSquares.push(special);
 				break;
 			case -2:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].cx - (BANK_WIDTH2/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT2, BANK_WIDTH2, BANK_HEIGHT2);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].cx - (BANK_WIDTH2/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT2, BANK_WIDTH2, BANK_HEIGHT2);
 				specialSquares.push(special);
 				break;
 		}
@@ -105,13 +105,13 @@ function drawBoard()
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				break;
 			case -1:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].cx - (TREE_WIDTH2/2), SQUARE_ARRAY[square].cy - TREE_HEIGHT2, TREE_WIDTH2, TREE_HEIGHT2);
 				specialSquares.push(special);
 				break;
 			case -2:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].cx - (BANK_WIDTH2/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT2, BANK_WIDTH2, BANK_HEIGHT2);
+				special = new SPECIAL_SQUARE(bank, SQUARE_ARRAY[square].cx - (BANK_WIDTH2/2), SQUARE_ARRAY[square].cy - BANK_HEIGHT2, BANK_WIDTH2, BANK_HEIGHT2);
 				specialSquares.push(special);
 				break;
 		}
