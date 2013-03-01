@@ -162,8 +162,8 @@ var BANK_HEIGHT = 230;
 
 var tree;
 var TREE = "img/tree.png";
-var TREE_WIDTH = 100;
-var TREE_HEIGHT = 200;
+var TREE_WIDTH = 150;
+var TREE_HEIGHT = 300;
 
 var GAME_ARRAY_WIDTH = 21;
 var GAME_ARRAY_HEIGHT = 16;
