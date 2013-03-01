@@ -10,9 +10,8 @@
 // if (b2 != null){
 // 	b2.style.display = "none";
 // }
-
-var canvas = document.getElementById("MiniGame4Canvas");
-var ctx = canvas.getContext("2d");
+var initScreen4 = new Image();
+initScreen4.src = 'img4/lazer.jpg'
 
 function drawSlideBackground()
 {
@@ -28,12 +27,7 @@ function drawSlideBackground()
 	ctx.drawImage(arrowRightImgOutline, ARROW_RIGHT_X, 0, ARROW_SIZE, ARROW_SIZE);
 }
 
-function gameOverState()
-{
-	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
-}
-
-function mainLoop()
+function mainLoop4()
 {
 	if (TOTAL_TIME >= -PERIOD)
 	{
@@ -44,6 +38,7 @@ function mainLoop()
 		}
 		
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+		//ctx.drawImage(initScreen4, 0, 0, canvas.width, canvas.height);
 		// ctx.fillText(stringToWrite, GAME_WIDTH-stringToWriteWidth-10, 30);
 		drawSlideBackground();
 		
@@ -91,15 +86,20 @@ function mainLoop()
 	
 	else
 	{
+		clearInterval(arrowIntervalID);
 		clearInterval(intervalID);
 		gameOverState();
 	}
 }
 
-function startGame()
+function startMiniGame4()
 {
 	// call init screen?
-	loadImages();
+	var TOTAL_TIME = 14000; // 15 secs
+	var SCORE = 0;
+	ARROW_ARRAY = [];
+
+	loadImages4();
 	canvas.addEventListener('keydown', onKeyDown, false);
 	canvas.setAttribute('tabindex','0');
     canvas.focus();
@@ -107,7 +107,7 @@ function startGame()
 	arrowIntervalID = setInterval(addArrows, ARROW_PERIOD);
 }
 
-function initState()
+function initState4()
 {
 	ctx.font = 'bold 60px Calibri';
 	var gameTitle = "MICROSOFT CHALLENGE";
@@ -122,7 +122,5 @@ function initState()
 	var welcomeMessageWidth = welcomeMessageMetrics.width;
 	
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
-	window.setTimeout(startGame, TIMEOUT);
+	window.setTimeout(startMiniGame4, TIMEOUT);
 }
-
-window.onload = initState;
