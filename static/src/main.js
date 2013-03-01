@@ -30,12 +30,12 @@ function drawBoard()
 				break;
 			case -1:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (TREE_HEIGHT/2) - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case -2:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (TREE_HEIGHT/2) - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 		}		
@@ -54,14 +54,15 @@ function drawBoard()
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				break;
 			case -1:
-				//ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case -2:
-				//ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (TREE_HEIGHT/2) - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
+				break;Squares.push(special);
 				break;
 		}
 		
@@ -79,13 +80,13 @@ function drawBoard()
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				break;
 			case -1:
-				//ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case -2:
-				//ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (TREE_HEIGHT/2) - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 		}
@@ -105,12 +106,12 @@ function drawBoard()
 				break;
 			case -1:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - (TREE_HEIGHT/2), TREE_WIDTH, TREE_HEIGHT);
 				specialSquares.push(special);
 				break;
 			case -2:
 				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (TREE_HEIGHT/2) - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y + (BANK_HEIGHT/2), BANK_WIDTH, BANK_HEIGHT);
 				specialSquares.push(special);
 				break;
 		}
