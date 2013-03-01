@@ -6,7 +6,7 @@ var arrowLeftImg;
 var arrowRightImg;
 //var levelOneImg;
 
-function loadImages()
+function loadImages4()
 {
 	arrowUpImg = new Image();
 	arrowUpImg.src = ARROW_UP_IMG;
@@ -39,7 +39,7 @@ function addArrows()
 	ARROW_ARRAY.push(newArrow);
 }
 
-function checkForKeys()
+function checkForKeys4()
 {
 	if (keyPressed(KEY_R)) {
 		newGame();
@@ -54,5 +54,5 @@ function checkForKeys()
 
 function checkForKeysTimer()
 {
-	checkForKeysInterval = setInterval(checkForKeys, 40);
+	checkForKeysInterval = setInterval(checkForKeys4, 40);
 }

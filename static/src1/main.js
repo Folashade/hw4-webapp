@@ -31,6 +31,10 @@ function gameOverState()
 		ctx.drawImage(initScreen3, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), SCORE);
 	}
+	if (gamestats %4 == 3){
+		ctx.drawImage(initScreen4, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), SCORE);
+	}
 	setTimeout(function(){for (var i = 0; i< users.length; i++){
 		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
 
@@ -83,7 +87,7 @@ function startMiniGame1()
 	TOPPING_NUM = 0;
 	TOPPING_ARRAY = [];
 	intervalID = setInterval(mainLoop1, PERIOD);
-	userIntervalID = setInterval(checkForKeys, 2);
+	userIntervalID = setInterval(checkForKeys1, 2);
 }
 
 function initState1()

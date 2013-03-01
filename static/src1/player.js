@@ -1,6 +1,6 @@
 // player.js
 
-function checkForKeys()
+function checkForKeys1()
 {
 	var topping;
 	document.onkeyup = function() {
