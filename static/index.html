@@ -12,25 +12,43 @@
 	<title> Game of Thrones </title>
 	<link rel="shortcut icon" href="/img/favicon.ico" />
 	<link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/loginstyle.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+
 	<div id="outer-container">
-		<div id = "titlegame"> GAME NAME </div>
+		
+		<div id="clouds">
+			<div class="cloud x1"></div>
+			<!-- Time for multiple clouds to dance around -->
+			<div class="cloud x2"></div>
+			<div class="cloud x3"></div>
+			<div class="cloud x3"></div>
+			<div class="cloud x4"></div>
+			<div class="cloud x5"></div>
+		</div>
+		
+		<div id = "titlegame" style="z-index:10;">The Adventures <br><span style=" z-index: 0">of </span><br>Silicon Valley</div>
+		
+		<div id="pick">
 		<form id="form1" action="javascript:newUser('Bill')" >
-			<input id="billButton" class = "button"  type="submit" value= "Bill Gates" />
+			<input id="billButton" class = "button minimal-indent"  type="submit" value= "BILL GATES" />
 		</form> 
 		<form id = "form2"action="javascript:newUser('Steve')" >
-			<input id="steveButton" class = "button" type="submit" value= "Steve Jobs" /> 
+			<input id="steveButton" class = "button minimal-indent" type="submit" value= "Steve Jobs" /> 
 		</form> 
 		<form id = "form3" action="javascript:newUser('Sergey')" >
-			<input id="sergeyButton" class = "button" type="submit" value= "Sergey Brin" /> 
+			<input id="sergeyButton" class = "button minimal-indent" type="submit" value= "Sergey Brin" /> 
 		</form> 
 		<form id = "form4"action="javascript:newUser('Mark')" >
-			<input id="markButton" class = "button" type="submit" value= "Mark Zuckerberg" /> 
+			<input id="markButton" class = "button minimal-indent" type="submit" value= "Mark Zuckerberg" /> 
 		</form>
+        
+		</div>
 	</div>
 
 	
