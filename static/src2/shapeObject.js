@@ -1,7 +1,7 @@
 function Shape(img, w, h)
 {
-	var randomX = Math.floor(Math.random() * (BOARD_WIDTH - w)) + BOARD_X;
-	var randomY = Math.floor(Math.random() * (BOARD_HEIGHT - h)) + BOARD_Y;
+	var randomX = Math.floor(Math.random() * (BOARD_WIDTH2 - w)) + BOARD_X2;
+	var randomY = Math.floor(Math.random() * (BOARD_HEIGHT2 - h)) + BOARD_Y2;
 	// add random topping types and sizes
 	this.x = randomX;
 	this.y = randomY;

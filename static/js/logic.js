@@ -104,6 +104,15 @@ function postGameScores(user, score){
   minigame.push({user: user, score: score});
 }
 
+function delScores() {
+  minigame = [];
+    $.ajax({
+      type: "delete",
+      url: "/minigame",
+      success: function(data) { }
+    });
+  }
+
 //<input id="billButton" class = "button"  type="submit" value= "Bill Gates" />
 function refreshIndex(){
 
@@ -278,6 +287,7 @@ function updateUser(user, id, turn, position, minigame, score){
      url: "/users/" + id,
      success: function(data) {
       users = data.users;
+      console.log("UPDATED USERS:" +users[0].minigame + users[1].minigame);
       //console.log("UPDATED"+ data[0]);
      }
   });

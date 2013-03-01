@@ -18,59 +18,51 @@ function drawBoard()
 	
 	for (var i = -4; i <= 4; i++)
 	{
-		//console.log(GAME_ARRAY);
+		//console.log(DRAW_GAME_ARRAY);
 		//console.log(PLAYER_POS);
-		if (GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i] > 0)
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+			case 0:
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case 1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case -1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 		}		
-		
-		else if (GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i] === -1)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}
-		
-		else if (GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i] === -2)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}
-				
-		else if (GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i] === 0)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-		}
 		
 		square++;
 	}
 	
 	for (var i = -3; i <= 3; i++)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i] > 0)
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-		}		
-		
-		else if (GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i] === -1)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}
-		
-		else if (GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i] === -2)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}		
-		
-		else if (GAME_ARRAY[PLAYER_POS.row - 1][PLAYER_POS.col + i] === 0)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+			case 0:
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case 1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case -1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 		}
 		
 		square++;
@@ -78,28 +70,24 @@ function drawBoard()
 	
 	for (var i = -2; i <= 2; i++)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i] > 0)
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-		}		
-		
-		else if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i] === -1)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}
-		
-		else if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i] === -2)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}		
-		
-		else if (GAME_ARRAY[PLAYER_POS.row][PLAYER_POS.col + i] === 0)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+			case 0:
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case 1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case -1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 		}
 		
 		square++;
@@ -107,28 +95,24 @@ function drawBoard()
 	
 	for (var i = -2; i <= 2; i++)
 	{
-		if (GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i] > 0)
+		switch(DRAW_GAME_ARRAY[PLAYER_POS.row - 2][PLAYER_POS.col + i])
 		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-		}		
-		
-		else if (GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i] === -1)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}
-		
-		else if (GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i] === -2)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
-			special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
-			specialSquares.push(special);
-		}
-		
-		else if (GAME_ARRAY[PLAYER_POS.row + 1][PLAYER_POS.col + i] === 0)
-		{
-			ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+			case 0:
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case 1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				break;
+			case -1:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
+			case -2:
+				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
+				specialSquares.push(special);
+				break;
 		}
 		
 		square++;
@@ -140,16 +124,20 @@ function drawBoard()
 	}
 }
 
-function drawPlayer()
+function drawPlayer(user)
 {
-	ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
+	if (user === 'Sergey'){
+		ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
+	}
 }
 
 function drawGame()
 {
+	console.log("DRAWINGTHE GAMEEEE");
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	drawBoard();
-	drawPlayer();
+	var user = getParam('user');
+	drawPlayer(user);
 }
 
 function startGame()
@@ -162,8 +150,8 @@ function startGame()
 	//canvas.setAttribute('tabindex','0');
     //canvas.focus();
 	
-	intervalID = setInterval(move, 1000);
-	intervalIDGame = setInterval(drawGame, 1000);
+	//intervalID = setInterval(move, 1000);
+	//intervalIDGame = setInterval(drawGame, 1000);
 }
 
 startGame();

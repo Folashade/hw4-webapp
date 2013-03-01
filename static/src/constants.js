@@ -118,6 +118,36 @@ var SERGEYUP1 = "characters/sergeyup1.png";
 var SERGEYUP2 = "characters/sergeyup2.png";
 var SERGEYDOWN1 = "characters/sergeydown1.png";
 var SERGEYDOWN2 = "characters/sergeydown2.png";
+
+var BILL = "";
+var BILLLEFT1 = "characters/billleft1.png";
+var BILLLEFT2 = "characters/billleft2.png";
+var BILLRIGHT1 = "characters/billright1.png";
+var BILLRIGHT2 = "characters/billright2.png";
+var BILLUP1 = "characters/billup1.png";
+var BILLUP2 = "characters/billup2.png";
+var BILLDOWN1 = "characters/billdown1.png";
+var BILLDOWN2 = "characters/billdown2.png";
+
+var STEVE = "";
+var STEVELEFT1 = "characters/steveleft1.png";
+var STEVELEFT2 = "characters/steveleft2.png";
+var STEVERIGHT1 = "characters/steveright1.png";
+var STEVERIGHT2 = "characters/steveright2.png";
+var STEVEUP1 = "characters/steveup1.png";
+var STEVEUP2 = "characters/steveup2.png";
+var STEVEDOWN1 = "characters/stevedown1.png";
+var STEVEDOWN2 = "characters/stevedown2.png";
+
+var MARK = "";
+var MARKLEFT1 = "characters/markleft1.png";
+var MARKLEFT2 = "characters/markleft2.png";
+var MARKRIGHT1 = "characters/markright1.png";
+var MARKRIGHT2 = "characters/markright2.png";
+var MARKUP1 = "characters/markup1.png";
+var MARKUP2 = "characters/markup2.png";
+var MARKDOWN1 = "characters/markdown1.png";
+var MARKDOWN2 = "characters/markdown2.png";
 var PLAYER_HEIGHT = 150;
 var PLAYER_WIDTH = 100;
 var PLAYER_POS;
@@ -132,8 +162,8 @@ var BANK_HEIGHT = 230;
 
 var tree;
 var TREE = "img/tree.png";
-var TREE_WIDTH = 100;
-var TREE_HEIGHT = 200;
+var TREE_WIDTH = 150;
+var TREE_HEIGHT = 300;
 
 var GAME_ARRAY_WIDTH = 21;
 var GAME_ARRAY_HEIGHT = 16;
@@ -158,21 +188,22 @@ var GAME_ARRAY_HEIGHT = 16;
 				   [0, 0, 1, 4, 4, 9, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 9, 4, 4, 0, 0],
 				   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
  
- // [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				  // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				  // [0, 0, 0, 2, 2, 2, 2, 3, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0],
-				  // [0, 0, 0, 1, 0, 1, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 2, 1, 0, 1, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 4, 8, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 4, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 6, 2, 2, 2, 2, 5, 0, 0, 0, 3, 4, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 1, 0, 0, 3, 4, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 4, 4, 4, 4, 9, 0, 3, 4, 0, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 5, 4, 4, 0, 0, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 3, 0, 3, 4, 4, 4, 4, 0, 3, 0, 0],
-				  // [0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 0, 0, 3, 0, 3, 0, 0, 0, 1, 0, 3, 0, 0],
-				  // [0, 0, 1, 4, 4, 9, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 9, 4, 4, 0, 0],
- 				  // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+
+var DRAW_GAME_ARRAY = [[0, 0, 0, 0, -1, 0, 0, -1, -1, -1, 0, -1, -1, 0, -1, 0, 0, -1, 0, 0, 0, 0, 0],
+				  [0, 0, 0, 0, 0, -1, -1, 0, 0, 0, -1, -1, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0],
+				  [0, 0, -1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+				  [0, 0, -1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, -1, -1, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 1, 0, 1, 0, 1, 0, 0, -1, 0, 1, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, -1, -1, 0, 0, 1, 1, 1, 0, 0],
+				  [0, -1, 1, -1, -1, 1, 0, 1, 0, -2, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, -1, 0, 1, 1, 0, -1, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, -1, 1, 0, 0, 0, 0, 1, -1, 0, 1, 1, -1, -1, 0, 1, 0, 0],
+				  [0, -1, 1, -1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, -1, 1, 0, 0, 0, 0, 1, 1, 1, -1, 0, -1, 0, -1, 1, 0, 0],
+				  [0, -1, 1, 0, 0, 1, -1, 1, 0, -1, -1, 0, 1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0],
+				  [0, 0, 1, 0, 0, 1, -1, 1, 0, 0, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0],
+				  [0, -1, 1, 0, 0, 1, 0, 1, 0, -1, -1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0],
+				  [0, -1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, -1, 1, 0, 0],
+				  [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+ 				  [0, 0, 0, 0, 0, -1, 0, -1, -1, 0, 0, 0, -1, 0, -1, -1, 0, 0, 0, -1, 0, 0, 0]];
 

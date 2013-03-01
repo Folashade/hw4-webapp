@@ -8,7 +8,7 @@ var pair7Img;
 var pair8Img;
 var flip_card;
 
-function loadImages()
+function loadImages3()
 {
 	pair1Img = new Image();
 	pair1Img.src = PAIR_1_IMG;

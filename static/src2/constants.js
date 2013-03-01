@@ -1,15 +1,15 @@
 // constants.js
 // Mini Game 2 "Shape Clicker" Constants
 
-var GAME_WIDTH = MiniGame2Canvas.width;
-var GAME_HEIGHT = MiniGame2Canvas.height;
+var GAME_WIDTH2 = MiniGame2Canvas.width;
+var GAME_HEIGHT2 = MiniGame2Canvas.height;
 var PERIOD = 5;
 
 // "board" constants
-var BOARD_X = 117;
-var BOARD_Y = 79;
-var BOARD_WIDTH = 785;
-var BOARD_HEIGHT = 451;
+var BOARD_X2 = 117;
+var BOARD_Y2 = 79;
+var BOARD_WIDTH2 = 785;
+var BOARD_HEIGHT2 = 451;
 
 // "shape" array
 var SHAPE_ARRAY = [];

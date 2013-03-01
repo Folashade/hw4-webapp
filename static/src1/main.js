@@ -3,45 +3,56 @@
 
 //var canvas = document.getElementById("MiniGame1Canvas");
 //var ctx = canvas.getContext("2d");
+
+
 var img = new Image();   // Create new img element
 img.src = 'img1/like.png'; // Set source path
 var imgOffset = 15; // this will be 300
 
-var initScreen = new Image();
-initScreen.src = 'img1/profile.jpg'
+var initScreen1 = new Image();
+initScreen1.src = 'img1/profile.jpg'
 
 /** clear main interval **/
 // clearInterval(intervalID);
 
 function gameOverState()
 {
-	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
-	postGameScores(getParam('user'), TOPPING_NUM);
-	var id;
-	for (var i = 0; i< users.length; i++){
-		if (users[i].user == getParam('user')){
-			id = i;
-		}
+	console.log("GAME OVER EXECUTING");
+
+	if (gamestats %4 == 0){
+		ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), TOPPING_NUM);
 	}
-	updateUser(getParam('user'), id, users[id].turn, users[id].position, true, users[id].score);
+	if (gamestats %4 ==1){
+		ctx.drawImage(initScreen2, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), SHAPE_NUM);
+	}
+	if (gamestats %4 == 2){
+		ctx.drawImage(initScreen3, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), SCORE);
+	}
+	setTimeout(function(){for (var i = 0; i< users.length; i++){
+		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
+
+	}}, 6000);
 }
 
-function mainLoop()
+function mainLoop1()
 {
+	console.log("THE TIME LEFT IS" + TOTAL_TIME);
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-		ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
+		ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 		/** score **/
-		ctx.fillStyle = '#dfdfdf';
-		
-		var stringToWrite = String(TOPPING_NUM);
-		var metrics = ctx.measureText(stringToWrite);
-		var stringToWriteWidth = metrics.width;		
+		ctx.fillStyle = '#dfdfdf';	
 	
 		ctx.fillStyle = '#3B5998';
 		ctx.font = 'italic 105px Georgia';
-		ctx.fillText(stringToWrite, GAME_WIDTH - stringToWriteWidth, 120, 125);
+		var stringToWrite = String(TOPPING_NUM);
+		var metrics = ctx.measureText(stringToWrite);
+		var stringToWriteWidth = metrics.width;	
+		ctx.fillText(stringToWrite, GAME_WIDTH - stringToWriteWidth - 10, 120, 125);
 		ctx.font = 'italic 30px Georgia';
 		ctx.fillText("likes", GAME_WIDTH - 140, 170);	
 		for (var i = 0; i < TOPPING_ARRAY.length; i++)
@@ -59,6 +70,8 @@ function mainLoop()
 	
 	else
 	{
+
+		clearInterval(userIntervalID);
 		clearInterval(intervalID);
 		gameOverState();
 	}
@@ -66,15 +79,16 @@ function mainLoop()
 
 function startMiniGame1()
 {
-	initState();
-
-	intervalID = setInterval(mainLoop, PERIOD);
+	TOTAL_TIME = 14000; // 15 secs
+	TOPPING_NUM = 0;
+	TOPPING_ARRAY = [];
+	intervalID = setInterval(mainLoop1, PERIOD);
 	userIntervalID = setInterval(checkForKeys, 2);
 }
 
-function initState()
+function initState1()
 {
-	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
+	ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 	ctx.font = 'italic 60px Georgia';
 	var gameTitle = "FACEBOOK CHALLENGE";
 	var gameTitleMetrics = ctx.measureText(gameTitle);
@@ -94,6 +108,6 @@ function initState()
 	
 	ctx.fillStyle = '#3B5998';
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
-	window.setTimeout(startGame, TIMEOUT);
+	window.setTimeout(startMiniGame1, TIMEOUT);
 }
 

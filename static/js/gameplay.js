@@ -1,13 +1,11 @@
-// mapcanvas = document.getElementById("map-canvas");
-// mapctx = mapcanvas.getContext("2d");
-
-//canvas = document.getElementById("GameBoard");
-//ctx = canvas.getContext("2d");
+mapcanvas = document.getElementById("map-canvas");
+mapctx = mapcanvas.getContext("2d");
 
 clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
 setInterval(getUsers, 2000);
+
 //setInterval(getGameStats, 2000);
 var turns; 
 var done;
@@ -25,63 +23,84 @@ function allPlayersTurn(){
 	var allDone = true;
 
 	for(var i =0; i < users.length; i++){
-		console.log("MYTURN "+ users[i].turn);
-		console.log(parseInt(gamestats,10)+1);
+		//console.log("MYTURN "+ users[i].turn);
+		//console.log(parseInt(gamestats,10)+1);
 		if (users[i].turn != (parseInt(gamestats,10) +1 +"")){
 			allDone = false;
 		}
 	}
-	console.log("ALL DONEL:::" + allDone);
+	//console.log("ALL DONEL:::" + allDone);
 	if(allDone){
 		clearInterval(done);
-		console.log("END DONE" + done);
-		alert("MINIGAME TIME");
-		postGameStats('');
+		//console.log("END DONE" + done);
+		alert("MINIGAME TIME" + gamestats);
 		clearInterval(intervalID);
-		console.log("END INTERVALID" + intervalID);
+		//console.log("END INTERVALID" + intervalID);
 		clearInterval(intervalIDGame);
-		console.log("END INTERVALIDGAME" + intervalIDGame);
-		startMiniGame1();
+		//console.log("END INTERVALIDGAME" + intervalIDGame);
+		if (gamestats %4 == 0){
+			console.log("STARTING MINI GAME 1");
+			initState1();
+		}
+		if (gamestats %4 ==1){
+			initState2();
+		}
+		if (gamestats %4 ==2){
+			initState3();
+		}
+		console.log("JUST STARTED THEGAME");
 		minigamedone = setInterval(checkMiniGames, 2000);
 
 		function checkMiniGames(){
-			console.log("CHECKMINIGAMES");
-			done = true;
+			//console.log("CHECKMINIGAMES");
+			var mini = true;
 			for (var i = 0; i < users.length; i++){
-				console.log("USER MINIGAME VALUE:" + users[i].minigame)
+				//console.log("USER MINIGAME VALUE:" + users[i].minigame)
 				if(users[i].minigame != "true"){
-					done = false;
+					mini = false;
 				}
 			}
-			console.log("DONE: "+ done);
-			if(done){
+
+			//console.log("ALL USERS DONE WITH MINI GAME: "+ mini);
+			if(mini){
+				postGameStats('');
 				clearInterval(minigamedone);
-				console.log("DONEEEEEEE");
+				//console.log("DONEEEEEEE");
 				ctx.linewidth = 1;
-				ctx.lineStyle = "#ffff00";
+				ctx.lineStyle = "#000000";
 				ctx.font= "24px sans-serif";
 				getGameScores();
-				setTimeout(checkAllScores, 3000);
+				setTimeout(checkAllScores, 5000);
 				function checkAllScores(){
-					console.log("MINIGAME LENGTH:"+ minigame.length);
+					//console.log("MINIGAME LENGTH:"+ minigame.length);
 					if(minigame.length == users.length){
+						var winner= {user: minigame[0].user, score: minigame[0].score};
 						for (var i =0; i < minigame.length; i++){
+							if(parseInt(minigame[i].score,10) > parseInt(winner.score,10)){
+								winner = {user: minigame[i].user, score: minigame[i].score};
+							}
 							ctx.fillText("Score for " + minigame[i].user+ ": " + minigame[i].score, 400,100+(i*100));
 						}
 					}
+					ctx.fillText("WINNER IS " + winner.user, 400, 500);
+
+					var id;
 					for(var i=0; i<users.length; i++){
-						if(users[i].user == getParam('user')){
-							console.log("USER REVERT MINIGAME");
-							updateUser(getParam('user'), i, users[i].turn, users[i].position, false, users[i].score);
+						
+						//console.log("USER REVERT MINIGAME");
+						if(users[i].user == winner.user){
+							id = i;
 						}
 					}
+					setTimeout(function(){updateUser(winner.user, id, undefined, undefined, false, {bits:(parseInt(users[id].score.bits,10) + 5)+"", bytes: "0"})}, 2000);
+
 				}
 			}
 		}
-
-		setTimeout(function(){start = setInterval(startGameServer,2000);}, 50000);
+		delScores();
+		setTimeout(function(){start = setInterval(startGameServer,2000);}, 40000);
 		//canvas.addClass('hide');
-		console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");
+		//console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");
 	}
 }
 
@@ -104,12 +123,11 @@ function startGameServer(){
 	getGameStats();
 	NUM_STEPS = -1;
 	turn = true;
-	console.log("startGame");
+	//console.log("startGame");
 	//getUsers();
 
 
 	if(users.length === 2){
-
 		turns = setInterval(turnOver, 4000);
 		done = setInterval(allPlayersTurn, 4000);
 		intervalID = setInterval(move, 1000);
@@ -117,23 +135,23 @@ function startGameServer(){
 		inGame = true;
 		//alert("Everyone has logged in let's play!!");
 		clearInterval(start);
-		//console.log("USER:"+ getParam('user') + "IS NOW PLAYING");
-		//console.log("users are::: " + users);
+		////console.log("USER:"+ getParam('user') + "IS NOW PLAYING");
+		////console.log("users are::: " + users);
 		takeTurns();
 		
 	}
 }
 
 function takeTurns(){
-	//console.log("IN TAKE TURNS");
-	////console.log("currentTurn is:" + gamestats);
+	////console.log("IN TAKE TURNS");
+	//////console.log("currentTurn is:" + gamestats);
 	for (var i =0; i < users.length; i++){
-		//console.log("PARAM: " + getParam('user'));
-		//console.log("USER: " + users[i].user);
-		//console.log("TURN: " + users[i].turn);
-		//console.log("GAMESTATS: " + gamestats);
+		////console.log("PARAM: " + getParam('user'));
+		////console.log("USER: " + users[i].user);
+		////console.log("TURN: " + users[i].turn);
+		////console.log("GAMESTATS: " + gamestats);
 		if(users[i].user == getParam('user') && users[i].turn == gamestats){
-			//console.log("STARTING THE DIE");
+			////console.log("STARTING THE DIE");
 
 			showDie();
 		}
@@ -141,7 +159,7 @@ function takeTurns(){
 }
 
 function showDie(){
-	//console.log("SHOW DIE");
+	////console.log("SHOW DIE");
 	var random = setInterval(generateRandom, 50);
 	cube = setInterval(drawCube,60);
 
@@ -150,12 +168,12 @@ function showDie(){
 		number.src = numberArray[randomnumber];
 
 		number.onload = function (){
-			//console.log("DRAWING IMAGE");
+			////console.log("DRAWING IMAGE");
 			ctx.drawImage(number, 20,20);
 		}
 	}
 	function generateRandom(){
-		//console.log("generateRandom!!!");
+		////console.log("generateRandom!!!");
 		randomnumber = Math.floor((Math.random()*6)+1);
 		drawCube(randomnumber);
 	}
@@ -166,7 +184,7 @@ function showDie(){
 		canvas.removeEventListener('click', onMouseDown,false);
 		NUM_STEPS = randomnumber;
 
-    	//console.log("***********************************************************************");
+    	////console.log("***********************************************************************");
 
     }
 
@@ -214,7 +232,7 @@ function onKeyPress(event){
 	//left
 	//alert("RAWRRRR");
 	if (event.keyCode === 37){
-		//console.log("left!!");
+		////console.log("left!!");
 		movePlayer('left');
 	}
 	//right
@@ -233,34 +251,34 @@ function onKeyPress(event){
 */
 
 /*function movePlayer(direction){
-	//console.log("moveplayer...");
+	////console.log("moveplayer...");
 	if (direction === 'left'){
-		//console.log("redrawing at left...");
+		////console.log("redrawing at left...");
 		canvasx = canvasx-70;
 		ctx.drawImage(gameboard, canvasx, canvasy , 600, 500, 0,0, 600,500);
 		drawPlayer();
 	}
 	else if(direction === 'right'){
-		//console.log("redrawing at right...");
+		////console.log("redrawing at right...");
 		canvasx = canvasx+70;
 		ctx.drawImage(gameboard, canvasx, canvasy , 600, 500, 0,0, 600,500);
 		drawPlayer();
 	}
 	else if (direction === 'up'){
-		//console.log("redrawing at left...");
+		////console.log("redrawing at left...");
 		canvasy = canvasy-70;
 		ctx.drawImage(gameboard, canvasx, canvasy , 600, 500, 0,0, 600,500);
 		drawPlayer();
 	}
 	else{
-		//console.log("redrawing at left...");
+		////console.log("redrawing at left...");
 		canvasy = canvasy+70;
 		ctx.drawImage(gameboard, canvasx, canvasy , 600, 500, 0,0, 600,500);
 		drawPlayer();
 	}
 }
 function drawPlayer (){
-	//console.log("drawing player...");
+	////console.log("drawing player...");
 	ctx.fillStyle="#FF0000";
 	ctx.fillRect(280, 290,50,50);
 	playerx = canvasx+ (280+25);
