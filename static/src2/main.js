@@ -40,6 +40,7 @@ function mainLoop2()
 		{
 			/** iphone products **/
 
+			console.log("SHAPEARRAY" + SHAPE_ARRAY);
 			ctx.drawImage(SHAPE_ARRAY[i].img, SHAPE_ARRAY[i].x, SHAPE_ARRAY[i].y, SHAPE_ARRAY[i].w, SHAPE_ARRAY[i].h);
 
 			/** score **/
@@ -68,7 +69,6 @@ function mainLoop2()
 
 function startMiniGame2()
 {
-	initState2();
 	loadImages();
 	TOTAL_TIME = 14000;
 	SHAPE_ARRAY = [];
@@ -82,6 +82,7 @@ function startMiniGame2()
 
 function initState2()
 {
+	ctx.drawImage(initScreen2, 0, 0, canvas.width, canvas.height);
 	ctx.font = 'bold 60px Arial';
 	var gameTitle = "APPLE CHALLENGE";
 	var gameTitleMetrics = ctx.measureText(gameTitle);
@@ -95,5 +96,5 @@ function initState2()
 	var welcomeMessageWidth = welcomeMessageMetrics.width;
 	
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
-	window.setTimeout(startGame, TIMEOUT);
+	window.setTimeout(startMiniGame2, TIMEOUT);
 }

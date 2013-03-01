@@ -27,11 +27,14 @@ function gameOverState()
 		ctx.drawImage(initScreen2, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), SHAPE_NUM);
 	}
-	var id;
-	for (var i = 0; i< users.length; i++){
+	if (gamestats %4 == 2){
+		ctx.drawImage(initScreen3, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), SCORE);
+	}
+	setTimeout(function(){for (var i = 0; i< users.length; i++){
 		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
 
-	}
+	}}, 6000);
 }
 
 function mainLoop1()
@@ -76,7 +79,6 @@ function mainLoop1()
 
 function startMiniGame1()
 {
-	initState1();
 	TOTAL_TIME = 14000; // 15 secs
 	TOPPING_NUM = 0;
 	TOPPING_ARRAY = [];
@@ -86,7 +88,7 @@ function startMiniGame1()
 
 function initState1()
 {
-	//ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
+	ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 	ctx.font = 'italic 60px Georgia';
 	var gameTitle = "FACEBOOK CHALLENGE";
 	var gameTitleMetrics = ctx.measureText(gameTitle);
@@ -106,6 +108,6 @@ function initState1()
 	
 	ctx.fillStyle = '#3B5998';
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
-	window.setTimeout(startGame, TIMEOUT);
+	window.setTimeout(startMiniGame1, TIMEOUT);
 }
 

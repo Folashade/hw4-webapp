@@ -1,9 +1,5 @@
 // main.js
 // Mini Game 3 "FLIP SHAPES" Logic
-
-var canvas = document.getElementById("MiniGame3Canvas");
-var ctx = canvas.getContext("2d");
-
 // var b1 = document.getElementById("MiniGame1Canvas")
 // var b2 = document.getElementById("MiniGame2Canvas")
 // var b4 = document.getElementById("MiniGame4Canvas")
@@ -21,7 +17,8 @@ var ctx = canvas.getContext("2d");
 
 // clearInterval(intervalID);
 
-
+var initScreen3 = new Image();
+initScreen3.src = 'img3/background.png'
 
 
 function drawSquareBackground()
@@ -30,10 +27,7 @@ function drawSquareBackground()
     ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 }
 
-function gameOverState()
-{
-	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
-}
+
 
 function drawCards()
 {
@@ -53,11 +47,12 @@ function drawCards()
 	}
 }
 
-function mainLoop()
+function mainLoop3()
 {
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+		ctx.drawImage(initScreen3, 0, 0, canvas.width, canvas.height);
 		drawSquareBackground();
 		ctx.fillStyle = 'red';
 		drawCards();
@@ -84,20 +79,24 @@ function mainLoop()
 }
 
 
-function startGame()
+function startMiniGame3()
 {
 	// call init screen?
+	CARD_NUM = 0;
+	SCORE  = 0;
+	NUM_CHOSEN = 0;
 	canvas.addEventListener('mousedown', onMouseDown, false);
 	loadImages();
 	MAKE_CARDS();
 	RANDOMIZE_CARDS();
 	SET_CARD_PARAMS();
-	intervalID = setInterval(mainLoop, PERIOD);
+	intervalID = setInterval(mainLoop3, PERIOD);
 }
 
 
-function initState()
+function initState3()
 {
+	ctx.drawImage(initScreen3, 0, 0, canvas.width, canvas.height);
 	ctx.font = 'bold 60px Calibri';
 	var gameTitle = "GOOGLE CHALLENGE";
 	var gameTitleMetrics = ctx.measureText(gameTitle);
@@ -111,7 +110,5 @@ function initState()
 	var welcomeMessageWidth = welcomeMessageMetrics.width;
 	
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
-	window.setTimeout(startGame, TIMEOUT);
+	window.setTimeout(startMiniGame3, TIMEOUT);
 }
-
-window.onload = initState;

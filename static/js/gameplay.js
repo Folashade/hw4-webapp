@@ -1,8 +1,5 @@
-// mapcanvas = document.getElementById("map-canvas");
-// mapctx = mapcanvas.getContext("2d");
-
-//canvas = document.getElementById("GameBoard");
-//ctx = canvas.getContext("2d");
+mapcanvas = document.getElementById("map-canvas");
+mapctx = mapcanvas.getContext("2d");
 
 clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
@@ -43,10 +40,13 @@ function allPlayersTurn(){
 		//console.log("END INTERVALIDGAME" + intervalIDGame);
 		if (gamestats %4 == 0){
 			console.log("STARTING MINI GAME 1");
-			startMiniGame1();
+			initState1();
 		}
 		if (gamestats %4 ==1){
-			startMiniGame2();
+			initState2();
+		}
+		if (gamestats %4 ==2){
+			initState3();
 		}
 		console.log("JUST STARTED THEGAME");
 		minigamedone = setInterval(checkMiniGames, 2000);
@@ -70,7 +70,7 @@ function allPlayersTurn(){
 				ctx.lineStyle = "#000000";
 				ctx.font= "24px sans-serif";
 				getGameScores();
-				setTimeout(checkAllScores, 3000);
+				setTimeout(checkAllScores, 5000);
 				function checkAllScores(){
 					//console.log("MINIGAME LENGTH:"+ minigame.length);
 					if(minigame.length == users.length){
