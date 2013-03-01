@@ -1,0 +1,19 @@
+-css/html not showing up :(
+-apple product offset
+-google cards
+-trees
+-dots on minimap
+-different characters instead?
+-special spots
+-music off
+-bits/bytes?
+-microsoft picture
+-bit values should be person's
+-game over condition
+-add rocks, water, and bushes
+-die should stop after the turn
+-music on/off button?
+-background color
+
+-readme
+-design (i'll send elizabeth's comments)
