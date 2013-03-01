@@ -7,6 +7,8 @@ function SQUARE(location, img, imgL, x, y, w, h)
 	this.y = y;
 	this.w = w;
 	this.h = h;
+	this.cx = this.x + (this.w/2);
+	this.cy = this.y + (this.h/2);
 }
 
 function LOAD_PLAYERS()
