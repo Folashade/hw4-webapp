@@ -8,9 +8,6 @@
 // 	b1.style.display = "none";
 // }
 
-
-var canvas = document.getElementById("MiniGame2Canvas");
-var ctx = canvas.getContext("2d");
 var imgOffset = 15;
 
 var img;
@@ -24,17 +21,21 @@ function loadImages()
 	img1.src = 'img2/macbookpro.png';
 }
 
+var initScreen2 = new Image();
+initScreen2.src = 'img2/ipad.png'
+
+
 /** clear main interval **/
 // if (intervalID != null){
 // 	clearInterval(intervalID);
 // }
 
-function mainLoop()
+function mainLoop2()
 {
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-
+		ctx.drawImage(initScreen2, 0, 0, canvas.width, canvas.height);
 		for (var i = 0; i < SHAPE_ARRAY.length; i++)
 		{
 			/** iphone products **/
@@ -65,17 +66,21 @@ function mainLoop()
 	}
 }
 
-function startGame()
+function startMiniGame2()
 {
+	initState2();
 	loadImages();
+	TOTAL_TIME = 14000;
+	SHAPE_ARRAY = [];
+	SHAPE_NUM = 0;
 	var initShape = makeRandomShape();
 	
 	SHAPE_ARRAY.push(initShape);
 	canvas.addEventListener('mousedown', onClick, false);
-	intervalID = setInterval(mainLoop, PERIOD);
+	intervalID = setInterval(mainLoop2, PERIOD);
 }
 
-function initState()
+function initState2()
 {
 	ctx.font = 'bold 60px Arial';
 	var gameTitle = "APPLE CHALLENGE";
@@ -92,5 +97,3 @@ function initState()
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
 	window.setTimeout(startGame, TIMEOUT);
 }
-
-window.onload = initState;

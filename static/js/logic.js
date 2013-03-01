@@ -104,6 +104,15 @@ function postGameScores(user, score){
   minigame.push({user: user, score: score});
 }
 
+function delScores() {
+  minigame = [];
+    $.ajax({
+      type: "delete",
+      url: "/minigame",
+      success: function(data) { }
+    });
+  }
+
 //<input id="billButton" class = "button"  type="submit" value= "Bill Gates" />
 function refreshIndex(){
 

@@ -36,13 +36,18 @@ function allPlayersTurn(){
 	if(allDone){
 		clearInterval(done);
 		//console.log("END DONE" + done);
-		alert("MINIGAME TIME");
-		postGameStats('');
+		alert("MINIGAME TIME" + gamestats);
 		clearInterval(intervalID);
 		//console.log("END INTERVALID" + intervalID);
 		clearInterval(intervalIDGame);
 		//console.log("END INTERVALIDGAME" + intervalIDGame);
-		startMiniGame1();
+		if (gamestats %4 == 0){
+			console.log("STARTING MINI GAME 1");
+			startMiniGame1();
+		}
+		if (gamestats %4 ==1){
+			startMiniGame2();
+		}
 		console.log("JUST STARTED THEGAME");
 		minigamedone = setInterval(checkMiniGames, 2000);
 
@@ -58,10 +63,11 @@ function allPlayersTurn(){
 
 			//console.log("ALL USERS DONE WITH MINI GAME: "+ mini);
 			if(mini){
+				postGameStats('');
 				clearInterval(minigamedone);
 				//console.log("DONEEEEEEE");
 				ctx.linewidth = 1;
-				ctx.lineStyle = "#ffff00";
+				ctx.lineStyle = "#000000";
 				ctx.font= "24px sans-serif";
 				getGameScores();
 				setTimeout(checkAllScores, 3000);
@@ -70,8 +76,8 @@ function allPlayersTurn(){
 					if(minigame.length == users.length){
 						var winner= {user: minigame[0].user, score: minigame[0].score};
 						for (var i =0; i < minigame.length; i++){
-							if(minigame[i].score > winner.score+ ""){
-								winner = {user: minigame[i].score, score: minigame[i].score};
+							if(parseInt(minigame[i].score,10) > parseInt(winner.score,10)){
+								winner = {user: minigame[i].user, score: minigame[i].score};
 							}
 							ctx.fillText("Score for " + minigame[i].user+ ": " + minigame[i].score, 400,100+(i*100));
 						}
@@ -86,12 +92,12 @@ function allPlayersTurn(){
 							id = i;
 						}
 					}
-					setTimeout(function(){updateUser(winner.user, id, users[id].turn, users[id].position, false, {bits:(parseInt(users[id].score.bits,10) + 5)+"", bytes: "0"})}, 2000);
+					setTimeout(function(){updateUser(winner.user, id, undefined, undefined, false, {bits:(parseInt(users[id].score.bits,10) + 5)+"", bytes: "0"})}, 2000);
 
 				}
 			}
 		}
-
+		delScores();
 		setTimeout(function(){start = setInterval(startGameServer,2000);}, 40000);
 		//canvas.addClass('hide');
 		//console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");

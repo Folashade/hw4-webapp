@@ -3,12 +3,14 @@
 
 //var canvas = document.getElementById("MiniGame1Canvas");
 //var ctx = canvas.getContext("2d");
+
+
 var img = new Image();   // Create new img element
 img.src = 'img1/like.png'; // Set source path
 var imgOffset = 15; // this will be 300
 
-var initScreen = new Image();
-initScreen.src = 'img1/profile.jpg'
+var initScreen1 = new Image();
+initScreen1.src = 'img1/profile.jpg'
 
 /** clear main interval **/
 // clearInterval(intervalID);
@@ -16,8 +18,15 @@ initScreen.src = 'img1/profile.jpg'
 function gameOverState()
 {
 	console.log("GAME OVER EXECUTING");
-	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
-	postGameScores(getParam('user'), TOPPING_NUM);
+
+	if (gamestats %4 == 0){
+		ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), TOPPING_NUM);
+	}
+	if (gamestats %4 ==1){
+		ctx.drawImage(initScreen2, 0, 0, canvas.width, canvas.height);
+		postGameScores(getParam('user'), SHAPE_NUM);
+	}
 	var id;
 	for (var i = 0; i< users.length; i++){
 		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
@@ -25,13 +34,13 @@ function gameOverState()
 	}
 }
 
-function mainLoop()
+function mainLoop1()
 {
 	console.log("THE TIME LEFT IS" + TOTAL_TIME);
 	if (TOTAL_TIME >= -PERIOD)
 	{
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-		ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
+		ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 		/** score **/
 		ctx.fillStyle = '#dfdfdf';	
 	
@@ -67,17 +76,17 @@ function mainLoop()
 
 function startMiniGame1()
 {
-	initState();
+	initState1();
 	TOTAL_TIME = 14000; // 15 secs
 	TOPPING_NUM = 0;
 	TOPPING_ARRAY = [];
-	intervalID = setInterval(mainLoop, PERIOD);
+	intervalID = setInterval(mainLoop1, PERIOD);
 	userIntervalID = setInterval(checkForKeys, 2);
 }
 
-function initState()
+function initState1()
 {
-	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
+	//ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 	ctx.font = 'italic 60px Georgia';
 	var gameTitle = "FACEBOOK CHALLENGE";
 	var gameTitleMetrics = ctx.measureText(gameTitle);

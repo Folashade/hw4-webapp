@@ -85,6 +85,16 @@ app.get("/userarray", function(request,response){
   });
 });
 
+// delete entire list
+app.delete("/minigame", function(request, response){
+  minigame = [];
+  writeFile("data.txt", JSON.stringify(minigame));
+  response.send({
+    minigame: minigame,
+    success: true
+  });
+});
+
 app.put("/users/:id", function (request, response){
   var id = request.params.id;
   var oldItem = users[id];
