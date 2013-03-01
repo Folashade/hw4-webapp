@@ -2,8 +2,8 @@
 
 function onClick(event)
 {
-	var x = event.pageX + canvas.offsetLeft;
-	var y = event.pageY + canvas.offsetTop;
+	var x = event.pageX - canvas.offsetLeft;
+	var y = event.pageY - canvas.offsetTop;
 	
 	for (var i = 0; i < SHAPE_ARRAY.length; i++)
 	{
