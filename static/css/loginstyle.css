@@ -4,50 +4,82 @@ body {
 	background-color: #dfdfdf;
 	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 	padding: 25px;
+	background: #333 url(../images/landscape.svg);
+	background-position:center;
 }
 
 #titlegame {
-	font-size: 72px;
+	font-size: 170px;
 	color: #FFF;
 	padding-top: 50px;
+	font-family: 'Oleo Script Swash Caps', cursive;
+	padding-left: -20px;
+	position:absolute;
+/*	left: -25px;*/
+	line-height: .6;
+	text-shadow: 4px 4px 4px #333;
+/*	bottom:0;*/
+	
+	/* Safari */
+	-webkit-transform: rotate(-10deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-10deg);
 }
+
 #outer-container {
 	margin: 0 auto;
 	text-align: center;
 	display: block;
-	border:2px solid #000000;
+	border: 15px solid #000000;
 	width:1500px; 
-	height:700px;
+	height:800px;
 	position:relative;
 	
 	/** shadow **/
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	
 	-moz-box-shadow: 5px 5px 5px black;
 	-webkit-box-shadow: 5px 5px 5px black;
 	box-shadow: 5px 5px 5px black;
+	
+	background: #333 url(../images/landscape.svg);
+	background-position:center;
+/*	background-position: -70% center;*/
 }
 
-.disabled{
-	text-align: left;
-	font-size: 32px;
-	color: #FFF;
-	position: relative;
-	padding:10px;
-	top:20px;
-	margin:10px;
-  	background: #797C8E;
-  	text-decoration:line-through;
-  	border-radius: 5px;
-  	-moz-border-radius: 5px;
-  	border: none;
+.disabled {
+/*  background-color: #f3f3f3;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222), color-stop(50%, #000), color-stop(50%, #555), color-stop(100%, #000));
+  background-image: -webkit-linear-gradient(top, #f3f3f3 0%, #666 50%, #333 50%, #333 100%);
+  background-image: -moz-linear-gradient(top, #f3f3f3 0%, #666 50%, #333 50%, #333 100%);
+
+  background-image: linear-gradient(top, #f3f3f3 0%, #666 50%, #333 50%, #333 100%);*/
+
+  text-decoration: line-through;;
+/*  border-right: 1px solid #dfdfdf;
+  border-bottom: 1px solid #b4b4b4;
+  border-right: 1px solid #dfdfdf;*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
+  box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
+  color: #444;
+  font: bold 30px/1 "helvetica neue", helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 7px 15px;
+  text-shadow: 0 1px 1px #fff;
+
+	background: #474747 url(../images/press.png);
+	color: #222;
+	text-shadow: 0px 2px 3px #555;
 }
 
 .button {
 	text-align: left;
 	font-size: 32px;
 	color: #FFF;
-	position: relative;
+/*	position: relative;*/
 	padding:10px;
 	top:20px;
 	margin:10px;
@@ -55,6 +87,10 @@ body {
   	border-radius: 5px;
   	-moz-border-radius: 5px;
   	border: none;
+	font-family: 'Josefin Sans', 'Helvetica', sans-serif;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(201,201,201,1) 50%, rgba(147,147,147,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(201,201,201,1)), color-stop(51%,rgba(147,147,147,1)), color-stop(100%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
 }
 
 .shadow {
@@ -63,3 +99,209 @@ body {
    -webkit-box-shadow: inset 0 0 15px #000000;
    box-shadow:         inset 0 0 15px #000000;
 }
+
+#pick {
+	display:inline-block;
+	position:absolute;
+	bottom: 50px;
+	right: 50px;
+}
+
+form {
+	display:inline-block;
+}
+
+input {
+	height: 50px;
+/*	width: 220px;*/
+/*	font-size:50px;*/
+}
+
+
+
+/******** cloudss *********/
+/*Lets start with the cloud formation rather*/
+
+/*The container will also serve as the SKY*/
+
+*{ margin: 0; padding: 0;}
+
+body {
+	/*To hide the horizontal scroller appearing during the animation*/
+	overflow: hidden;
+}
+
+#clouds{
+	padding: 100px 0;
+/*	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);*/
+	position: fixed;
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+
+
+/******* BUTTONS ********/
+/*div.indent {
+  background-color: #e2e2e2;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2e2e2), color-stop(100%, #fafafa));
+  background-image: -webkit-linear-gradient(top, #e2e2e2, #fafafa);
+  background-image: -moz-linear-gradient(top, #e2e2e2, #fafafa);
+  background-image: -ms-linear-gradient(top, #e2e2e2, #fafafa);
+  background-image: -o-linear-gradient(top, #e2e2e2, #fafafa);
+  background-image: linear-gradient(top, #e2e2e2, #fafafa);
+  border-bottom: 1px solid #e7e7e7;
+  border-left: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+  border-top: 1px solid #dfdfdf;
+  border-radius: 8px;
+  margin: 50px auto 0;
+  padding: 10px 0;
+  width: 170px; }*/
+
+
+.minimal-indent {
+  background-color: #f3f3f3;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f3f3), color-stop(50%, #dddddd), color-stop(50%, #d2d2d2), color-stop(100%, #dfdfdf));
+  background-image: -webkit-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+  background-image: -moz-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+  background-image: -ms-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+  background-image: -o-linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+  background-image: linear-gradient(top, #f3f3f3 0%, #dddddd 50%, #d2d2d2 50%, #dfdfdf 100%);
+  border-right: 1px solid #dfdfdf;
+  border-bottom: 1px solid #b4b4b4;
+  border-right: 1px solid #dfdfdf;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
+  box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #d5d5d5, 0 -1px 2px 1px #efefef;
+  color: #666;
+  font: bold 30px/1 "helvetica neue", helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 7px 15px;
+  text-shadow: 0 1px 1px #fff;
+/*  width: 220px; */
+}
+
+  .minimal-indent:hover {
+    background-color: #e5e5e5;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e5e5e5), color-stop(50%, #d1d1d1), color-stop(50%, #c4c4c4), color-stop(100%, #b8b8b8));
+    background-image: -webkit-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+    background-image: -moz-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+    background-image: -ms-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+    background-image: -o-linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+    background-image: linear-gradient(top, #e5e5e5 0%, #d1d1d1 50%, #c4c4c4 50%, #b8b8b8 100%);
+    -webkit-box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9, 0 -1px 2px 1px #e3e3e3;
+    box-shadow: inset 0 1px 0 0 #f2f2f2, 0 1px 0 0 #c9c9c9, 0 -1px 2px 1px #e3e3e3;
+    cursor: pointer; }
+  button.minimal-indent:active {
+    -webkit-box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white;
+    box-shadow: inset 0 0 30px 0 #999999, 0 1px 0 0 white; }
