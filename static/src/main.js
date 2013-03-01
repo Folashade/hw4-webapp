@@ -129,7 +129,17 @@ function drawPlayer(user)
 	if (user === 'Sergey'){
 		ctx.drawImage(SERGEY, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); // TODO: hardcoded to actual square coordinates
 	}
+	if (user === 'Bill'){
+		ctx.drawImage(BILL, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
+	}
+	if (user === 'Steve'){
+		ctx.drawImage(STEVE, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
+	}
+	if (user === 'Mark'){
+		ctx.drawImage(MARK, 502.5 - PLAYER_WIDTH/2, 296 - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT); 
+	}
 }
+
 
 function drawGame()
 {

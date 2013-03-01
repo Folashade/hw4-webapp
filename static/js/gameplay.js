@@ -21,9 +21,7 @@ var inGame = false;
 var randomnumber;
 
 var numberArray = ["", "img/numbers/1.png", "img/numbers/2.png","img/numbers/3.png","img/numbers/4.png","img/numbers/5.png","img/numbers/6.png"];
-function scoreUpdate(){
-	return;
-}
+
 function allPlayersTurn(){
 	var allDone = true;
 
