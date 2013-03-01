@@ -34,6 +34,12 @@ function loadImages()
 {
 	bankImg = new Image();
 	bankImg.src = BANK_IMAGE;
+	
+	lamp = new Image();
+	lamp.src = LAMP;
+	
+	wood = new Image();
+	wood.src = WOOD;
 }
 
 function SET_BIT_PARAMS()

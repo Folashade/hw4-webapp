@@ -194,6 +194,10 @@ function initState()
 	var welcomeMessage = "Entering the bank!";
 	var welcomeMessageMetrics = ctx.measureText(welcomeMessage);
 	var welcomeMessageWidth = welcomeMessageMetrics.width;
+
+	ctx.drawImage(wood, 0, GAME_HEIGHT/2 + 50, GAME_WIDTH, GAME_HEIGHT);
+	ctx.drawImage(lamp, -25, 15);	
+	
 	
 	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
 	window.setTimeout(startGame, TIMEOUT);

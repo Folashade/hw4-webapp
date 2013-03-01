@@ -2,6 +2,9 @@
 // Bank constants
 
 var BANK_IMAGE = "imgBank/bank.jpg";
+// var LAMP = "imgBank/lampT.png";
+var LAMP = "imgBank/money.jpg";
+var WOOD = "imgBank/wood.jpeg";
 
 var GAME_WIDTH = BankCanvas.width;
 var GAME_HEIGHT = BankCanvas.height;
