@@ -157,6 +157,10 @@ var STEP_TIME = 1000;
 
 var bank;
 var BANK = "img/bank.png";
+var BANK_WIDTH = 90;
+var BANK_HEIGHT = 90;
+var BANK_WIDTH = 1600;
+var BANK_HEIGHT = 160;
 var BANK_WIDTH = 230;
 var BANK_HEIGHT = 230;
 
@@ -165,9 +169,9 @@ var TREE = "img/tree.png";
 var TREE_WIDTH = 50;
 var TREE_HEIGHT = 100;
 var TREE_WIDTH1 = 100;
-var TREE_HEIGHT = 200;
+var TREE_HEIGHT1 = 200;
 var TREE_WIDTH2 = 150;
-var TREE_HEIGHT = 300;
+var TREE_HEIGHT2 = 300;
 
 var GAME_ARRAY_WIDTH = 21;
 var GAME_ARRAY_HEIGHT = 16;
