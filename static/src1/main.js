@@ -29,7 +29,7 @@ function mainLoop()
 	
 		ctx.fillStyle = '#3B5998';
 		ctx.font = 'italic 105px Georgia';
-		ctx.fillText(stringToWrite, GAME_WIDTH - 140, 120, 125);
+		ctx.fillText(stringToWrite, GAME_WIDTH - stringToWriteWidth, 120, 125);
 		ctx.font = 'italic 30px Georgia';
 		ctx.fillText("likes", GAME_WIDTH - 140, 170);	
 		for (var i = 0; i < TOPPING_ARRAY.length; i++)
