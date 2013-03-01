@@ -40,8 +40,11 @@ function drawCards()
 		
 		else if ((i !== CHOSEN1INDEX) && (i !== CHOSEN2INDEX))
 		{
+			console.log(flip_card+ "    "+ CARD_ARRAY[i].x + "     " + CARD_ARRAY[i].y + "       " + CARD_WIDTH + "    " + CARD_HEIGHT);
 			ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
+
 			ctx.drawImage(flip_card, CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);		
+
 			
 		}
 	}
@@ -82,11 +85,12 @@ function mainLoop3()
 function startMiniGame3()
 {
 	// call init screen?
+	TOTAL_TIME = 14000;
 	CARD_NUM = 0;
 	SCORE  = 0;
 	NUM_CHOSEN = 0;
 	canvas.addEventListener('mousedown', onMouseDown, false);
-	loadImages();
+	loadImages3();
 	MAKE_CARDS();
 	RANDOMIZE_CARDS();
 	SET_CARD_PARAMS();
