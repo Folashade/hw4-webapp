@@ -34,7 +34,7 @@ function drawBoard()
 				specialSquares.push(special);
 				break;
 			case -2:
-				ctx.drawImage(SQUARE_ARRAY[square].img, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
+				ctx.drawImage(SQUARE_ARRAY[square].imgL, SQUARE_ARRAY[square].x, SQUARE_ARRAY[square].y, SQUARE_ARRAY[square].w, SQUARE_ARRAY[square].h);
 				special = new SPECIAL_SQUARE(tree, SQUARE_ARRAY[square].x + (SQUARE_ARRAY[square].w/2) - (TREE_WIDTH/2), SQUARE_ARRAY[square].y - TREE_HEIGHT, TREE_WIDTH, TREE_HEIGHT);
 				specialSquares.push(special);
 				break;
