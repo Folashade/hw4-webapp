@@ -12,7 +12,10 @@ img.src = 'img1/like.png'; // Set source path
 var imgOffset = 15; // this will be 300
 
 var initScreen1 = new Image();
-initScreen1.src = 'img1/profile.jpg'
+initScreen1.src = 'img1/profile.jpg';
+
+var ddr = new Image();
+ddr.src = 'img1/ddr.jpg';
 
 function gameOverState()
 {
@@ -30,7 +33,7 @@ function gameOverState()
 		postGameScores(getParam('user'), SCORE);
 	}
 	if (gamestats %5 == 3){
-		ctx.drawImage(initScreen4, 0, 0, canvas.width, canvas.height);
+		ctx.drawImage(ddr, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), SCORE);
 	}
 	if (gamestats %5== 4){

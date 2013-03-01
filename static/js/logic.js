@@ -94,8 +94,8 @@ function message(){
 }
 
 function postGameScores(user, score){
-  postScores(user,score);
   minigame.push({user: user, score: score});
+  postScores(user,score);
 }
 
 function delScores() {
