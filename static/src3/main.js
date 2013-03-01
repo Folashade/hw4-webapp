@@ -31,10 +31,7 @@ function drawCards()
 		
 		else if ((i !== CHOSEN1INDEX) && (i !== CHOSEN2INDEX))
 		{
-			//ctx.fillRect(CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);
 			ctx.drawImage(flip_card, CARD_ARRAY[i].x, CARD_ARRAY[i].y, CARD_WIDTH, CARD_HEIGHT);		
-
-			
 		}
 	}
 }

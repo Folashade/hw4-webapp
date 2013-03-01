@@ -1,19 +1,24 @@
--css/html not showing up :(
+-"chat" above chat box
 -apple product offset
 -google cards
+	* not on code side, must be with server, refreshing all variables?
 -trees
--dots on minimap
+-dots on minimap - diff colors and offset
 -different characters instead?
 -special spots
 -music off
 -bits/bytes?
--microsoft picture
+-microsoft picture background and score color change??
 -bit values should be person's
--game over condition
+-game over condition and look pretty with scores?
 -add rocks, water, and bushes
 -die should stop after the turn
 -music on/off button?
 -background color
+-clear rect in game over in apple mini game
+-google game, of set instruction text
+-after bank
+-fix full map
 
 -readme
 -design (i'll send elizabeth's comments)
