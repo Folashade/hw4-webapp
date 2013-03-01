@@ -28,6 +28,60 @@ function LOAD_PLAYERS()
 	sergeydown2 = new Image();
 	sergeydown2.src = SERGEYDOWN2;
 	SERGEY = sergeydown1;
+
+	billleft1 = new Image();
+	billleft1.src = BILLLEFT1;
+	billleft2 = new Image();
+	billleft2.src = BILLLEFT2;
+	billright1 = new Image();
+	billright1.src = BILLRIGHT1;
+	billright2 = new Image();
+	billright2.src = BILLRIGHT2;
+	billup1 = new Image();
+	billup1.src = BILLUP1;
+	billup2 = new Image();
+	billup2.src = BILLUP2;
+	billdown1 = new Image();
+	billdown1.src = BILLDOWN1;
+	billdown2 = new Image();
+	billdown2.src = BILLDOWN2;
+	BILL = billdown1;
+
+	markleft1 = new Image();
+	markleft1.src = MARKLEFT1;
+	markleft2 = new Image();
+	markleft2.src = MARKLEFT2;
+	markright1 = new Image();
+	markright1.src = MARKRIGHT1;
+	markright2 = new Image();
+	markright2.src = MARKRIGHT2;
+	markup1 = new Image();
+	markup1.src = MARKUP1;
+	markup2 = new Image();
+	markup2.src = MARKUP2;
+	markdown1 = new Image();
+	markdown1.src = MARKDOWN1;
+	markdown2 = new Image();
+	markdown2.src = MARKDOWN2;
+	MARK = markdown1;
+
+	steveleft1 = new Image();
+	steveleft1.src = STEVELEFT1;
+	steveleft2 = new Image();
+	steveleft2.src = STEVELEFT2;
+	steveright1 = new Image();
+	steveright1.src = STEVERIGHT1;
+	steveright2 = new Image();
+	steveright2.src = STEVERIGHT2;
+	steveup1 = new Image();
+	steveup1.src = STEVEUP1;
+	steveup2 = new Image();
+	steveup2.src = STEVEUP2;
+	stevedown1 = new Image();
+	stevedown1.src = STEVEDOWN1;
+	stevedown2 = new Image();
+	stevedown2.src = STEVEDOWN2;
+	STEVE = stevedown1;
 }
 
 function LOAD_GAME_ELEMS()
