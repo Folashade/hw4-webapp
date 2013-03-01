@@ -14,6 +14,7 @@
 	<link rel="shortcut icon" href="/img/favicon.ico" />
 	<link href='http://fonts.googleapis.com/css?family=Text+Me+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
 	
 	<link href="css/reset.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
@@ -22,11 +23,11 @@
 
 </head>
 
-<script> // Load the music 
+<!--<script> // Load the music 
 var music = new Audio('/music.mp3');
 music.loop = true;
 music.play();
-</script>
+</script>-->
 
 <body>
 
@@ -47,14 +48,14 @@ music.play();
 					<div id = "billtag"class="playername">Bill</div>
 					<div id = "billscore" class="score"></div>
 				</div>
-				<div id="player2" class="players shadow">
+				<!--<div id="player2" class="players shadow">
 					<div id = "sergeytag" class="playername">Sergey</div>
 					<div id = "sergeyscore" class="score"></div>
-				</div>
-				<div id="player3" class="players shadow">
+				</div>-->
+				<!--<div id="player3" class="players shadow">
 					<div id = "marktag" class="playername">Mark</div>
 					<div id = "markscore" class="score"></div>
-				</div>
+				</div>-->
 				<div id="player4" class="players shadow">
 					<div id = "stevetag" class="playername">Steve</div>
 					<div id = "stevescore" class="score"></div>
@@ -106,11 +107,12 @@ music.play();
 			<canvas id="BankCanvas" width="1000" height="600"></canvas>
 			
 		</div>
-		
+		<div id="gameb"> Game </div>
 		<canvas id="GameBoard" width="1000" height="600"></canvas>
 		<!-- <canvas id="miniGameBoard" width="1000" height="600"></canvas> -->
-		
+		<div id="map"> Map </div>
 		<canvas id="map-canvas" width= "330" height= "200"></canvas>
+		<div id="chat"> Chat </div>
 		<div id="chatroom" >
 			<ul>
 

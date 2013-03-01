@@ -105,7 +105,6 @@ function mainLoop5()
 {
 	if (TOTAL_TIME >= -PERIOD)
 	{
-		console.log(TOTAL_TIME);
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 		drawBankBackground();
 		ctx.font="50px Arial";

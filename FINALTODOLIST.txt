@@ -1,24 +1,25 @@
--"chat" above chat box
+Lydia:
 -apple product offset
 -google cards
 	* not on code side, must be with server, refreshing all variables?
 -trees
--dots on minimap - diff colors and offset
 -different characters instead?
 -special spots
--music off
--bits/bytes?
--microsoft picture background and score color change??
--bit values should be person's
--game over condition and look pretty with scores?
 -add rocks, water, and bushes
--die should stop after the end of game
--music on/off button?
--background color
--clear rect in game over in apple mini game
--google game, of set instruction text
--after bank
 -fix full map
 
+Samaan:
+-chat above chat DONE
+-dots on minimap - diff colors and offset DONE
+-bits/bytes? DONE
+-microsoft picture background and score color change?? 
+-bit values should be person's DONE
+-game over condition and look pretty with scores?
+-die should stop after the end of game
+-google game, of set instruction text
+
+
+Other:
 -readme
 -design (i'll send elizabeth's comments)
+

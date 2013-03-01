@@ -16,7 +16,7 @@ initScreen1.src = 'img1/profile.jpg'
 
 function gameOverState()
 {
-
+	console.log(gamestats);
 	if (gamestats %5 == 0){
 		ctx.drawImage(initScreen1, 0, 0, canvas.width, canvas.height);
 		postGameScores(getParam('user'), TOPPING_NUM);
@@ -34,22 +34,13 @@ function gameOverState()
 		postGameScores(getParam('user'), SCORE);
 	}
 	if (gamestats %5== 4){
-		drawBankBackground();
-		var id;
-		for(var i =0; i< users.length; i++){
-			if(users[i].user == getParam('user')){
-				id =i;
-			}
-		}
-		if(parseInt(users[id].score.bits,10) >= 32){
-			updateUser(users[id].user, id, users[id].turn, users[i].position, true, {bits: parseInt(users[id].score.bits,10) -32, 
-				bytes: parseInt(users[id].score.bytes,10) +1});
-		}
+		ctx.drawImage(bankImg, 0, 0, GAME_WIDTH, GAME_HEIGHT);
+		postGameScores(getParam('user'), 0);
 	}
 	setTimeout(function(){for (var i = 0; i< users.length; i++){
 		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
 
-	}}, 6000);
+	}}, 4000);
 }
 
 function mainLoop1()
