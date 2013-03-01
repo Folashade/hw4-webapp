@@ -1,1 +1,1 @@
-[{"user":"Steve","score":"23"},{"user":"Bill","score":"19"},{"user":"Bill","score":"19"},{"user":"Steve","score":"23"}]
+[{"user":"Steve","score":"30"},{"user":"Bill","score":"13"}]
