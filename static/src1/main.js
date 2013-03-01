@@ -33,14 +33,13 @@ function mainLoop()
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 		ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
 		/** score **/
-		ctx.fillStyle = '#dfdfdf';
-		
-		var stringToWrite = String(TOPPING_NUM);
-		var metrics = ctx.measureText(stringToWrite);
-		var stringToWriteWidth = metrics.width;		
+		ctx.fillStyle = '#dfdfdf';	
 	
 		ctx.fillStyle = '#3B5998';
 		ctx.font = 'italic 105px Georgia';
+		var stringToWrite = String(TOPPING_NUM);
+		var metrics = ctx.measureText(stringToWrite);
+		var stringToWriteWidth = metrics.width;	
 		ctx.fillText(stringToWrite, GAME_WIDTH - stringToWriteWidth, 120, 125);
 		ctx.font = 'italic 30px Georgia';
 		ctx.fillText("likes", GAME_WIDTH - 140, 170);	
