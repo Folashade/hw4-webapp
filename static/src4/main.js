@@ -18,7 +18,7 @@ function drawSlideBackground()
 {
 	ctx.fillStyle = 'black';
     // ctx.fillRect(SLIDE_X, 0, SLIDE_WIDTH, SLIDE_HEIGHT);
-	ctx.fillStyle = 'red';
+	ctx.fillStyle = 'black';
 	ctx.moveTo(SLIDE_X, ARROW_SIZE + 2);
 	ctx.lineTo(SLIDE_WIDTH, ARROW_SIZE + 2);
 	ctx.stroke();
