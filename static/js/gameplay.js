@@ -8,7 +8,7 @@ clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
 setInterval(getUsers, 2000);
-setInterval (scoreUpdate,5000);
+
 //setInterval(getGameStats, 2000);
 var turns; 
 var done;
