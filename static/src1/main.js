@@ -19,7 +19,6 @@ function mainLoop()
 {
 	if (TOTAL_TIME >= -PERIOD)
 	{
-		console.log(TOTAL_TIME);
 		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 		/** score **/
 		ctx.fillStyle = '#dfdfdf';

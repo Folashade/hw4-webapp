@@ -30,6 +30,11 @@ function drawSquareBackground()
     ctx.fillRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 }
 
+function gameOverState()
+{
+	ctx.drawImage(initScreen, 0, 0, canvas.width, canvas.height);
+}
+
 function drawCards()
 {
 	for (var i = 0; i < CARD_ARRAY.length; i++)
@@ -50,15 +55,32 @@ function drawCards()
 
 function mainLoop()
 {
-	ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-	ctx.font="30px Arial";
-	var stringToWrite = String(SCORE);
-	var metrics = ctx.measureText(stringToWrite);
-	var stringToWriteWidth = metrics.width;
-	ctx.fillText(stringToWrite, GAME_WIDTH/2 - stringToWriteWidth/2, 30);
-	drawSquareBackground();
-	ctx.fillStyle = 'red';
-	drawCards();
+	if (TOTAL_TIME >= -PERIOD)
+	{
+		ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+		drawSquareBackground();
+		ctx.fillStyle = 'red';
+		drawCards();
+		
+		ctx.font="30px Arial";
+		ctx.fillStyle = '#cd2626';
+		var stringToWrite = "Score: " + String(SCORE);
+		var metrics = ctx.measureText(stringToWrite);
+		var stringToWriteWidth = metrics.width;
+		ctx.fillText(stringToWrite, GAME_WIDTH - stringToWriteWidth - 3*TEXT_PADDING, 50);
+		var time = "Time left: " + String(Math.floor((TOTAL_TIME + 1000)/1000)); //for milliseconds
+		var timemetrics = ctx.measureText(time);
+		var timeWidth = timemetrics.width;
+		ctx.fillText(time, 3*TEXT_PADDING, 50);
+		
+		TOTAL_TIME -= PERIOD;
+	}
+	
+	else
+	{
+		clearInterval(intervalID);
+		gameOverState();
+	}
 }
 
 
@@ -73,4 +95,23 @@ function startGame()
 	intervalID = setInterval(mainLoop, PERIOD);
 }
 
-startGame();
+
+function initState()
+{
+	ctx.font = 'bold 60px Calibri';
+	var gameTitle = "GOOGLE CHALLENGE";
+	var gameTitleMetrics = ctx.measureText(gameTitle);
+	var gameTitleWidth = gameTitleMetrics.width;
+	ctx.fillStyle = '#cd2626';
+	ctx.fillText(gameTitle, GAME_WIDTH/2 - (gameTitleWidth/2), 2*GAME_HEIGHT/5);
+	
+	ctx.font = 'bold 20px Calibri';
+	var welcomeMessage = "Match as many Google Doodles as you can!";
+	var welcomeMessageMetrics = ctx.measureText(welcomeMessage);
+	var welcomeMessageWidth = welcomeMessageMetrics.width;
+	
+	ctx.fillText(welcomeMessage, GAME_WIDTH/2 - (welcomeMessageWidth/2), GAME_HEIGHT/2);
+	window.setTimeout(startGame, TIMEOUT);
+}
+
+window.onload = initState;

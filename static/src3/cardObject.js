@@ -1,2 +1,0 @@
-// cardObject.js
-
