@@ -8,6 +8,7 @@ clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
 setInterval(getUsers, 2000);
+setInterval (scoreUpdate,5000);
 //setInterval(getGameStats, 2000);
 var turns; 
 var done;
@@ -20,7 +21,9 @@ var inGame = false;
 var randomnumber;
 
 var numberArray = ["", "img/numbers/1.png", "img/numbers/2.png","img/numbers/3.png","img/numbers/4.png","img/numbers/5.png","img/numbers/6.png"];
-
+function scoreUpdate(){
+	return;
+}
 function allPlayersTurn(){
 	var allDone = true;
 
@@ -67,21 +70,31 @@ function allPlayersTurn(){
 				function checkAllScores(){
 					//console.log("MINIGAME LENGTH:"+ minigame.length);
 					if(minigame.length == users.length){
+						var winner= {user: minigame[0].user, score: minigame[0].score};
 						for (var i =0; i < minigame.length; i++){
+							if(minigame[i].score > winner.score+ ""){
+								winner = {user: minigame[i].score, score: minigame[i].score};
+							}
 							ctx.fillText("Score for " + minigame[i].user+ ": " + minigame[i].score, 400,100+(i*100));
 						}
 					}
+					ctx.fillText("WINNER IS " + winner.user, 400, 500);
+
+					var id;
 					for(var i=0; i<users.length; i++){
 						
 						//console.log("USER REVERT MINIGAME");
-						updateUser(users[i].users, i, users[i].turn, users[i].position, false, users[i].score);
-						
+						if(users[i].user == winner.user){
+							id = i;
+						}
 					}
+					setTimeout(function(){updateUser(winner.user, id, users[id].turn, users[id].position, false, {bits:(parseInt(users[id].score.bits,10) + 5)+"", bytes: "0"})}, 2000);
+
 				}
 			}
 		}
 
-		setTimeout(function(){start = setInterval(startGameServer,2000);}, 50000);
+		setTimeout(function(){start = setInterval(startGameServer,2000);}, 40000);
 		//canvas.addClass('hide');
 		//console.log("WOOOOOOOOOOOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOWOOWW");
 	}

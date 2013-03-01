@@ -20,8 +20,7 @@ function gameOverState()
 	postGameScores(getParam('user'), TOPPING_NUM);
 	var id;
 	for (var i = 0; i< users.length; i++){
-		
-			updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
+		updateUser(users[i].user, i, users[i].turn, users[i].position, true, users[i].score);
 
 	}
 }
