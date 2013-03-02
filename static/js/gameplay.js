@@ -65,16 +65,16 @@ function displayAllPlayers(){
 		if(users[i].user != getParam('user')){
 			var row = users[i].position.row;
 			var col = users[i].position.col;
-			var x1 = row*8.5;
-			var y1 = col*14.2;
+			var x1 = col*10.9;
+			var y1 = row*11.1;
 			mapctx.fillStyle = "#FF1127";
 			mapctx.fillRect(x1,y1, 10, 10);
 		}
 		else{ // ITS YOU!
 			var row = users[i].position.row;
 			var col = users[i].position.col;
-			var x1 = row*8.5;
-			var y1 = col*14.2;
+			var x1 = col*10.9;
+			var y1 = row*11.1;
 			mapctx.fillStyle = "#0D20FF";
 			mapctx.fillRect(x1,y1, 10, 10);
 		}
@@ -157,7 +157,7 @@ function allPlayersTurn(){
 									minigame[i].score, 400,150+(i*80));
 						}
 					}
-					ctx.fillText("The Winner is: " + winner.user, 400, 500);
+					ctx.fillText("The Winner is: " + winner.user, 400, 300);
 
 					var id;
 					for(var i=0; i<users.length; i++){
