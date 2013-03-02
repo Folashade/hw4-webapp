@@ -6,9 +6,11 @@
 */
 //gameplay.js
 
+//smaller map
 mapcanvas = document.getElementById("map-canvas");
 mapctx = mapcanvas.getContext("2d");
 
+//getting users logged in
 clearInterval(checkUsers);
 var start = setInterval(startGameServer, 2000);
 setInterval(getMessages, 2000);
@@ -32,7 +34,7 @@ minimap.src = 'images/fullMap.png'; // Set source path
 
 var numberArray = ["", "img/numbers/1.png", "img/numbers/2.png","img/numbers/3.png","img/numbers/4.png","img/numbers/5.png","img/numbers/6.png"];
 
-
+//display an updated score in the score overlay
 function displayScores(){
 	for(var i =0; i < users.length; i++){
 		if(users[i].user == 'Bill'){
@@ -46,18 +48,20 @@ function displayScores(){
 	}
 }
 
+//end the game when the game ends
 function endGame(){
 	if (!inGame){
 		ctx.fillStyle = "#000000";
 		ctx.font = "54px sans-serif";
+		clearInterval(cube);
 		clearInterval(intervalID);
 		clearInterval(intervalIDGame);
-		setInterval(function(){clearInterval(cube);},50);
 		ctx.fillText(" GAME OVER", 400, 300);
 
 	}
 }
 
+//display players on the mini map
 function displayAllPlayers(){
 
 	mapctx.drawImage(minimap, 0, 0, mapcanvas.width, mapcanvas.height);
@@ -81,6 +85,7 @@ function displayAllPlayers(){
 	}
 }
 
+//check if all the players have finished moving
 function allPlayersTurn(){
 	var allDone = true;
 
@@ -90,18 +95,19 @@ function allPlayersTurn(){
 		}
 	}
 
+	//can now start the minigame
 	if(allDone){
 		clearInterval(done);
 		clearInterval(intervalID);
 		clearInterval(intervalIDGame);
 
-		if (gamestats %5 == 0){
+		if (gamestats %5 == 3){
 			initState1();
 		}
 		if (gamestats %5 ==1){
 			initState2();
 		}
-		if (gamestats %5 ==2){
+		if (gamestats %5 ==0){
 			initState3();
 		}
 		if (gamestats %5 ==3){
@@ -115,12 +121,14 @@ function allPlayersTurn(){
 					id =i;
 				}
 			}
+			//exchange bits for bytes if the player has enough
 			if(parseInt(users[id].score.bits,10) >= 32){
 				setTimeout(updateUser(users[id].user, id, users[id].turn, users[id].position, users[id].minigame, {bits: parseInt(users[id].score.bits,10) -32, 
 					bytes: parseInt(users[id].score.bytes,10) +1}), 2000);
 			}
 		}
 
+		//check to see that everyone has finished the minigame
 		minigamedone = setInterval(checkMiniGames, 2000);
 
 		function checkMiniGames(){
@@ -144,6 +152,7 @@ function allPlayersTurn(){
 
 				setTimeout(checkAllScores, 5000);
 
+				//check how everyone did and declare the winner!
 				function checkAllScores(){
 				
 					if(minigame.length == users.length){
@@ -177,6 +186,7 @@ function allPlayersTurn(){
 	}
 }
 
+//check when a player's turn is over, and if so update their turn
 function turnOver(){
 	if (turn == true && NUM_STEPS === 0){
 		clearInterval(cube);
@@ -210,6 +220,7 @@ function startGameServer(){
 	}
 }
 
+//start the turns
 function takeTurns(){
 
 	for (var i =0; i < users.length; i++){
@@ -219,6 +230,7 @@ function takeTurns(){
 	}
 }
 
+//display the die
 function showDie(){
 	var random = setInterval(generateRandom, 50);
 	cube = setInterval(drawCube,60);
