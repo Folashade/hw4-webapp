@@ -71,7 +71,6 @@ function mainLoop3()
 function startMiniGame3()
 {
 	TOTAL_TIME = 14000;
-	CARD_NUM = CARD_ARRAY.length;
 	SCORE  = 0;
 	NUM_CHOSEN = 0;
 	canvas.addEventListener('mousedown', onMouseDown, false);
