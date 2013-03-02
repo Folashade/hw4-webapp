@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"gamestats":"5"}
-=======
 {"gamestats":"1"}
->>>>>>> d3c1c240144af42d87d35f7b0bec0b36c03b6a9d
