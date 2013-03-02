@@ -3,7 +3,7 @@
  * Due: 26 February 2013 
  
  Based off of Mario Party series.
- */
+*/
 //gameplay.js
 
 mapcanvas = document.getElementById("map-canvas");
@@ -52,11 +52,12 @@ function endGame(){
 		ctx.font = "54px sans-serif";
 		clearInterval(intervalID);
 		clearInterval(intervalIDGame);
-		clearInterval(cube);
+		setInterval(function(){clearInterval(cube);},50);
 		ctx.fillText(" GAME OVER", 400, 300);
 
 	}
 }
+
 function displayAllPlayers(){
 
 	mapctx.drawImage(minimap, 0, 0, mapcanvas.width, mapcanvas.height);
@@ -64,16 +65,16 @@ function displayAllPlayers(){
 		if(users[i].user != getParam('user')){
 			var row = users[i].position.row;
 			var col = users[i].position.col;
-			var x1 = row*8.5;
-			var y1 = col*14.2;
+			var x1 = col*10.9;
+			var y1 = row*11.1;
 			mapctx.fillStyle = "#FF1127";
 			mapctx.fillRect(x1,y1, 10, 10);
 		}
 		else{ // ITS YOU!
 			var row = users[i].position.row;
 			var col = users[i].position.col;
-			var x1 = row*8.5;
-			var y1 = col*14.2;
+			var x1 = col*10.9;
+			var y1 = row*11.1;
 			mapctx.fillStyle = "#0D20FF";
 			mapctx.fillRect(x1,y1, 10, 10);
 		}
@@ -115,7 +116,7 @@ function allPlayersTurn(){
 				}
 			}
 			if(parseInt(users[id].score.bits,10) >= 32){
-				setTimeout(updateUser(users[id].user, id, users[id].turn, users[id].position, false, {bits: parseInt(users[id].score.bits,10) -32, 
+				setTimeout(updateUser(users[id].user, id, users[id].turn, users[id].position, users[id].minigame, {bits: parseInt(users[id].score.bits,10) -32, 
 					bytes: parseInt(users[id].score.bytes,10) +1}), 2000);
 			}
 		}
@@ -132,126 +133,118 @@ function allPlayersTurn(){
 			}
 
 			if(mini){
-				console.log("EVERYONE IS DONE");
-				clearInterval(minigamedone);
+
 				postGameStats('');
+				clearInterval(minigamedone);
+
 				ctx.linewidth = 1;
 				ctx.fillStyle = "#000000";
-				if (parseInt(gamestats %5,10) == 3){
-					ctx.fillStyle = "#FFFFFF";
-				}
-				ctx.font= "32px Helvetica Neue";
+				ctx.font= "24px sans-serif";
 				getGameScores();
 
-
-				setTimeout(checkAllScores, 8000);
+				setTimeout(checkAllScores, 5000);
 
 				function checkAllScores(){
-
+				
 					if(minigame.length == users.length){
 						var winner= {user: minigame[0].user, score: minigame[0].score};
-						console.log(minigame[0]);
+
 						for (var i =0; i < minigame.length; i++){
 							if(parseInt(minigame[i].score,10) > parseInt(winner.score,10)){
 								winner = {user: minigame[i].user, score: minigame[i].score};
 							}
 							ctx.fillText("Score for " + minigame[i].user+ ": " + 
-								minigame[i].score, 400,100+(i*100));
+									minigame[i].score, 400,150+(i*80));
 						}
 					}
-					ctx.fillText("The Winner is: " + winner.user, 400, 500);
+					ctx.fillText("The Winner is: " + winner.user, 400, 300);
 
 					var id;
 					for(var i=0; i<users.length; i++){
-
+				
 						if(users[i].user == winner.user){
 							id = i;
 						}
-
 					}
-					
 					setTimeout(function(){updateUser(winner.user, id, undefined, undefined, false, 
-						{bits:(parseInt(users[id].score.bits,10) + 15)+"", bytes: users[id].score.bytes})}, 2000);
+						{bits:(parseInt(users[id].score.bits,10) + 10)+"", bytes: users[id].score.bytes})}, 2000);
 
-					
 				}
-
-				delScores();
-				setTimeout(function(){start = setInterval(startGameServer,2000);}, 40000);
 			}
+		}
+		delScores();
+		setTimeout(function(){start = setInterval(startGameServer,2000);}, 40000);
+	}
+}
+
+function turnOver(){
+	if (turn == true && NUM_STEPS === 0){
+		clearInterval(cube);
+		turn = false;
+		clearInterval(turns);
+		var id;
+
+		for(var i =0; i < users.length; i++){
+			if(users[i].user == getParam('user')){
+				id = i;
+			}
+		}
+		updateUser(getParam('user'), id, (parseInt(users[id].turn,10)+1)+"", users[id].position, false, users[id].score );
+	}
+}
+function startGameServer(){
+	getGameStats();
+	NUM_STEPS = -1;
+	turn = true;
+
+	setTimeout(function(){if (gamestats == 5) inGame = false;}, 3000);
+	if(users.length === 2){
+		turns = setInterval(turnOver, 4000);
+		done = setInterval(allPlayersTurn, 4000);
+		intervalID = setInterval(move, 1000);
+		intervalIDGame = setInterval(drawGame, 1000);
+
+		clearInterval(start);
+		takeTurns();
+		
+	}
+}
+
+function takeTurns(){
+
+	for (var i =0; i < users.length; i++){
+		if(users[i].user == getParam('user') && users[i].turn == gamestats){
+			showDie();
 		}
 	}
 }
 
-	function turnOver(){
-		if (turn == true && NUM_STEPS === 0){
-			clearInterval(cube);
-			turn = false;
-			clearInterval(turns);
-			var id;
+function showDie(){
+	var random = setInterval(generateRandom, 50);
+	cube = setInterval(drawCube,60);
 
-			for(var i =0; i < users.length; i++){
-				if(users[i].user == getParam('user')){
-					id = i;
-				}
-			}
-			updateUser(getParam('user'), id, (parseInt(users[id].turn,10)+1)+"", users[id].position, false, users[id].score );
-		}
-	}
-	function startGameServer(){
-		getGameStats();
-		NUM_STEPS = -1;
-		turn = true;
+	function drawCube(){
+		var number = new Image();
+		number.src = numberArray[randomnumber];
 
-		setTimeout(function(){if (gamestats == 5) inGame = false;}, 3000);
-		if(users.length === 2){
-			turns = setInterval(turnOver, 4000);
-			done = setInterval(allPlayersTurn, 4000);
-			intervalID = setInterval(move, 1000);
-			intervalIDGame = setInterval(drawGame, 1000);
-
-			clearInterval(start);
-			takeTurns();
-
+		number.onload = function (){
+			ctx.drawImage(number, 20,20);
 		}
 	}
 
-	function takeTurns(){
-
-		for (var i =0; i < users.length; i++){
-			if(users[i].user == getParam('user') && users[i].turn == gamestats){
-				showDie();
-			}
-		}
+	function generateRandom(){
+		randomnumber = Math.floor((Math.random()*6)+1);
+		drawCube(randomnumber);
 	}
 
-	function showDie(){
-		var random = setInterval(generateRandom, 50);
-		cube = setInterval(drawCube,60);
+	var onMouseDown = function(event){
+		clearInterval(random);
+		canvas.removeEventListener('click', onMouseDown,false);
+		NUM_STEPS = randomnumber;
+    }
 
-		function drawCube(){
-			var number = new Image();
-			number.src = numberArray[randomnumber];
-
-			number.onload = function (){
-				ctx.drawImage(number, 20,20);
-			}
-		}
-
-		function generateRandom(){
-			randomnumber = Math.floor((Math.random()*6)+1);
-			drawCube(randomnumber);
-		}
-
-		var onMouseDown = function(event){
-			clearInterval(random);
-			canvas.removeEventListener('click', onMouseDown,false);
-			NUM_STEPS = randomnumber;
-		}
-
-		canvas.addEventListener('click', onMouseDown, false);
-	}
-
+    canvas.addEventListener('click', onMouseDown, false);
+}
 
 
 
