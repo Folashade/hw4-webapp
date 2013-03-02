@@ -1,0 +1,16 @@
+User Testing
+
+Person 1:
+	- possible collapsible chat window
+	- scoreboard available at all times
+	- View of how many turns you have
+
+Person 2:
+	- Score per player
+	- Sync after turns
+	- Tutorial kind of difficult to see
+
+Person 3:
+	- Overall Map View
+	- Labels for windows to make them clearer
+	- Message boxes
