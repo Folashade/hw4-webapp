@@ -14,8 +14,9 @@ function onClick(event)
 	
 	for (var i = 0; i < SHAPE_ARRAY.length; i++)
 	{
-		if ((x >= SHAPE_ARRAY[i].x) && (x <= (SHAPE_ARRAY[i].x + SHAPE_ARRAY[i].w)) && (y >= SHAPE_ARRAY[i].y) && (y <= (SHAPE_ARRAY[i].y + SHAPE_ARRAY[i].h)))
-		{
+		if ((SHAPE_ARRAY[i].x >= SHAPE_ARRAY[i].x) && (SHAPE_ARRAY[i].x <= (SHAPE_ARRAY[i].x + SHAPE_ARRAY[i].w)) && (SHAPE_ARRAY[i].y >= SHAPE_ARRAY[i].y) && (SHAPE_ARRAY[i].y <= (SHAPE_ARRAY[i].y - 
+		SHAPE_ARRAY[i].h)))
+		{	
 			SHAPE_ARRAY.splice(i, 1);
 			var newShape = makeRandomShape();
 

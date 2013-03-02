@@ -46,8 +46,6 @@ function mainLoop2()
 		for (var i = 0; i < SHAPE_ARRAY.length; i++)
 		{
 			/** iphone products **/
-
-			console.log("SHAPEARRAY" + SHAPE_ARRAY);
 			ctx.drawImage(SHAPE_ARRAY[i].img, SHAPE_ARRAY[i].x, SHAPE_ARRAY[i].y, SHAPE_ARRAY[i].w, SHAPE_ARRAY[i].h);
 
 			/** score **/

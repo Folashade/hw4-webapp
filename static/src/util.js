@@ -65,6 +65,8 @@ function LOAD_GAME_ELEMS()
 	bank.src = BANK;
 	tree = new Image();
 	tree.src = TREE;
+	bush = new Image();
+	bush.src = BUSH;
 }
 
 function PLAYER_POSITION(row, col)
