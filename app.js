@@ -81,7 +81,6 @@ app.get("/users", function(request,response){
 // delete entire list
 app.delete("/minigame", function(request, response){
   minigame = [];
-  writeFile("data/minigame.txt", JSON.stringify(minigame));
   response.send({
     minigame: minigame,
     success: true
@@ -126,7 +125,6 @@ app.post("/users", function(request,response){
 
   if (successful) {
     users.push(item); 
-   // userarray[user] = {"score": 0};
     writeFile("data/users.txt", JSON.stringify(users));
   }else {
     item = undefined;

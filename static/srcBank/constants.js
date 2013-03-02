@@ -3,13 +3,29 @@
  * Due: 26 February 2013 
  
  Based off of Mario Party series.
-*/
+ */
 
 // constants.js
 // Bank constants
+var bankinterval = setInterval(getBytes, 2000);
+var id;
+var NUM_BITS;
+function getBytes(){
+	if (users == undefined){
+		NUM_BITS=0;
+	}
+	else{
+		for (var i =0; i < users.length; i++){
+			if (users[i].user == getParam('user')){
+				id =i;
+			}
+		}
+		clearInterval(bankinterval);	
+		NUM_BITS = users[id].score.bits;
+	}
+}
 
 var BANK_IMAGE = "imgBank/bank.jpg";
-// var LAMP = "imgBank/lampT.png";
 var LAMP = "imgBank/money.jpg";
 var WOOD = "imgBank/wood.jpeg";
 
@@ -31,8 +47,6 @@ var BIT_HEIGHT = GAME_HEIGHT/4; //(GAME_HEIGHT - (ROW_NUM*PADDING))/ROW_NUM;
 var BYTE_VALUE = "NaN";
 
 var CURRENTLY_CLICKED = -1;
-
-var NUM_BITS = 32;
 
 var RANDOM = Math.floor(Math.random() * NUM_BITS);
 var NUM_1_BITS = RANDOM;
